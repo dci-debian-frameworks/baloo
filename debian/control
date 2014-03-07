@@ -1,0 +1,41 @@
+Source: baloo
+Section: kde
+Priority: optional
+Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
+Build-Depends: debhelper (>= 8.0.0), cmake,
+ libkfilemetadata-dev,
+ pkg-kde-tools,
+ kdelibs5-dev,
+ kdepimlibs5-dev,
+ libxapian-dev,
+ libqjson-dev,
+ libattr1-dev,
+ libboost1.54-dev
+Standards-Version: 3.9.4
+Homepage: http://projects.kde.org/baloo
+
+Package: baloo
+Architecture: any
+Replaces: kde-runtime ( << 4:4.13.0 ), kde-runtime-data ( << 4:4.13.0 )
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: framework for searching and managing metadata.
+ A framework for searching and managing metadata in KDE.
+
+Package: libbaloo-dev
+Architecture: any
+Section: libdevel
+Depends: baloo (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: Development headers for developing applications ontop of baloo
+ Baloo is a framework for searching and managing metadata in KDE.
+ .
+ This package contains development headers for baloo.
+
+Package: baloo-dbg
+Architecture: any
+Depends: baloo (= ${binary:Version}), ${misc:Depends}
+Priority: extra
+Section: debug
+Description: Debugging symbols for baloo
+ Baloo is a framework for searching and managing metadata in KDE.
+ .
+ This package contains debugging symbols for baloo.

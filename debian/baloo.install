@@ -1,0 +1,10 @@
+etc/dbus-1/system.d/*
+usr/bin/*
+usr/lib/kde4/*.so
+usr/lib/kde4/libexec/*
+usr/lib/libbaloo*.so.4*
+usr/share/akonadi/agents/*
+usr/share/autostart/*
+usr/share/dbus-1/*
+usr/share/kde4/*
+usr/share/polkit-1/*
