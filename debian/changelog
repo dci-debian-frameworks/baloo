@@ -1,5 +1,5 @@
-baloo (4.12.80-ubuntu1) UNRELEASED; urgency=low
+baloo (4:4.12.80-0ubuntu1) UNRELEASED; urgency=low
 
-  * Initial release 
+  * Initial release
 
- -- Rohan Garg <rohangarg@kubuntu.org>  Mon, 27 Jan 2014 12:53:12 +0100
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Mar 2014 10:41:50 +0000
