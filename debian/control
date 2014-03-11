@@ -70,7 +70,13 @@ Description: Xapian funcationality for Baloo
 Package: baloo-dev
 Architecture: any
 Section: libdevel
-Depends: baloo (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: baloo (= ${binary:Version}),
+ libbaloocore4 (= ${binary:Version}),
+ libbaloofiles4 (= ${binary:Version}),
+ libbaloopim4 (= ${binary:Version}),
+ libbalooxapian4 (= ${binary:Version}),
+ ${shlibs:Depends},
+ ${misc:Depends}
 Description: Development headers for developing applications with Baloo
  Baloo is a framework for searching and managing metadata.
  .
