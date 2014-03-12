@@ -1,6 +1,5 @@
 # SymbolsHelper-Confirmed: 4:4.12.80 amd64
-libbalooxapian.so.4 libbalooxapian4 #MINVER#
-| libbalooxapian4 #MINVER#, baloo
+libbalooxapian.so.4 libbalooxapian4 #MINVER#, baloo
  _ZN5Baloo17XapianSearchStore11docForQueryEi@Base 4:4.12.80
  _ZN5Baloo17XapianSearchStore13finalizeQueryERKN6Xapian5QueryE@Base 4:4.12.80
  _ZN5Baloo17XapianSearchStore13toXapianQueryEN6Xapian5Query2opERK5QListINS_4TermEE@Base 4:4.12.80
