@@ -4,8 +4,8 @@ Priority: optional
 Maintainer: Rohan Garg <rohangarg@kubuntu.org>
 Build-Depends: debhelper (>= 9.0.0), cmake,
  pkg-kde-tools,
- kdelibs5-dev (>= 4:4.12.80),
- kdepimlibs5-dev (>= 4:4.12.80),
+ kdelibs5-dev (>= 4:4.12.90),
+ kdepimlibs5-dev (>= 4:4.12.90),
  libkfilemetadata-dev (>= 4:4.12.80),
  libxapian-dev,
  libqjson-dev,
