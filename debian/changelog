@@ -7,4 +7,7 @@ baloo (4:4.12.80-0ubuntu1) UNRELEASED; urgency=low
   * Fix copyright
   * Create and fix symbols. 
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Mar 2014 10:41:50 +0000
+  [ Jonathan Riddell ]
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 13 Mar 2014 21:05:49 +0000
