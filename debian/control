@@ -70,8 +70,7 @@ Description: Xapian funcationality for Baloo
 Package: baloo-dev
 Architecture: any
 Section: libdevel
-Depends: baloo (= ${binary:Version}),
- libbaloocore4 (= ${binary:Version}),
+Depends: libbaloocore4 (= ${binary:Version}),
  libbaloofiles4 (= ${binary:Version}),
  libbaloopim4 (= ${binary:Version}),
  libbalooxapian4 (= ${binary:Version}),

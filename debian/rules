@@ -8,4 +8,4 @@ override_dh_strip:
 .PHONY: override_dh_auto_test
 
 override_dh_shlibdeps:
-	 $(overridden_command) -- -xbaloo
+	 $(overridden_command) -- -xbaloo -xkde-runtime -xkdepim-runtime
