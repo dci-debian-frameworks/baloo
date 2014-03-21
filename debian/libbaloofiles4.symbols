@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 4:4.12.80 amd64
+# SymbolsHelper-Confirmed: 4:4.12.95 amd64 i386
 libbaloofiles.so.4 libbaloofiles4 #MINVER#, baloo
  _ZN5Baloo10TagListJob11qt_metacallEN11QMetaObject4CallEiPPv@Base 4:4.12.80
  _ZN5Baloo10TagListJob11qt_metacastEPKc@Base 4:4.12.80
@@ -118,6 +118,7 @@ libbaloofiles.so.4 libbaloofiles4 #MINVER#, baloo
  _ZTIN6Xapian12RuntimeErrorE@Base 4:4.12.80
  _ZTIN6Xapian13DatabaseErrorE@Base 4:4.12.80
  _ZTIN6Xapian16DocNotFoundErrorE@Base 4:4.12.80
+ _ZTIN6Xapian17DatabaseLockErrorE@Base 4:4.12.95
  _ZTIN6Xapian20DatabaseOpeningErrorE@Base 4:4.12.80
  _ZTIN6Xapian20InvalidArgumentErrorE@Base 4:4.12.80
  _ZTIN6Xapian5ErrorE@Base 4:4.12.80
@@ -129,6 +130,7 @@ libbaloofiles.so.4 libbaloofiles4 #MINVER#, baloo
  _ZTSN6Xapian12RuntimeErrorE@Base 4:4.12.80
  _ZTSN6Xapian13DatabaseErrorE@Base 4:4.12.80
  _ZTSN6Xapian16DocNotFoundErrorE@Base 4:4.12.80
+ _ZTSN6Xapian17DatabaseLockErrorE@Base 4:4.12.95
  _ZTSN6Xapian20DatabaseOpeningErrorE@Base 4:4.12.80
  _ZTSN6Xapian20InvalidArgumentErrorE@Base 4:4.12.80
  _ZTSN6Xapian5ErrorE@Base 4:4.12.80
