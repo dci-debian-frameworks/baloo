@@ -1,5 +1,32 @@
-# SymbolsHelper-Confirmed: 4:4.12.80 amd64
+# SymbolsHelper-Confirmed: 4:4.12.97 amd64
 libbalooxapian.so.4 libbalooxapian4 #MINVER#, baloo
+ _ZN5Baloo14XapianDatabase11qt_metacallEN11QMetaObject4CallEiPPv@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabase11qt_metacastEPKc@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabase11retryCommitEv@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabase14deleteDocumentEj@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabase15replaceDocumentEjRKN6Xapian8DocumentE@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabase16staticMetaObjectE@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabase6commitEv@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabase8documentEj@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabase9committedEv@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabaseC1ERK7QString@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabaseC2ERK7QString@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabaseD0Ev@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabaseD1Ev@Base 4:4.12.97
+ _ZN5Baloo14XapianDatabaseD2Ev@Base 4:4.12.97
+ _ZN5Baloo14XapianDocument11addBoolTermERK7QStringS3_@Base 4:4.12.97
+ _ZN5Baloo14XapianDocument11addBoolTermEiRK7QString@Base 4:4.12.97
+ _ZN5Baloo14XapianDocument19fetchTermStartsWithERK10QByteArray@Base 4:4.12.97
+ _ZN5Baloo14XapianDocument20removeTermStartsWithERK10QByteArray@Base 4:4.12.97
+ _ZN5Baloo14XapianDocument3docEv@Base 4:4.12.97
+ _ZN5Baloo14XapianDocument7addTermERK7QStringS3_@Base 4:4.12.97
+ _ZN5Baloo14XapianDocument8addValueEiRK7QString@Base 4:4.12.97
+ _ZN5Baloo14XapianDocument9indexTextERK7QStringS3_i@Base 4:4.12.97
+ _ZN5Baloo14XapianDocument9indexTextERK7QStringi@Base 4:4.12.97
+ _ZN5Baloo14XapianDocumentC1ERKN6Xapian8DocumentE@Base 4:4.12.97
+ _ZN5Baloo14XapianDocumentC1Ev@Base 4:4.12.97
+ _ZN5Baloo14XapianDocumentC2ERKN6Xapian8DocumentE@Base 4:4.12.97
+ _ZN5Baloo14XapianDocumentC2Ev@Base 4:4.12.97
  _ZN5Baloo17XapianSearchStore11docForQueryEi@Base 4:4.12.80
  _ZN5Baloo17XapianSearchStore13finalizeQueryERKN6Xapian5QueryE@Base 4:4.12.80
  _ZN5Baloo17XapianSearchStore13toXapianQueryEN6Xapian5Query2opERK5QListINS_4TermEE@Base 4:4.12.80
@@ -25,18 +52,24 @@ libbalooxapian.so.4 libbalooxapian4 #MINVER#, baloo
  _ZN5Baloo17XapianSearchStoreD2Ev@Base 4:4.12.80
  (optional=templinst)_ZN6Xapian5QueryC1IPS0_EENS0_2opET_S4_j@Base 4:4.12.80
  (optional=templinst)_ZN6Xapian5QueryC2IPS0_EENS0_2opET_S4_j@Base 4:4.12.80
+ _ZNK5Baloo14XapianDatabase10metaObjectEv@Base 4:4.12.97
+ _ZTIN5Baloo14XapianDatabaseE@Base 4:4.12.97
  _ZTIN5Baloo17XapianSearchStoreE@Base 4:4.12.80
  _ZTIN6Xapian12RuntimeErrorE@Base 4:4.12.80
  _ZTIN6Xapian13DatabaseErrorE@Base 4:4.12.80
  _ZTIN6Xapian16DocNotFoundErrorE@Base 4:4.12.80
+ _ZTIN6Xapian17DatabaseLockErrorE@Base 4:4.12.97
  _ZTIN6Xapian20DatabaseOpeningErrorE@Base 4:4.12.80
  _ZTIN6Xapian21DatabaseModifiedErrorE@Base 4:4.12.80
  _ZTIN6Xapian5ErrorE@Base 4:4.12.80
+ _ZTSN5Baloo14XapianDatabaseE@Base 4:4.12.97
  _ZTSN5Baloo17XapianSearchStoreE@Base 4:4.12.80
  _ZTSN6Xapian12RuntimeErrorE@Base 4:4.12.80
  _ZTSN6Xapian13DatabaseErrorE@Base 4:4.12.80
  _ZTSN6Xapian16DocNotFoundErrorE@Base 4:4.12.80
+ _ZTSN6Xapian17DatabaseLockErrorE@Base 4:4.12.97
  _ZTSN6Xapian20DatabaseOpeningErrorE@Base 4:4.12.80
  _ZTSN6Xapian21DatabaseModifiedErrorE@Base 4:4.12.80
  _ZTSN6Xapian5ErrorE@Base 4:4.12.80
+ _ZTVN5Baloo14XapianDatabaseE@Base 4:4.12.97
  _ZTVN5Baloo17XapianSearchStoreE@Base 4:4.12.80
