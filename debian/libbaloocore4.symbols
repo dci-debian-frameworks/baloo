@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 4:4.12.80 amd64
+# SymbolsHelper-Confirmed: 4:4.12.97 i386
 libbaloocore.so.4 libbaloocore4 #MINVER#, baloo
  _ZN5Baloo11SearchStore11qt_metacallEN11QMetaObject4CallEiPPv@Base 4:4.12.80
  _ZN5Baloo11SearchStore11qt_metacastEPKc@Base 4:4.12.80
@@ -35,6 +35,7 @@ libbaloocore.so.4 libbaloocore4 #MINVER#, baloo
  _ZN5Baloo4Term11setNegationEb@Base 4:4.12.80
  _ZN5Baloo4Term11setPropertyERK7QString@Base 4:4.12.80
  _ZN5Baloo4Term11setSubTermsERK5QListIS0_E@Base 4:4.12.80
+ _ZN5Baloo4Term11setUserDataERK7QStringRK8QVariant@Base 4:4.12.97
  _ZN5Baloo4Term12setOperationENS0_9OperationE@Base 4:4.12.80
  _ZN5Baloo4Term13setComparatorENS0_10ComparatorE@Base 4:4.12.80
  _ZN5Baloo4Term14fromVariantMapERK4QMapI7QString8QVariantE@Base 4:4.12.80
@@ -108,6 +109,7 @@ libbaloocore.so.4 libbaloocore4 #MINVER#, baloo
  _ZNK5Baloo4Term7subTermEv@Base 4:4.12.80
  _ZNK5Baloo4Term8propertyEv@Base 4:4.12.80
  _ZNK5Baloo4Term8subTermsEv@Base 4:4.12.80
+ _ZNK5Baloo4Term8userDataERK7QString@Base 4:4.12.97
  _ZNK5Baloo4Term9isNegatedEv@Base 4:4.12.80
  _ZNK5Baloo4Term9operationEv@Base 4:4.12.80
  _ZNK5Baloo4TermeqERKS0_@Base 4:4.12.80
