@@ -1,0 +1,28 @@
+From f8ce8ab4d3e763f36eb21cd63238eaafa15007ea Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Tue, 1 Apr 2014 12:36:06 +0200
+Subject: [PATCH 26/48] FileIndexingJob: Assert instead of failing gracefully
+
+---
+ src/file/fileindexingjob.cpp | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/src/file/fileindexingjob.cpp b/src/file/fileindexingjob.cpp
+index d20dfe4..d00b840 100644
+--- a/src/file/fileindexingjob.cpp
++++ b/src/file/fileindexingjob.cpp
+@@ -49,10 +49,7 @@ FileIndexingJob::FileIndexingJob(const QVector<uint>& files, QObject* parent)
+ 
+ void FileIndexingJob::start()
+ {
+-    if (m_files.isEmpty()) {
+-        emitResult();
+-        return;
+-    }
++    Q_ASSERT(!m_files.isEmpty());
+ 
+     m_args = m_files;
+     m_files.clear();
+-- 
+1.9.1
+

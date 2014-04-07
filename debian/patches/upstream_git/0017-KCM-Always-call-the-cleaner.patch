@@ -1,0 +1,62 @@
+From 457969987a601d047ff97a9ee575be5182d7246e Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Sat, 29 Mar 2014 15:31:03 +0100
+Subject: [PATCH 17/48] KCM: Always call the cleaner
+
+The KCM save function will only be called if some setting has changed,
+and since the folders are the only thing that could have changed, we
+call the kcm.
+---
+ src/file/kcm/kcm.cpp | 15 ++-------------
+ src/file/kcm/kcm.h   |  2 --
+ 2 files changed, 2 insertions(+), 15 deletions(-)
+
+diff --git a/src/file/kcm/kcm.cpp b/src/file/kcm/kcm.cpp
+index 354392b..685b6e1 100644
+--- a/src/file/kcm/kcm.cpp
++++ b/src/file/kcm/kcm.cpp
+@@ -87,9 +87,6 @@ void ServerConfigModule::load()
+     QStringList excludeFolders = group.readPathEntry("exclude folders", QStringList());
+     m_folderSelectionWidget->setFolders(includeFolders, excludeFolders);
+ 
+-    m_oldExcludeFolders = excludeFolders;
+-    m_oldIncludeFolders = includeFolders;
+-
+     // All values loaded -> no changes
+     Q_EMIT changed(false);
+ }
+@@ -126,16 +123,8 @@ void ServerConfigModule::save()
+     }
+ 
+     // Start cleaner
+-    bool cleaningRequired = false;
+-    if (includeFolders != m_oldIncludeFolders)
+-        cleaningRequired = true;
+-    else if (excludeFolders != m_oldExcludeFolders)
+-        cleaningRequired = true;
+-
+-    if (cleaningRequired) {
+-        const QString exe = KStandardDirs::findExe(QLatin1String("baloo_file_cleaner"));
+-        QProcess::startDetached(exe);
+-    }
++    const QString exe = KStandardDirs::findExe(QLatin1String("baloo_file_cleaner"));
++    QProcess::startDetached(exe);
+ 
+     // all values saved -> no changes
+     Q_EMIT changed(false);
+diff --git a/src/file/kcm/kcm.h b/src/file/kcm/kcm.h
+index ae76af4..440849d 100644
+--- a/src/file/kcm/kcm.h
++++ b/src/file/kcm/kcm.h
+@@ -40,8 +40,6 @@ public Q_SLOTS:
+     void defaults();
+ 
+ private:
+-    QStringList m_oldIncludeFolders;
+-    QStringList m_oldExcludeFolders;
+ };
+ }
+ 
+-- 
+1.9.1
+

@@ -1,0 +1,101 @@
+From d0c63165ffcd8be0bcb3b69f4a54cb12ce1543f2 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Tue, 1 Apr 2014 17:45:31 +0200
+Subject: [PATCH 33/48] FileIndexingJob: Minimize the number of calls to the
+ extractor
+
+---
+ src/file/fileindexingjob.cpp | 19 ++++++++-----------
+ src/file/fileindexingjob.h   |  3 ++-
+ 2 files changed, 10 insertions(+), 12 deletions(-)
+
+diff --git a/src/file/fileindexingjob.cpp b/src/file/fileindexingjob.cpp
+index 3dde7e4..9ab398a 100644
+--- a/src/file/fileindexingjob.cpp
++++ b/src/file/fileindexingjob.cpp
+@@ -37,9 +37,11 @@ using namespace Baloo;
+ 
+ FileIndexingJob::FileIndexingJob(const QVector<uint>& files, QObject* parent)
+     : KJob(parent)
+-    , m_files(files)
+     , m_process(0)
+ {
++    Q_ASSERT(!files.isEmpty());
++    m_files.push(files);
++
+     // setup the timer used to kill the indexer process if it seems to get stuck
+     m_processTimer = new QTimer(this);
+     m_processTimer->setSingleShot(true);
+@@ -51,11 +53,7 @@ FileIndexingJob::FileIndexingJob(const QVector<uint>& files, QObject* parent)
+ 
+ void FileIndexingJob::start()
+ {
+-    Q_ASSERT(!m_files.isEmpty());
+-
+-    m_args = m_files;
+-    m_files.clear();
+-
++    m_args = m_files.pop();
+     start(m_args);
+ }
+ 
+@@ -97,14 +95,14 @@ void FileIndexingJob::slotIndexedFile(int, QProcess::ExitStatus exitStatus)
+         if (m_files.isEmpty()) {
+             emitResult();
+         } else {
+-            m_args = m_files;
+-            m_files.clear();
++            m_args = m_files.pop();
+             start(m_args);
+         }
+         return;
+     }
+ 
+     // Failed to index. We must figure out which was the offending file
++    qDebug() << "Indexing failed. Trying to determine offending file";
+ 
+     // Here it is!
+     if (m_args.size() == 1) {
+@@ -116,8 +114,7 @@ void FileIndexingJob::slotIndexedFile(int, QProcess::ExitStatus exitStatus)
+         if (m_files.isEmpty()) {
+             emitResult();
+         } else {
+-            m_args = m_files;
+-            m_files.clear();
++            m_args = m_files.pop();
+             start(m_args);
+         }
+         return;
+@@ -126,7 +123,7 @@ void FileIndexingJob::slotIndexedFile(int, QProcess::ExitStatus exitStatus)
+     // We split the args into half and push the rest back into m_files
+     // to call later
+     int s = m_args.size() / 2;
+-    m_files = m_args.mid(s) + m_files;
++    m_files.push(m_args.mid(s));
+     m_args.resize(s);
+ 
+     start(m_args);
+diff --git a/src/file/fileindexingjob.h b/src/file/fileindexingjob.h
+index 48e4fb2..3ad5c89 100644
+--- a/src/file/fileindexingjob.h
++++ b/src/file/fileindexingjob.h
+@@ -26,6 +26,7 @@
+ #include <KJob>
+ #include <QProcess>
+ #include <QVector>
++#include <QStack>
+ 
+ #include "filemapping.h"
+ 
+@@ -72,7 +73,7 @@ private:
+     void start(const QVector<uint>& files);
+ 
+     /// holds the files which still need to be indexed
+-    QVector<uint> m_files;
++    QStack< QVector<uint> > m_files;
+ 
+     /// holds the files which have been sent to the process
+     QVector<uint> m_args;
+-- 
+1.9.1
+

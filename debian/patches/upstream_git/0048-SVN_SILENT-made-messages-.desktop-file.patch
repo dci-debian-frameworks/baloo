@@ -1,0 +1,50 @@
+From f09fb69b3d314dbf9258b689886acd69a6d819fc Mon Sep 17 00:00:00 2001
+From: l10n daemon script <scripty@kde.org>
+Date: Fri, 4 Apr 2014 08:35:55 +0000
+Subject: [PATCH 48/48] SVN_SILENT made messages (.desktop file)
+
+---
+ src/file/inotify/org.kde.baloo.filewatch.actions | 1 +
+ src/file/kcm/kcm_baloofile.desktop               | 1 +
+ src/runner/plasma-runner-baloosearch.desktop     | 1 +
+ 3 files changed, 3 insertions(+)
+
+diff --git a/src/file/inotify/org.kde.baloo.filewatch.actions b/src/file/inotify/org.kde.baloo.filewatch.actions
+index 769ea92..cf72a98 100644
+--- a/src/file/inotify/org.kde.baloo.filewatch.actions
++++ b/src/file/inotify/org.kde.baloo.filewatch.actions
+@@ -11,6 +11,7 @@ Name[es]=Límite de vigilancia de carpetas
+ Name[fi]=Kansioiden valvontaraja
+ Name[fr]=Limite de surveillance des dossiers
+ Name[hu]=Mappafigyelési korlát
++Name[ia]=Limite de guardia de dossier
+ Name[it]=Limite di osservazione delle cartelle
+ Name[ko]=폴더 감시 제한
+ Name[lt]=Aplankų stebėjimo riba
+diff --git a/src/file/kcm/kcm_baloofile.desktop b/src/file/kcm/kcm_baloofile.desktop
+index 8add6de..25be4ae 100644
+--- a/src/file/kcm/kcm_baloofile.desktop
++++ b/src/file/kcm/kcm_baloofile.desktop
+@@ -21,6 +21,7 @@ Name[es]=Búsqueda de escritorio
+ Name[fi]=Työpöytähaku
+ Name[fr]=Recherche sur le bureau
+ Name[hu]=Asztali keresés
++Name[ia]=Cerca de Scriptorio
+ Name[it]=Ricerca dal desktop
+ Name[ko]=데스크톱 검색
+ Name[lt]=Darbastalio paieška
+diff --git a/src/runner/plasma-runner-baloosearch.desktop b/src/runner/plasma-runner-baloosearch.desktop
+index 044fbfc..42863bb 100644
+--- a/src/runner/plasma-runner-baloosearch.desktop
++++ b/src/runner/plasma-runner-baloosearch.desktop
+@@ -11,6 +11,7 @@ Name[es]=Búsqueda de escritorio
+ Name[fi]=Työpöytähaku
+ Name[fr]=Recherche sur le bureau
+ Name[hu]=Asztali keresés
++Name[ia]=Cerca de Scriptorio
+ Name[it]=Ricerca dal desktop
+ Name[ko]=데스크톱 검색
+ Name[lt]=Darbastalio paieška
+-- 
+1.9.1
+

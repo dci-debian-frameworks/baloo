@@ -1,0 +1,37 @@
+From a94b4283574bae7dee0419d9a9c3195af82b0e96 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Fri, 28 Mar 2014 12:07:01 +0100
+Subject: [PATCH 10/48] sqlite: Enable WAL journaling mode
+
+This decreases the number of writes we're doing by about half. With
+about 11k files it goes down from 200mb to about 100mb.
+
+This can be checked by running the basicindexingqueue test
+---
+ src/file/database.cpp | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/src/file/database.cpp b/src/file/database.cpp
+index 8e54f18..6612459 100644
+--- a/src/file/database.cpp
++++ b/src/file/database.cpp
+@@ -85,6 +85,16 @@ bool Database::init()
+         return false;
+     }
+ 
++    //
++    // WAL Journaling mode has much lower io writes than the traditional journal
++    // based indexing.
++    //
++    ret = query.exec("PRAGMA journal_mode = WAL");
++    if (!ret) {
++        kDebug() << "Could not set WAL journaling mode" << query.lastError().text();
++        return false;
++    }
++
+     m_initialized = true;
+     return true;
+ }
+-- 
+1.9.1
+

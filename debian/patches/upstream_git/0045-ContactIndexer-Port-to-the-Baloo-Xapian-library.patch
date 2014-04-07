@@ -1,0 +1,268 @@
+From fdccf18bd1559b4dd8aae934dc8a40af255159fe Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Wed, 2 Apr 2014 16:55:07 +0200
+Subject: [PATCH 45/48] ContactIndexer: Port to the Baloo::Xapian library
+
+Makes the code much easier to read. Also, this way we're not converting
+strings to std::string which results in us loosing anything above 127.
+---
+ src/pim/agent/CMakeLists.txt     |  1 +
+ src/pim/agent/contactindexer.cpp | 60 ++++++++++++++--------------------------
+ src/pim/agent/contactindexer.h   |  6 ++--
+ src/xapian/xapiandatabase.cpp    | 11 +++++++-
+ src/xapian/xapiandatabase.h      |  1 +
+ src/xapian/xapiandocument.cpp    |  2 +-
+ src/xapian/xapiandocument.h      |  4 +--
+ 7 files changed, 39 insertions(+), 46 deletions(-)
+
+diff --git a/src/pim/agent/CMakeLists.txt b/src/pim/agent/CMakeLists.txt
+index efdca9b..e917915 100644
+--- a/src/pim/agent/CMakeLists.txt
++++ b/src/pim/agent/CMakeLists.txt
+@@ -28,6 +28,7 @@ target_link_libraries(akonadi_baloo_indexer
+     ${KDEPIMLIBS_KABC_LIBS}
+     ${XAPIAN_LIBRARIES}
+     ${KDEPIMLIBS_KPIMUTILS_LIBS}
++    balooxapian
+ )
+ 
+ install(TARGETS akonadi_baloo_indexer ${INSTALL_TARGETS_DEFAULT_ARGS})
+diff --git a/src/pim/agent/contactindexer.cpp b/src/pim/agent/contactindexer.cpp
+index 9529676..16a3f95 100644
+--- a/src/pim/agent/contactindexer.cpp
++++ b/src/pim/agent/contactindexer.cpp
+@@ -21,6 +21,7 @@
+  */
+ 
+ #include "contactindexer.h"
++#include "xapiandocument.h"
+ 
+ #include <KABC/Addressee>
+ #include <KABC/ContactGroup>
+@@ -29,7 +30,7 @@
+ ContactIndexer::ContactIndexer(const QString& path):
+     AbstractIndexer()
+ {
+-    m_db = new Xapian::WritableDatabase(path.toStdString(), Xapian::DB_CREATE_OR_OPEN);
++    m_db = new Baloo::XapianDatabase(path, true);
+ }
+ 
+ ContactIndexer::~ContactIndexer()
+@@ -52,10 +53,7 @@ bool ContactIndexer::indexContact(const Akonadi::Item& item)
+         return false;
+     }
+ 
+-    Xapian::Document doc;
+-    Xapian::TermGenerator termGen;
+-    termGen.set_database(*m_db);
+-    termGen.set_document(doc);
++    Baloo::XapianDocument doc;
+ 
+     QString name;
+     if (!addresse.formattedName().isEmpty()) {
+@@ -68,22 +66,18 @@ bool ContactIndexer::indexContact(const Akonadi::Item& item)
+         name = addresse.name();
+     }
+ 
+-    const std::string stdName = name.toStdString();
+-    const std::string stdNick = addresse.nickName().toStdString();
+     kDebug() << "Indexing" << name << addresse.nickName();
+ 
+-    termGen.index_text(stdName);
+-    termGen.index_text(stdNick);
+-    doc.add_boolean_term(addresse.uid().toStdString());
++    doc.indexText(name);
++    doc.indexText(addresse.nickName());
++    doc.indexText(addresse.uid());
+ 
+-    termGen.index_text(stdName, 1, "NA");
+-    termGen.index_text(stdNick, 1, "NI");
++    doc.indexText(name, "NA");
++    doc.indexText(addresse.nickName(), "NI");
+ 
+     Q_FOREACH (const QString& email, addresse.emails()) {
+-        std::string stdEmail = email.toStdString();
+-
+-        doc.add_term(stdEmail);
+-        termGen.index_text(stdEmail);
++        doc.addTerm(email);
++        doc.indexText(email);
+     }
+ 
+     // Parent collection
+@@ -91,10 +85,9 @@ bool ContactIndexer::indexContact(const Akonadi::Item& item)
+                "Item does not have a valid parent collection");
+ 
+     const Akonadi::Entity::Id colId = item.parentCollection().id();
+-    const QByteArray term = 'C' + QByteArray::number(colId);
+-    doc.add_boolean_term(term.data());
++    doc.addBoolTerm(colId, "C");
+ 
+-    m_db->replace_document(item.id(), doc);
++    m_db->replaceDocument(item.id(), doc);
+     return true;
+ }
+ 
+@@ -107,27 +100,20 @@ void ContactIndexer::indexContactGroup(const Akonadi::Item& item)
+         return;
+     }
+ 
+-    Xapian::Document doc;
+-    Xapian::TermGenerator termGen;
+-    termGen.set_database(*m_db);
+-    termGen.set_document(doc);
++    Baloo::XapianDocument doc;
+ 
+     const QString name = group.name();
++    doc.indexText(name);
++    doc.indexText(name, "NA");
+ 
+-    const std::string stdName = name.toStdString();
+-
+-    termGen.index_text(stdName);
+-
+-    termGen.index_text(stdName, 1, "NA");
+     // Parent collection
+     Q_ASSERT_X(item.parentCollection().isValid(), "Baloo::ContactIndexer::index",
+                "Item does not have a valid parent collection");
+ 
+     const Akonadi::Entity::Id colId = item.parentCollection().id();
+-    const QByteArray term = 'C' + QByteArray::number(colId);
+-    doc.add_boolean_term(term.data());
++    doc.addBoolTerm(colId, "C");
+ 
+-    m_db->replace_document(item.id(), doc);
++    m_db->replaceDocument(item.id(), doc);
+ }
+ 
+ 
+@@ -140,22 +126,18 @@ void ContactIndexer::index(const Akonadi::Item& item)
+ 
+ void ContactIndexer::remove(const Akonadi::Item& item)
+ {
+-    try {
+-        m_db->delete_document(item.id());
+-    }
+-    catch (const Xapian::DocNotFoundError&) {
+-        return;
+-    }
++    m_db->deleteDocument(item.id());
+ }
+ 
+ void ContactIndexer::remove(const Akonadi::Collection& collection)
+ {
+     try {
++        Xapian::Database* db = m_db->db();
+         Xapian::Query query('C'+ QString::number(collection.id()).toStdString());
+-        Xapian::Enquire enquire(*m_db);
++        Xapian::Enquire enquire(*db);
+         enquire.set_query(query);
+ 
+-        Xapian::MSet mset = enquire.get_mset(0, m_db->get_doccount());
++        Xapian::MSet mset = enquire.get_mset(0, db->get_doccount());
+         Xapian::MSetIterator end(mset.end());
+         for (Xapian::MSetIterator it = mset.begin(); it != end; ++it) {
+             const qint64 id = *it;
+diff --git a/src/pim/agent/contactindexer.h b/src/pim/agent/contactindexer.h
+index fb38ee8..cd751bd 100644
+--- a/src/pim/agent/contactindexer.h
++++ b/src/pim/agent/contactindexer.h
+@@ -24,8 +24,7 @@
+ #define CONTACTINDEXER_H
+ 
+ #include "abstractindexer.h"
+-
+-#include <xapian.h>
++#include "xapiandatabase.h"
+ 
+ class ContactIndexer: public AbstractIndexer
+ {
+@@ -44,7 +43,8 @@ class ContactIndexer: public AbstractIndexer
+ private:
+     bool indexContact(const Akonadi::Item &item);
+     void indexContactGroup(const Akonadi::Item &item);
+-    Xapian::WritableDatabase* m_db;
++
++    Baloo::XapianDatabase* m_db;
+ };
+ 
+ #endif // CONTACTINDEXER_H
+diff --git a/src/xapian/xapiandatabase.cpp b/src/xapian/xapiandatabase.cpp
+index a6bbd18..a509731 100644
+--- a/src/xapian/xapiandatabase.cpp
++++ b/src/xapian/xapiandatabase.cpp
+@@ -54,6 +54,11 @@ XapianDatabase::XapianDatabase(const QString& path, bool writeOnly)
+     }
+ }
+ 
++void XapianDatabase::replaceDocument(uint id, const XapianDocument& doc)
++{
++    replaceDocument(id, doc.doc());
++}
++
+ void XapianDatabase::replaceDocument(uint id, const Xapian::Document& doc)
+ {
+     if (m_writeOnly) {
+@@ -66,7 +71,11 @@ void XapianDatabase::replaceDocument(uint id, const Xapian::Document& doc)
+ void XapianDatabase::deleteDocument(uint id)
+ {
+     if (m_writeOnly) {
+-        m_wDb.delete_document(id);
++        try {
++            m_wDb.delete_document(id);
++        }
++        catch (const Xapian::DocNotFoundError&) {
++        }
+         return;
+     }
+     m_docsToRemove << id;
+diff --git a/src/xapian/xapiandatabase.h b/src/xapian/xapiandatabase.h
+index abe7680..8eca833 100644
+--- a/src/xapian/xapiandatabase.h
++++ b/src/xapian/xapiandatabase.h
+@@ -42,6 +42,7 @@ public:
+     XapianDatabase(const QString& path, bool writeOnly = false);
+ 
+     void replaceDocument(uint id, const Xapian::Document& doc);
++    void replaceDocument(uint id, const XapianDocument& doc);
+     void deleteDocument(uint id);
+ 
+     /**
+diff --git a/src/xapian/xapiandocument.cpp b/src/xapian/xapiandocument.cpp
+index a7149e5..a2a3dff 100644
+--- a/src/xapian/xapiandocument.cpp
++++ b/src/xapian/xapiandocument.cpp
+@@ -66,7 +66,7 @@ void XapianDocument::indexText(const QString& text, int wdfInc)
+     indexText(text, QString(), wdfInc);
+ }
+ 
+-Xapian::Document XapianDocument::doc()
++Xapian::Document XapianDocument::doc() const
+ {
+     return m_doc;
+ }
+diff --git a/src/xapian/xapiandocument.h b/src/xapian/xapiandocument.h
+index 98bf35f..452595b 100644
+--- a/src/xapian/xapiandocument.h
++++ b/src/xapian/xapiandocument.h
+@@ -38,7 +38,7 @@ public:
+     XapianDocument();
+     XapianDocument(const Xapian::Document& doc);
+ 
+-    void addTerm(const QString& term, const QString& prefix);
++    void addTerm(const QString& term, const QString& prefix = QString());
+     void addBoolTerm(const QString& term, const QString& prefix = QString());
+     void addBoolTerm(int term, const QString& prefix);
+ 
+@@ -47,7 +47,7 @@ public:
+ 
+     void addValue(int pos, const QString& value);
+ 
+-    Xapian::Document doc();
++    Xapian::Document doc() const;
+ 
+     QString fetchTermStartsWith(const QByteArray& term);
+ 
+-- 
+1.9.1
+

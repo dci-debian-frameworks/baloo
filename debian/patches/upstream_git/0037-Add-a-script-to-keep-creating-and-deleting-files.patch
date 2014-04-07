@@ -1,0 +1,35 @@
+From b4f886837cf1a209f96c47903bd57873d59dfee9 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Wed, 2 Apr 2014 12:14:49 +0200
+Subject: [PATCH 37/48] Add a script to keep creating and deleting files
+
+This is a helper script which is useful in debugging database locks
+which often occur when file indexing is routintely interrupted by the db
+being locked.
+---
+ src/file/tests/createFile.sh | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+ create mode 100755 src/file/tests/createFile.sh
+
+diff --git a/src/file/tests/createFile.sh b/src/file/tests/createFile.sh
+new file mode 100755
+index 0000000..e9cf4ea
+--- /dev/null
++++ b/src/file/tests/createFile.sh
+@@ -0,0 +1,13 @@
++#!/bin/sh
++
++# This script is mostly used in order to make sure the baloo_file_extractor
++# process can cope with Xapian::DatabaseModified exceptions and when
++# it cannot obtain the write lock
++for i in {1..1000000}
++do
++    FILE="$HOME/_baloo_test_file$i"
++    touch $FILE
++    sleep 2
++    rm $FILE
++    sleep 2
++done
+-- 
+1.9.1
+

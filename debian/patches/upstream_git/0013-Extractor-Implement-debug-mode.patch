@@ -1,0 +1,111 @@
+From 74143bf37c1e98df0755e891b4645a9c2dea7716 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Fri, 28 Mar 2014 19:01:44 +0100
+Subject: [PATCH 13/48] Extractor: Implement debug mode
+
+---
+ src/file/extractor/app.cpp | 59 ++++++++++++++++++++++++++++++++++++++++++++++
+ src/file/extractor/app.h   |  2 ++
+ 2 files changed, 61 insertions(+)
+
+diff --git a/src/file/extractor/app.cpp b/src/file/extractor/app.cpp
+index 37000c2..83ee293 100644
+--- a/src/file/extractor/app.cpp
++++ b/src/file/extractor/app.cpp
+@@ -65,6 +65,7 @@ App::App(QObject* parent)
+             this, SLOT(slotCommitted()));
+ 
+     m_bData = args->isSet("bdata");
++    m_debugEnabled = args->isSet("debug");
+ 
+     m_results.reserve(args->count());
+     for (int i=0; i<args->count(); i++) {
+@@ -224,6 +225,10 @@ void App::slotCommitted()
+ 
+     QDBusConnection::sessionBus().send(message);
+ 
++    if (m_debugEnabled) {
++        printDebug();
++    }
++
+     Q_EMIT saved();
+ }
+ 
+@@ -233,3 +238,57 @@ void App::deleteDocument(unsigned docid)
+     m_db.xapianDatabase()->deleteDocument(docid);
+ }
+ 
++void App::printDebug()
++{
++    Q_FOREACH (const Result& res, m_results) {
++        qDebug() << res.inputUrl();
++        QMapIterator<QString, QVariant> it(res.map());
++        while (it.hasNext()) {
++            it.next();
++            int propNum = it.key().toInt();
++
++            using namespace KFileMetaData::Property;
++            Property prop = static_cast<Property>(propNum);
++            KFileMetaData::PropertyInfo pi(prop);
++            qDebug() << pi.name() << it.value();
++        }
++    }
++
++    // Print the io usage
++    QFile file("/proc/self/io");
++    file.open(QIODevice::ReadOnly | QIODevice::Text);
++
++    QTextStream fs(&file);
++    QString str = fs.readAll();
++
++    qDebug() << "------- IO ---------";
++    QTextStream stream(&str);
++    while (!stream.atEnd()) {
++        QString str = stream.readLine();
++
++        QString rchar("rchar: ");
++        if (str.startsWith(rchar)) {
++            ulong amt = str.mid(rchar.size()).toULong();
++            qDebug() << "Read:" << amt / 1024  << "kb";
++        }
++
++        QString wchar("wchar: ");
++        if (str.startsWith(wchar)) {
++            ulong amt = str.mid(wchar.size()).toULong();
++            qDebug() << "Write:" << amt / 1024  << "kb";
++        }
++
++        QString read("read_bytes: ");
++        if (str.startsWith(read)) {
++            ulong amt = str.mid(read.size()).toULong();
++            qDebug() << "Actual Reads:" << amt / 1024  << "kb";
++        }
++
++        QString write("write_bytes: ");
++        if (str.startsWith(write)) {
++            ulong amt = str.mid(write.size()).toULong();
++            qDebug() << "Actual Writes:" << amt / 1024  << "kb";
++        }
++    }
++
++}
+diff --git a/src/file/extractor/app.h b/src/file/extractor/app.h
+index 5aecdbd..6f89a80 100644
+--- a/src/file/extractor/app.h
++++ b/src/file/extractor/app.h
+@@ -52,10 +52,12 @@ Q_SIGNALS:
+ 
+ private:
+     void deleteDocument(unsigned docid);
++    void printDebug();
+ 
+     QVector<Result> m_results;
+     QStringList m_urls;
+     bool m_bData;
++    bool m_debugEnabled;
+ 
+     QString m_path;
+ 
+-- 
+1.9.1
+

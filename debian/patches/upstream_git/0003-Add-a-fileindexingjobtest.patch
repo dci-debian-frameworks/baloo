@@ -1,0 +1,189 @@
+From de39e751d09a16a3f3ef278e2e9755f193074111 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Thu, 27 Mar 2014 13:29:12 +0100
+Subject: [PATCH 03/48] Add a fileindexingjobtest
+
+This runs the basiciq over all the files and then calls the file
+indexing job on each file individually instead of in batches like the
+file indexing queue does.
+---
+ src/file/fileindexingjob.cpp             | 10 ++++
+ src/file/fileindexingjob.h               |  8 ++++
+ src/file/tests/CMakeLists.txt            | 25 ++++++++++
+ src/file/tests/fileindexingqueuetest.cpp | 79 ++++++++++++++++++++++++++++++++
+ 4 files changed, 122 insertions(+)
+ create mode 100644 src/file/tests/fileindexingqueuetest.cpp
+
+diff --git a/src/file/fileindexingjob.cpp b/src/file/fileindexingjob.cpp
+index 1ed8212..d20dfe4 100644
+--- a/src/file/fileindexingjob.cpp
++++ b/src/file/fileindexingjob.cpp
+@@ -78,6 +78,10 @@ void FileIndexingJob::start(const QVector<uint>& files)
+     QStringList args;
+     Q_FOREACH (const uint& file, files)
+         args << QString::number(file);
++
++    if (!m_customDbPath.isEmpty()) {
++        args << "--db" << m_customDbPath;
++    }
+     kDebug() << args;
+ 
+     connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
+@@ -142,4 +146,10 @@ void FileIndexingJob::slotProcessTimerTimeout()
+     slotIndexedFile(1, QProcess::CrashExit);
+ }
+ 
++void FileIndexingJob::setCustomDbPath(const QString& path)
++{
++    m_customDbPath = path;
++}
++
++
+ #include "fileindexingjob.moc"
+diff --git a/src/file/fileindexingjob.h b/src/file/fileindexingjob.h
+index 666667b..1c2c321 100644
+--- a/src/file/fileindexingjob.h
++++ b/src/file/fileindexingjob.h
+@@ -41,6 +41,12 @@ class FileIndexingJob : public KJob
+ public:
+     FileIndexingJob(const QVector<uint>& files, QObject* parent = 0);
+ 
++    /**
++     * Set a custom path which should be sent to the baloo_file_extractor
++     * to use for the database. This is useful when debugging.
++     */
++    void setCustomDbPath(const QString& path);
++
+     virtual void start();
+ 
+ Q_SIGNALS:
+@@ -61,6 +67,8 @@ private:
+ 
+     QProcess* m_process;
+     QTimer* m_processTimer;
++
++    QString m_customDbPath;
+ };
+ }
+ 
+diff --git a/src/file/tests/CMakeLists.txt b/src/file/tests/CMakeLists.txt
+index 145adc2..75a7afb 100644
+--- a/src/file/tests/CMakeLists.txt
++++ b/src/file/tests/CMakeLists.txt
+@@ -38,3 +38,28 @@ target_link_libraries(basicindexingqueuetest
+   baloocore
+   balooxapian
+ )
++
++kde4_add_executable(fileindexingqueuetest
++                    fileindexingqueuetest.cpp
++                    ../fileindexingjob.cpp
++                    ../fileindexerconfig.cpp
++                    ../regexpcache.cpp
++                    ../fileexcludefilters.cpp
++                    ../basicindexingqueue.cpp
++                    ../indexingqueue.cpp
++                    ../basicindexingjob.cpp
++                    ../database.cpp
++                    ../lib/filemapping.cpp
++                    ../commitqueue.cpp
++)
++
++target_link_libraries(fileindexingqueuetest
++  ${QT_QTCORE_LIBRARY}
++  ${QT_QTSQL_LIBRARY}
++  ${KDE4_KDECORE_LIBS}
++  ${KDE4_KIO_LIBS}
++  ${XAPIAN_LIBRARIES}
++  ${KFILEMETADATA_LIBRARY}
++  baloocore
++  balooxapian
++)
+diff --git a/src/file/tests/fileindexingqueuetest.cpp b/src/file/tests/fileindexingqueuetest.cpp
+new file mode 100644
+index 0000000..67ff9ab
+--- /dev/null
++++ b/src/file/tests/fileindexingqueuetest.cpp
+@@ -0,0 +1,79 @@
++/*
++ * This file is part of the KDE Baloo Project
++ * Copyright (C) 2014  Vishesh Handa <me@vhanda.in>
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) version 3, or any
++ * later version accepted by the membership of KDE e.V. (or its
++ * successor approved by the membership of KDE e.V.), which shall
++ * act as a proxy defined in Section 6 of version 3 of the license.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++
++#include <KDebug>
++#include <KTempDir>
++#include <QTime>
++#include <QCoreApplication>
++
++#include "../basicindexingqueue.h"
++#include "../fileindexingjob.h"
++#include "../commitqueue.h"
++#include "../database.h"
++#include "../fileindexerconfig.h"
++#include "../lib/filemapping.h"
++
++int main(int argc, char** argv)
++{
++    KTempDir tempDir;
++
++    Database db;
++    db.setPath(tempDir.name());
++    db.init();
++
++    Baloo::FileIndexerConfig config;
++    QCoreApplication app(argc, argv);
++
++    Baloo::BasicIndexingQueue basicIQ(&db, &config);
++    QObject::connect(&basicIQ, SIGNAL(finishedIndexing()), &app, SLOT(quit()));
++
++    Baloo::CommitQueue commitQueue(&db);
++    QObject::connect(&basicIQ, SIGNAL(newDocument(uint,Xapian::Document)),
++                     &commitQueue, SLOT(add(uint,Xapian::Document)));
++
++    basicIQ.enqueue(Baloo::FileMapping(QDir::homePath()));
++    app.exec();
++
++    commitQueue.commit();
++
++    // Now the file indexing
++    Xapian::Database* xdb = db.xapianDatabase()->db();
++    Xapian::Enquire enquire(*xdb);
++    enquire.set_query(Xapian::Query("Z1"));
++
++    Xapian::MSet mset = enquire.get_mset(0, 50000);
++    Xapian::MSetIterator it = mset.begin();
++
++    QTime timer;
++    timer.start();
++    for (; it != mset.end(); it++) {
++        QVector<uint> files;
++        files << *it;
++
++        Baloo::FileIndexingJob* job = new Baloo::FileIndexingJob(files);
++        job->setCustomDbPath(db.path());
++        job->exec();
++    }
++
++    qDebug() << "Elapsed:" << timer.elapsed();
++    return 0;
++}
+-- 
+1.9.1
+

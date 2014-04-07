@@ -1,0 +1,33 @@
+From 6d5f9746494d19610c07d79e5a9a07d844667127 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Fri, 28 Mar 2014 14:30:32 +0100
+Subject: [PATCH 11/48] FileMap Db: Do not set the id as auto-increment
+
+When a column is set as auto-increment an additional table
+sqlite_sequence is created which stores the highest rowid. From that
+point a rowid < that number is not accepted. We do not care that the
+rowids be always increasing. We just need them to be unique and that is
+guarenteed.
+
+This saves us a about 16 mb when running through the
+basicindexingqueuetest for 11k files.
+---
+ src/file/database.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/file/database.cpp b/src/file/database.cpp
+index 6612459..c841b99 100644
+--- a/src/file/database.cpp
++++ b/src/file/database.cpp
+@@ -72,7 +72,7 @@ bool Database::init()
+ 
+     QSqlQuery query(*m_sqlDb);
+     bool ret = query.exec("CREATE TABLE files("
+-                          "id INTEGER PRIMARY KEY AUTOINCREMENT, "
++                          "id INTEGER PRIMARY KEY, "
+                           "url TEXT NOT NULL UNIQUE)");
+     if (!ret) {
+         kDebug() << "Could not create tags table" << query.lastError().text();
+-- 
+1.9.1
+

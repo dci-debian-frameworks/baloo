@@ -1,0 +1,105 @@
+From 3f2ba1154d6f97db080ec2da272418e9fd93807a Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Tue, 1 Apr 2014 16:37:14 +0200
+Subject: [PATCH 30/48] FileIndexingJob: Improve logic
+
+The previous logic was slightly faulty and would not notify us on all
+the files that should have failed to index. This code does, though it
+still calls the extractor process many more times than is actually
+necessary.
+---
+ src/file/fileindexingjob.cpp | 56 ++++++++++++++++++++++----------------------
+ src/file/fileindexingjob.h   |  3 +++
+ 2 files changed, 31 insertions(+), 28 deletions(-)
+
+diff --git a/src/file/fileindexingjob.cpp b/src/file/fileindexingjob.cpp
+index 18f8121..a6f8183 100644
+--- a/src/file/fileindexingjob.cpp
++++ b/src/file/fileindexingjob.cpp
+@@ -102,40 +102,40 @@ void FileIndexingJob::slotIndexedFile(int, QProcess::ExitStatus exitStatus)
+     if (exitStatus == QProcess::NormalExit) {
+         if (m_files.isEmpty()) {
+             emitResult();
+-            return;
+-        }
+-    }
+-    else {
+-        if (m_args.size() == 1) {
+-            uint doc = m_args.first();
+-            kError() << "Indexer crashed while indexing" << doc;
+-            kError() << "Blacklisting this file";
+-            Q_EMIT indexingFailed(doc);
+-
+-            if (m_files.isEmpty()) {
+-                emitResult();
+-                return;
+-            }
+-        }
+-        else {
+-            m_files = m_args;
++        } else {
++            m_args = m_files;
++            m_files.clear();
++            start(m_args);
+         }
++        return;
+     }
+ 
+-    // Split the number of files into half
+-    if (m_files.size() == 1) {
+-        m_args = m_files;
+-        m_files.clear();
++    // Failed to index. We must figure out which was the offending file
+ 
+-        start(m_args);
+-    }
+-    else {
+-        int mid = m_files.size()/2;
+-        m_args = m_files.mid(mid);
+-        m_files.resize(mid);
++    // Here it is!
++    if (m_args.size() == 1) {
++        uint doc = m_args.first();
++        kError() << "Indexer crashed while indexing" << doc;
++        kError() << "Blacklisting this file";
++        Q_EMIT indexingFailed(doc);
+ 
+-        start(m_args);
++        if (m_files.isEmpty()) {
++            emitResult();
++        } else {
++            m_args = m_files;
++            m_files.clear();
++            start(m_args);
++        }
++        return;
+     }
++
++    // We split the args into half and push the rest back into m_files
++    // to call later
++    int s = m_args.size() / 2;
++    m_files = m_args.mid(s) + m_files;
++    m_args.resize(s);
++
++    start(m_args);
+ }
+ 
+ void FileIndexingJob::slotProcessTimerTimeout()
+diff --git a/src/file/fileindexingjob.h b/src/file/fileindexingjob.h
+index d09aeb6..48e4fb2 100644
+--- a/src/file/fileindexingjob.h
++++ b/src/file/fileindexingjob.h
+@@ -71,7 +71,10 @@ private Q_SLOTS:
+ private:
+     void start(const QVector<uint>& files);
+ 
++    /// holds the files which still need to be indexed
+     QVector<uint> m_files;
++
++    /// holds the files which have been sent to the process
+     QVector<uint> m_args;
+ 
+     QProcess* m_process;
+-- 
+1.9.1
+

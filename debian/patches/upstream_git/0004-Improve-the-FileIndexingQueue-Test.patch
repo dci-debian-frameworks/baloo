@@ -1,0 +1,262 @@
+From 6890a28af3eed5c2b2428d8cc0e5e960ef8ed3b8 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Thu, 27 Mar 2014 16:07:48 +0100
+Subject: [PATCH 04/48] Improve the FileIndexingQueue Test
+
+It now prints out information about how long each file took along with
+average statistics per mimetype.
+---
+ src/file/tests/CMakeLists.txt            |  2 +-
+ src/file/tests/fileindexer.cpp           | 88 ++++++++++++++++++++++++++++++++
+ src/file/tests/fileindexer.h             | 61 ++++++++++++++++++++++
+ src/file/tests/fileindexingqueuetest.cpp | 41 ++++++++++++---
+ 4 files changed, 183 insertions(+), 9 deletions(-)
+ create mode 100644 src/file/tests/fileindexer.cpp
+ create mode 100644 src/file/tests/fileindexer.h
+
+diff --git a/src/file/tests/CMakeLists.txt b/src/file/tests/CMakeLists.txt
+index 75a7afb..102c981 100644
+--- a/src/file/tests/CMakeLists.txt
++++ b/src/file/tests/CMakeLists.txt
+@@ -41,7 +41,7 @@ target_link_libraries(basicindexingqueuetest
+ 
+ kde4_add_executable(fileindexingqueuetest
+                     fileindexingqueuetest.cpp
+-                    ../fileindexingjob.cpp
++                    fileindexer.cpp
+                     ../fileindexerconfig.cpp
+                     ../regexpcache.cpp
+                     ../fileexcludefilters.cpp
+diff --git a/src/file/tests/fileindexer.cpp b/src/file/tests/fileindexer.cpp
+new file mode 100644
+index 0000000..763fa3a
+--- /dev/null
++++ b/src/file/tests/fileindexer.cpp
+@@ -0,0 +1,88 @@
++/*
++ * <one line to give the library's name and an idea of what it does.>
++ * Copyright (C) 2014  Vishesh Handa <me@vhanda.in>
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
++ *
++ */
++
++#include "fileindexer.h"
++
++#include <QTime>
++#include <QTimer>
++
++#include <KStandardDirs>
++#include <KMimeType>
++
++using namespace Baloo;
++
++FileIndexer::FileIndexer(uint id, const QString& url)
++    : KJob()
++    , m_id(id)
++    , m_url(url)
++    , m_process(0)
++{
++}
++
++void FileIndexer::setCustomPath(const QString& path)
++{
++    m_customPath = path;
++}
++
++void FileIndexer::start()
++{
++    QTimer::singleShot(0, this, SLOT(doStart()));
++}
++
++void FileIndexer::doStart()
++{
++    // Get the mimetype - used for stats later
++    m_mimeType = KMimeType::findByUrl(QUrl::fromLocalFile(m_url))->name();
++
++    // setup the external process which does the actual indexing
++    const QString exe = KStandardDirs::findExe(QLatin1String("baloo_file_extractor"));
++
++    QStringList args;
++    args << QString::number(m_id);
++    args << "--db" << m_customPath;
++
++    m_process = new QProcess(this);
++    connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
++            this, SLOT(slotIndexedFile(int,QProcess::ExitStatus)));
++
++    m_process->setProcessChannelMode(QProcess::SeparateChannels);
++
++    m_timer.start();
++    m_process->start(exe, args);
++}
++
++void FileIndexer::slotIndexedFile(int returnCode, QProcess::ExitStatus status)
++{
++    m_elapsed = m_timer.elapsed();
++
++    emitResult();
++    return;
++}
++
++int FileIndexer::elapsed() const
++{
++    return m_elapsed;
++}
++
++QString FileIndexer::mimeType() const
++{
++    return m_mimeType;
++}
++
+diff --git a/src/file/tests/fileindexer.h b/src/file/tests/fileindexer.h
+new file mode 100644
+index 0000000..cafa1e5
+--- /dev/null
++++ b/src/file/tests/fileindexer.h
+@@ -0,0 +1,61 @@
++/*
++ * <one line to give the library's name and an idea of what it does.>
++ * Copyright (C) 2014  Vishesh Handa <me@vhanda.in>
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
++ *
++ */
++
++#ifndef BALOO_FILEINDEXER_H
++#define BALOO_FILEINDEXER_H
++
++#include <KJob>
++#include <QProcess>
++
++#include <QTime>
++
++namespace Baloo {
++
++class FileIndexer : public KJob
++{
++    Q_OBJECT
++public:
++    FileIndexer(uint id, const QString& url);
++
++    virtual void start();
++    void setCustomPath(const QString& path);
++
++    QString mimeType() const;
++    int elapsed() const;
++
++private Q_SLOTS:
++    void doStart();
++    void slotIndexedFile(int returnCode, QProcess::ExitStatus status);
++
++private:
++    int m_id;
++    QString m_url;
++    QString m_mimeType;
++
++    QString m_customPath;
++    QProcess* m_process;
++
++    QTime m_timer;
++    int m_elapsed;
++};
++
++}
++
++#endif // BALOO_FILEINDEXER_H
+diff --git a/src/file/tests/fileindexingqueuetest.cpp b/src/file/tests/fileindexingqueuetest.cpp
+index 67ff9ab..3e131f3 100644
+--- a/src/file/tests/fileindexingqueuetest.cpp
++++ b/src/file/tests/fileindexingqueuetest.cpp
+@@ -25,13 +25,24 @@
+ #include <QTime>
+ #include <QCoreApplication>
+ 
++#include "fileindexer.h"
++
+ #include "../basicindexingqueue.h"
+-#include "../fileindexingjob.h"
+ #include "../commitqueue.h"
+ #include "../database.h"
+ #include "../fileindexerconfig.h"
+ #include "../lib/filemapping.h"
+ 
++namespace {
++    QString contents(const QString& url) {
++        QFile file(url);
++        file.open(QIODevice::ReadOnly);
++
++        QTextStream stream(&file);
++        return stream.readAll();
++    }
++}
++
+ int main(int argc, char** argv)
+ {
+     KTempDir tempDir;
+@@ -63,17 +74,31 @@ int main(int argc, char** argv)
+     Xapian::MSet mset = enquire.get_mset(0, 50000);
+     Xapian::MSetIterator it = mset.begin();
+ 
+-    QTime timer;
+-    timer.start();
++    QHash<QString, int> m_timePerType;
++    QHash<QString, int> m_numPerType;
++
++    uint totalTime = 0;
+     for (; it != mset.end(); it++) {
+-        QVector<uint> files;
+-        files << *it;
++        Baloo::FileMapping fileMap(*it);
++        if (!fileMap.fetch(db.sqlDatabase()))
++            continue;
+ 
+-        Baloo::FileIndexingJob* job = new Baloo::FileIndexingJob(files);
+-        job->setCustomDbPath(db.path());
++        Baloo::FileIndexer* job = new Baloo::FileIndexer(fileMap.id(), fileMap.url());
++        job->setCustomPath(db.path());
+         job->exec();
++
++        qDebug() << fileMap.id() << fileMap.url() << job->mimeType() << job->elapsed();
++        totalTime += job->elapsed();
++
++        m_timePerType[job->mimeType()] += job->elapsed();
++        m_numPerType[job->mimeType()] += 1;
+     }
+ 
+-    qDebug() << "Elapsed:" << timer.elapsed();
++    qDebug() << "\n\n";
++    Q_FOREACH (const QString& type, m_timePerType.uniqueKeys()) {
++        double averageTime = m_timePerType.value(type) / m_numPerType.value(type);
++        qDebug() << type << averageTime;
++    }
++    qDebug() << "Total Elapsed:" << totalTime;
+     return 0;
+ }
+-- 
+1.9.1
+

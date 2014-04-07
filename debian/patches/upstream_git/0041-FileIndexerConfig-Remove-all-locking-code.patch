@@ -1,0 +1,100 @@
+From c7036c46b8dffe1a8b9ce1c2eec52e40bf4b3a66 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Wed, 2 Apr 2014 12:52:35 +0200
+Subject: [PATCH 41/48] FileIndexerConfig: Remove all locking code
+
+We're always single threading, we no longer need all this locking.
+---
+ src/file/fileindexerconfig.cpp | 9 ---------
+ src/file/fileindexerconfig.h   | 6 ------
+ 2 files changed, 15 deletions(-)
+
+diff --git a/src/file/fileindexerconfig.cpp b/src/file/fileindexerconfig.cpp
+index 4af8cd2..cc84d8b 100644
+--- a/src/file/fileindexerconfig.cpp
++++ b/src/file/fileindexerconfig.cpp
+@@ -22,8 +22,6 @@
+ 
+ #include <QStringList>
+ #include <QDir>
+-#include <QWriteLocker>
+-#include <QReadLocker>
+ 
+ #include <KDirWatch>
+ #include <KStandardDirs>
+@@ -189,13 +187,11 @@ bool FileIndexerConfig::shouldFolderBeIndexed(const QString& path) const
+ bool FileIndexerConfig::shouldFileBeIndexed(const QString& fileName) const
+ {
+     // check the filters
+-    QWriteLocker lock(&m_folderCacheMutex);
+     return !m_excludeFilterRegExpCache.exactMatch(fileName);
+ }
+ 
+ bool FileIndexerConfig::shouldMimeTypeBeIndexed(const QString& mimeType) const
+ {
+-    QReadLocker lock(&m_mimetypeMutex);
+     return !m_excludeMimetypes.contains(mimeType);
+ }
+ 
+@@ -208,8 +204,6 @@ bool FileIndexerConfig::folderInFolderList(const QString& path)
+ 
+ bool FileIndexerConfig::folderInFolderList(const QString& path, QString& folder) const
+ {
+-    QReadLocker lock(&m_folderCacheMutex);
+-
+     const QString p = KUrl(path).path(KUrl::RemoveTrailingSlash);
+ 
+     // we traverse the list backwards to catch all exclude folders
+@@ -308,7 +302,6 @@ void FileIndexerConfig::fillExcludeFolderChanges(const FileIndexerConfig::Entry&
+ 
+ bool FileIndexerConfig::buildFolderCache()
+ {
+-    QWriteLocker lock(&m_folderCacheMutex);
+ 
+     //
+     // General folders
+@@ -393,7 +386,6 @@ bool FileIndexerConfig::buildFolderCache()
+ 
+ bool FileIndexerConfig::buildExcludeFilterRegExpCache()
+ {
+-    QWriteLocker lock(&m_folderCacheMutex);
+     QStringList newFilters = excludeFilters();
+     m_excludeFilterRegExpCache.rebuildCacheFromFilterList(newFilters);
+ 
+@@ -409,7 +401,6 @@ bool FileIndexerConfig::buildExcludeFilterRegExpCache()
+ 
+ bool FileIndexerConfig::buildMimeTypeCache()
+ {
+-    QWriteLocker lock(&m_mimetypeMutex);
+     QStringList newMimeExcludes = m_config.group("General").readPathEntry("exclude mimetypes", defaultExcludeMimetypes());
+ 
+     QSet<QString> newMimeExcludeSet = newMimeExcludes.toSet();
+diff --git a/src/file/fileindexerconfig.h b/src/file/fileindexerconfig.h
+index 4fdb5db..73675be 100644
+--- a/src/file/fileindexerconfig.h
++++ b/src/file/fileindexerconfig.h
+@@ -22,11 +22,8 @@
+ #include <QtCore/QObject>
+ #include <QtCore/QList>
+ #include <QtCore/QSet>
+-#include <QtCore/QRegExp>
+-#include <QtCore/QReadWriteLock>
+ 
+ #include <kconfig.h>
+-#include <kio/global.h>
+ 
+ #include "regexpcache.h"
+ 
+@@ -189,9 +186,6 @@ private:
+ 
+     bool m_indexHidden;
+ 
+-    mutable QReadWriteLock m_folderCacheMutex;
+-    mutable QReadWriteLock m_mimetypeMutex;
+-
+     static FileIndexerConfig* s_self;
+ 
+     //
+-- 
+1.9.1
+

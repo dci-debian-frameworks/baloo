@@ -1,0 +1,56 @@
+From 9a96bd2f8990bcd160c385d557473a8972578f0f Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Thu, 27 Mar 2014 13:12:27 +0100
+Subject: [PATCH 02/48] Extractor: Add a --db option to write to a separate db
+
+This is very useful when debugging a particular extractor and you want
+to use a fresh / temporary database.
+---
+ src/file/extractor/app.cpp  | 10 ++++++++--
+ src/file/extractor/main.cpp |  2 ++
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/src/file/extractor/app.cpp b/src/file/extractor/app.cpp
+index 2a2b7f7..33f6eda 100644
+--- a/src/file/extractor/app.cpp
++++ b/src/file/extractor/app.cpp
+@@ -46,7 +46,14 @@ App::App(QObject* parent)
+     : QObject(parent)
+     , m_termCount(0)
+ {
+-    m_path = KGlobal::dirs()->localxdgdatadir() + "baloo/file";
++    const KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
++
++    if (!args->getOption("db").isEmpty()) {
++        m_path = args->getOption("db");
++    }
++    else {
++        m_path = KGlobal::dirs()->localxdgdatadir() + "baloo/file";
++    }
+ 
+     m_db.setPath(m_path);
+     if (!m_db.init()) {
+@@ -57,7 +64,6 @@ App::App(QObject* parent)
+     connect(m_db.xapianDatabase(), SIGNAL(committed()),
+             this, SLOT(slotCommitted()));
+ 
+-    const KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
+     m_bData = args->isSet("bdata");
+ 
+     m_results.reserve(args->count());
+diff --git a/src/file/extractor/main.cpp b/src/file/extractor/main.cpp
+index ec77e96..ec9dce0 100644
+--- a/src/file/extractor/main.cpp
++++ b/src/file/extractor/main.cpp
+@@ -50,6 +50,8 @@ int main(int argc, char* argv[])
+     options.add("+[url]", ki18n("The URL/id of the files to be indexed"));
+     options.add("debug", ki18n("Print the data being indexed"));
+     options.add("bdata", ki18n("Print the QVariantMap in Base64 encoding"));
++    // FIXME: Set a proper string after the freeze. This option is just for debugging
++    options.add("db <url>", ki18n(""));
+ 
+     KCmdLineArgs::addCmdLineOptions(options);
+     const KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
+-- 
+1.9.1
+

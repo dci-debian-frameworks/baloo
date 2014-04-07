@@ -1,0 +1,307 @@
+From 0350407984eae51e79ca9c7607970d4d92e3a9c8 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Wed, 2 Apr 2014 15:38:44 +0200
+Subject: [PATCH 44/48] XapianDB: Implement a write only mode
+
+In this writeonly mode, we do not keep 2 databases - one for reading and
+one for writing. The disadvantage is that no one else can write as long
+as the object is in use.
+
+This patch also modifies the baloo_file_extractor to use this write only
+db as it only need to hold the lock for a very small amount of time.
+---
+ src/file/database.cpp         |  8 +++++---
+ src/file/database.h           |  2 +-
+ src/file/extractor/app.cpp    | 40 +++++++++++++++++++---------------------
+ src/file/extractor/app.h      |  2 +-
+ src/file/lib/filemapping.cpp  | 28 ++++++++++++++++++++++++++++
+ src/file/lib/filemapping.h    |  2 ++
+ src/xapian/xapiandatabase.cpp | 21 ++++++++++++++++++++-
+ src/xapian/xapiandatabase.h   |  1 +
+ 8 files changed, 77 insertions(+), 27 deletions(-)
+
+diff --git a/src/file/database.cpp b/src/file/database.cpp
+index c841b99..7afcca7 100644
+--- a/src/file/database.cpp
++++ b/src/file/database.cpp
+@@ -49,13 +49,15 @@ Database::~Database()
+     QSqlDatabase::removeDatabase(name);
+ }
+ 
+-bool Database::init()
++bool Database::init(bool sqlOnly)
+ {
+     if (m_initialized)
+         return true;
+ 
+-    // Create the Xapian DB
+-    m_xapianDb = new Baloo::XapianDatabase(m_path);
++    if (!sqlOnly) {
++        // Create the Xapian DB
++        m_xapianDb = new Baloo::XapianDatabase(m_path);
++    }
+ 
+     m_sqlDb = new QSqlDatabase(QSqlDatabase::addDatabase("QSQLITE"));
+     m_sqlDb->setDatabaseName(m_path + "/fileMap.sqlite3");
+diff --git a/src/file/database.h b/src/file/database.h
+index 2018efc..f2a6836 100644
+--- a/src/file/database.h
++++ b/src/file/database.h
+@@ -37,7 +37,7 @@ public:
+     QString path();
+     void setPath(const QString& path);
+ 
+-    bool init();
++    bool init(bool sqlOnly = false);
+     bool isInitialized();
+ 
+     QSqlDatabase& sqlDatabase();
+diff --git a/src/file/extractor/app.cpp b/src/file/extractor/app.cpp
+index 12646d6..9c7a70f 100644
+--- a/src/file/extractor/app.cpp
++++ b/src/file/extractor/app.cpp
+@@ -23,6 +23,7 @@
+ #include "app.h"
+ #include "../basicindexingjob.h"
+ #include "../database.h"
++#include "xapiandatabase.h"
+ 
+ #include <KCmdLineArgs>
+ #include <KMimeType>
+@@ -50,13 +51,12 @@ App::App(QObject* parent)
+ 
+     if (!args->getOption("db").isEmpty()) {
+         m_path = args->getOption("db");
+-    }
+-    else {
++    } else {
+         m_path = KGlobal::dirs()->localxdgdatadir() + "baloo/file";
+     }
+ 
+     m_db.setPath(m_path);
+-    if (!m_db.init()) {
++    if (!m_db.init(true /*sql db only*/)) {
+         QTimer::singleShot(0, QCoreApplication::instance(), SLOT(quit()));
+         return;
+     }
+@@ -68,31 +68,30 @@ App::App(QObject* parent)
+     for (int i=0; i<args->count(); i++) {
+         FileMapping mapping = FileMapping(args->arg(i).toUInt());
+         QString url;
++
++        // arg is an id
+         if (mapping.fetch(m_db.sqlDatabase())) {
+-            // arg is an id
+             url = mapping.url();
+-            // If this url no longer exists, remove it from the mapping db.
+             if (!QFile::exists(url)) {
+-                QSqlQuery query(m_db.sqlDatabase());
+-                query.prepare("delete from files where url = ?");
+-                query.addBindValue(url);
+-                if (!query.exec()) {
+-                    kError() << query.lastError().text();
+-                }
++                mapping.remove(m_db.sqlDatabase());
++                continue;
+             }
+         } else {
+             // arg is a url
+             url = args->url(i).toLocalFile();
+         }
++
+         if (QFile::exists(url)) {
+             m_urls << url;
+         } else {
+             // id or url was looked up, but file deleted
+             kDebug() << url << "does not exist";
++
+             // Try to delete it as an id:
+             // it may have been deleted from the FileMapping db as well.
+             // The worst that can happen is deleting nothing.
+-            deleteDocument(mapping.id());
++            mapping.remove(m_db.sqlDatabase());
++            m_docsToDelete << mapping.id();
+         }
+     }
+ 
+@@ -194,16 +193,21 @@ void App::saveChanges()
+ 
+     m_updatedFiles.clear();
+ 
++    XapianDatabase xapDb(m_path);
+     for (int i = 0; i<m_results.size(); i++) {
+         Result& res = m_results[i];
+         res.finish();
+ 
+-        m_db.xapianDatabase()->replaceDocument(res.id(), res.document());
++        xapDb.replaceDocument(res.id(), res.document());
+         m_updatedFiles << res.inputUrl();
+     }
+ 
+-    m_db.xapianDatabase()->commit();
+-    // vHanda: Write the Sqlite db?
++    Q_FOREACH (int docid, m_docsToDelete) {
++        xapDb.deleteDocument(docid);
++    }
++
++    xapDb.commit();
++    m_db.sqlDatabase().commit();
+ 
+     m_results.clear();
+     m_termCount = 0;
+@@ -227,12 +231,6 @@ void App::saveChanges()
+     Q_EMIT saved();
+ }
+ 
+-
+-void App::deleteDocument(unsigned docid)
+-{
+-    m_db.xapianDatabase()->deleteDocument(docid);
+-}
+-
+ void App::printDebug()
+ {
+     Q_FOREACH (const Result& res, m_results) {
+diff --git a/src/file/extractor/app.h b/src/file/extractor/app.h
+index 889db1d..5e1698e 100644
+--- a/src/file/extractor/app.h
++++ b/src/file/extractor/app.h
+@@ -50,7 +50,6 @@ Q_SIGNALS:
+     void saved();
+ 
+ private:
+-    void deleteDocument(unsigned docid);
+     void printDebug();
+ 
+     QVector<Result> m_results;
+@@ -66,6 +65,7 @@ private:
+ 
+     int m_termCount;
+     QList<QString> m_updatedFiles;
++    QVector<uint> m_docsToDelete;
+ };
+ 
+ }
+diff --git a/src/file/lib/filemapping.cpp b/src/file/lib/filemapping.cpp
+index 471aec4..316cfe0 100644
+--- a/src/file/lib/filemapping.cpp
++++ b/src/file/lib/filemapping.cpp
+@@ -131,6 +131,34 @@ bool FileMapping::create(QSqlDatabase db)
+     return true;
+ }
+ 
++bool FileMapping::remove(QSqlDatabase db)
++{
++    if (m_url.isEmpty() && m_id == 0)
++        return false;
++
++    QSqlQuery query(db);
++
++    if (!m_url.isEmpty()) {
++        query.prepare("delete from files where url = ?");
++        query.addBindValue(m_url);
++        if (!query.exec()) {
++            kError() << query.lastError().text();
++            return false;
++        }
++    }
++    else {
++        query.prepare("delete from files where id = ?");
++        query.addBindValue(m_id);
++        if (!query.exec()) {
++            kError() << query.lastError().text();
++            return false;
++        }
++    }
++
++    return true;
++}
++
++
+ void FileMapping::clear()
+ {
+     m_id = 0;
+diff --git a/src/file/lib/filemapping.h b/src/file/lib/filemapping.h
+index 31d66b6..71dff2d 100644
+--- a/src/file/lib/filemapping.h
++++ b/src/file/lib/filemapping.h
+@@ -60,6 +60,8 @@ public:
+      */
+     bool create(QSqlDatabase db);
+ 
++    bool remove(QSqlDatabase db);
++
+     bool operator ==(const FileMapping& rhs) const;
+ 
+ private:
+diff --git a/src/xapian/xapiandatabase.cpp b/src/xapian/xapiandatabase.cpp
+index 5c63c47..a6bbd18 100644
+--- a/src/xapian/xapiandatabase.cpp
++++ b/src/xapian/xapiandatabase.cpp
+@@ -31,6 +31,7 @@ using namespace Baloo;
+ 
+ XapianDatabase::XapianDatabase(const QString& path, bool writeOnly)
+     : m_db(0)
++    , m_writeOnly(writeOnly)
+ {
+     QDir().mkpath(path);
+     m_path = path.toUtf8().constData();
+@@ -55,16 +56,29 @@ XapianDatabase::XapianDatabase(const QString& path, bool writeOnly)
+ 
+ void XapianDatabase::replaceDocument(uint id, const Xapian::Document& doc)
+ {
++    if (m_writeOnly) {
++        m_wDb.replace_document(id, doc);
++        return;
++    }
+     m_docsToAdd << qMakePair(id, doc);
+ }
+ 
+ void XapianDatabase::deleteDocument(uint id)
+ {
++    if (m_writeOnly) {
++        m_wDb.delete_document(id);
++        return;
++    }
+     m_docsToRemove << id;
+ }
+ 
+ void XapianDatabase::commit()
+ {
++    if (m_writeOnly) {
++        m_wDb.commit();
++        return;
++    }
++
+     if (m_docsToAdd.isEmpty() && m_docsToRemove.isEmpty()) {
+         return;
+     }
+@@ -98,7 +112,12 @@ void XapianDatabase::commit()
+ XapianDocument XapianDatabase::document(uint id)
+ {
+     try {
+-        Xapian::Document xdoc = m_db->get_document(id);
++        Xapian::Document xdoc;
++        if (m_writeOnly) {
++            xdoc = m_wDb.get_document(id);
++        } else {
++            xdoc = m_db->get_document(id);
++        }
+         return XapianDocument(xdoc);
+     }
+     catch (const Xapian::DatabaseModifiedError&) {
+diff --git a/src/xapian/xapiandatabase.h b/src/xapian/xapiandatabase.h
+index 430bee6..abe7680 100644
+--- a/src/xapian/xapiandatabase.h
++++ b/src/xapian/xapiandatabase.h
+@@ -72,6 +72,7 @@ private:
+     QVector<uint> m_docsToRemove;
+ 
+     std::string m_path;
++    bool m_writeOnly;
+ 
+     Xapian::WritableDatabase createWritableDb();
+ };
+-- 
+1.9.1
+

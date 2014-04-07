@@ -1,0 +1,61 @@
+From 632abbd8a255bf01e334565e18c8b5d3c6ad0ebf Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Sat, 29 Mar 2014 17:23:52 +0100
+Subject: [PATCH 20/48] Cleaner: Always remove it from both the databases
+
+---
+ src/file/cleaner/cleaner.cpp | 22 +++++++++++++---------
+ 1 file changed, 13 insertions(+), 9 deletions(-)
+
+diff --git a/src/file/cleaner/cleaner.cpp b/src/file/cleaner/cleaner.cpp
+index 880dcf4..1cfec6f 100644
+--- a/src/file/cleaner/cleaner.cpp
++++ b/src/file/cleaner/cleaner.cpp
+@@ -29,6 +29,7 @@
+ #include <QUrl>
+ #include <QCoreApplication>
+ #include <QSqlQuery>
++#include <QDebug>
+ 
+ using namespace Baloo;
+ 
+@@ -53,24 +54,27 @@ void Cleaner::start()
+         int id = query.value(0).toInt();
+         QString url = query.value(1).toString();
+ 
++        bool removeIt = false;
+         if (!QFile::exists(url)) {
+-            QSqlQuery q(sqlDb);
+-            q.prepare("delete from files where id = ?");
+-            q.addBindValue(id);
+-            q.exec();
+-            m_commitQueue->remove(id);
+-            continue;
++            removeIt = true;
+         }
+ 
+         if (!config.shouldBeIndexed(url)) {
+-            m_commitQueue->remove(id);
+-            continue;
++            removeIt = true;
+         }
+ 
+         QString mimetype = KMimeType::findByUrl(QUrl::fromLocalFile(url))->name();
+         if (!config.shouldMimeTypeBeIndexed(mimetype)) {
++            removeIt = true;
++        }
++
++        if (removeIt) {
++            qDebug() << id << url;
++            QSqlQuery q(sqlDb);
++            q.prepare("delete from files where id = ?");
++            q.addBindValue(id);
++            q.exec();
+             m_commitQueue->remove(id);
+-            continue;
+         }
+     }
+ 
+-- 
+1.9.1
+

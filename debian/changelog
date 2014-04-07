@@ -1,3 +1,10 @@
+baloo (4:4.12.97-0ubuntu2) trusty; urgency=medium
+
+  * Blanket import fixes between 4.12.97 and current git KDE/4.13 in
+    debian/patches/upstream_git/
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Mon, 07 Apr 2014 12:35:02 +0200
+
 baloo (4:4.12.97-0ubuntu1) trusty; urgency=medium
 
   * New upstream release candidate

@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 4:4.12.97 i386
+# SymbolsHelper-Confirmed: 4:4.12.97-0ubuntu2 amd64 i386
 libbaloofiles.so.4 libbaloofiles4 #MINVER#, baloo
  _ZN5Baloo10TagListJob11qt_metacallEN11QMetaObject4CallEiPPv@Base 4:4.12.80
  _ZN5Baloo10TagListJob11qt_metacastEPKc@Base 4:4.12.80
@@ -14,6 +14,7 @@ libbaloofiles.so.4 libbaloofiles4 #MINVER#, baloo
  _ZN5Baloo11FileMapping5fetchE12QSqlDatabase@Base 4:4.12.80
  _ZN5Baloo11FileMapping5setIdEj@Base 4:4.12.80
  _ZN5Baloo11FileMapping6createE12QSqlDatabase@Base 4:4.12.80
+ _ZN5Baloo11FileMapping6removeE12QSqlDatabase@Base 4:4.12.97-0ubuntu2
  _ZN5Baloo11FileMapping6setUrlERK7QString@Base 4:4.12.80
  _ZN5Baloo11FileMapping7fetchedEv@Base 4:4.12.80
  _ZN5Baloo11FileMappingC1ERK7QString@Base 4:4.12.80
@@ -56,7 +57,6 @@ libbaloofiles.so.4 libbaloofiles4 #MINVER#, baloo
  _ZN5Baloo13FileModifyJob11qt_metacallEN11QMetaObject4CallEiPPv@Base 4:4.12.80
  _ZN5Baloo13FileModifyJob11qt_metacastEPKc@Base 4:4.12.80
  _ZN5Baloo13FileModifyJob12modifyRatingERK11QStringListi@Base 4:4.12.80
- _ZN5Baloo13FileModifyJob13slotCommittedEv@Base 4:4.12.97
  _ZN5Baloo13FileModifyJob16staticMetaObjectE@Base 4:4.12.80
  _ZN5Baloo13FileModifyJob17modifyUserCommentERK11QStringListRK7QString@Base 4:4.12.80
  _ZN5Baloo13FileModifyJob5startEv@Base 4:4.12.80

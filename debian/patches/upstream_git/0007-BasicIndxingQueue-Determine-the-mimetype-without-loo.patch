@@ -1,0 +1,73 @@
+From 0f7d29f09e72357217ba10de8de5f67aa0b69c64 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Thu, 27 Mar 2014 19:39:45 +0100
+Subject: [PATCH 07/48] BasicIndxingQueue: Determine the mimetype without
+ looking into the file
+
+Baloo indexing happens in two phases - Phase 1 (Basic) and Phase 2
+(File). During phase 1 only the basic stat info + mimetype + xattr are
+stored. During phase 2 the file's contents are indexed.
+
+Currently phase 1 was also looking into the contents of the file to
+determine the mimetype. This was causing very high IO usage during the
+inital indexing. We now determine the mimetype only using the url, and
+do a proper mimetype analysis in Phase 2.
+
+DIGEST: Reduce io usage during initial indexing
+---
+ src/file/basicindexingqueue.cpp |  6 +++++-
+ src/file/extractor/app.cpp      | 21 ++++++++-------------
+ 2 files changed, 13 insertions(+), 14 deletions(-)
+
+diff --git a/src/file/basicindexingqueue.cpp b/src/file/basicindexingqueue.cpp
+index 654ad3f..f165972 100644
+--- a/src/file/basicindexingqueue.cpp
++++ b/src/file/basicindexingqueue.cpp
+@@ -96,7 +96,11 @@ bool BasicIndexingQueue::process(FileMapping& file, UpdateDirFlags flags)
+ {
+     bool startedIndexing = false;
+ 
+-    QString mimetype = KMimeType::findByUrl(QUrl::fromLocalFile(file.url()))->name();
++    // This mimetype may not be completely accurate, but that's okay. This is
++    // just the initial phase of indexing. The second phase can try to find
++    // a more accurate mimetype.
++    QString mimetype = KMimeType::findByUrl(QUrl::fromLocalFile(file.url()), 0,
++                                            true /*is Local*/, true /*Fast*/)->name();
+ 
+     bool forced = flags & ForceUpdate;
+     bool recursive = flags & UpdateRecursive;
+diff --git a/src/file/extractor/app.cpp b/src/file/extractor/app.cpp
+index 33f6eda..37000c2 100644
+--- a/src/file/extractor/app.cpp
++++ b/src/file/extractor/app.cpp
+@@ -129,19 +129,14 @@ void App::processNextUrl()
+         }
+     }
+ 
+-    Xapian::Document doc;
+-    if (file.fetched()) {
+-        try {
+-            doc = m_db.xapianDatabase()->db()->get_document(file.id());
+-        }
+-        catch (const Xapian::DocNotFoundError&) {
+-            BasicIndexingJob basicIndexer(&m_db.sqlDatabase(), file, mimetype);
+-            basicIndexer.index();
+-
+-            file.setId(basicIndexer.id());
+-            doc = basicIndexer.document();
+-        }
+-    }
++    // We always run the basic indexing again. This is mostly so that the proper
++    // mimetype is set and we get proper type information.
++    // The mimetype fetched in the BasicIQ is fast but not accurate
++    BasicIndexingJob basicIndexer(&m_db.sqlDatabase(), file, mimetype);
++    basicIndexer.index();
++
++    file.setId(basicIndexer.id());
++    Xapian::Document doc = basicIndexer.document();
+ 
+     Result result(url, mimetype);
+     result.setId(file.id());
+-- 
+1.9.1
+

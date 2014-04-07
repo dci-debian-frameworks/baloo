@@ -1,0 +1,25 @@
+From 6f85025610f48076ac3b11613934cf33b6f67cd2 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Thu, 3 Apr 2014 11:01:07 +0200
+Subject: [PATCH 46/48] Runner: Use the Baloo icon
+
+---
+ src/runner/plasma-runner-baloosearch.desktop | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/runner/plasma-runner-baloosearch.desktop b/src/runner/plasma-runner-baloosearch.desktop
+index c4c5fee..044fbfc 100644
+--- a/src/runner/plasma-runner-baloosearch.desktop
++++ b/src/runner/plasma-runner-baloosearch.desktop
+@@ -67,7 +67,7 @@ Comment[zh_CN]=在文件、电子邮件和联系人中进行搜索的 Runner
+ Comment[zh_TW]=搜尋檔案、電子郵件與聯絡人的執行器
+ X-KDE-ServiceTypes=Plasma/Runner
+ Type=Service
+-Icon=edit-find
++Icon=baloo
+ X-KDE-Library=krunner_baloosearchrunner
+ X-KDE-PluginInfo-Author=Vishesh Handa
+ X-KDE-PluginInfo-Email=me@vhanda.in
+-- 
+1.9.1
+
