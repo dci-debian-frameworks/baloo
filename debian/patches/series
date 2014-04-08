@@ -46,3 +46,4 @@ upstream_git/0045-ContactIndexer-Port-to-the-Baloo-Xapian-library.patch
 upstream_git/0046-Runner-Use-the-Baloo-icon.patch
 upstream_git/0047-XapianSearchStore-Catch-some-more-exceptions.patch
 upstream_git/0048-SVN_SILENT-made-messages-.desktop-file.patch
+upstream_git/0049-XapianDatabase-Catch-more-exceptions.patch

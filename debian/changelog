@@ -1,3 +1,10 @@
+baloo (4:4.12.97-0ubuntu3) trusty; urgency=medium
+
+  * Add upstream_git/0049-XapianDatabase-Catch-more-exceptions.patch
+    fixing a crash when changing the file rating in dolphin.
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Tue, 08 Apr 2014 13:10:09 +0200
+
 baloo (4:4.12.97-0ubuntu2) trusty; urgency=medium
 
   * Blanket import fixes between 4.12.97 and current git KDE/4.13 in
