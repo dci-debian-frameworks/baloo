@@ -1,0 +1,37 @@
+From 655576d99746e21471140235aa98b23120e4defc Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Wed, 9 Apr 2014 11:43:38 +0200
+Subject: [PATCH 55/56] BalooShow: Print a message when no index info was found
+
+---
+ src/tools/balooshow/main.cpp | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/src/tools/balooshow/main.cpp b/src/tools/balooshow/main.cpp
+index e91120b..0a519fa 100644
+--- a/src/tools/balooshow/main.cpp
++++ b/src/tools/balooshow/main.cpp
+@@ -104,10 +104,16 @@ int main(int argc, char* argv[])
+ 
+         Baloo::File file = job->file();
+         int fid = Baloo::deserialize("file", file.id());
+-        text = colorString(QString::number(fid), 31);
+-        text += " ";
+-        text += colorString(file.url(), 32);
+-        stream << text << endl;
++
++        if (fid && !file.url().isEmpty()) {
++            text = colorString(QString::number(fid), 31);
++            text += " ";
++            text += colorString(file.url(), 32);
++            stream << text << endl;
++        }
++        else {
++            stream << "No index information found" << endl;
++        }
+ 
+         KFileMetaData::PropertyMap propMap = file.properties();
+         KFileMetaData::PropertyMap::const_iterator it = propMap.constBegin();
+-- 
+1.9.1
+

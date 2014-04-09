@@ -1,7 +1,7 @@
 From fdccf18bd1559b4dd8aae934dc8a40af255159fe Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Wed, 2 Apr 2014 16:55:07 +0200
-Subject: [PATCH 45/48] ContactIndexer: Port to the Baloo::Xapian library
+Subject: [PATCH 45/56] ContactIndexer: Port to the Baloo::Xapian library
 
 Makes the code much easier to read. Also, this way we're not converting
 strings to std::string which results in us loosing anything above 127.

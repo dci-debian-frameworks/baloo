@@ -1,7 +1,7 @@
 From f09fb69b3d314dbf9258b689886acd69a6d819fc Mon Sep 17 00:00:00 2001
 From: l10n daemon script <scripty@kde.org>
 Date: Fri, 4 Apr 2014 08:35:55 +0000
-Subject: [PATCH 48/48] SVN_SILENT made messages (.desktop file)
+Subject: [PATCH 48/56] SVN_SILENT made messages (.desktop file)
 
 ---
  src/file/inotify/org.kde.baloo.filewatch.actions | 1 +

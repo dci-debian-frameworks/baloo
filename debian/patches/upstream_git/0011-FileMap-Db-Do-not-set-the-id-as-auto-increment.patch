@@ -1,7 +1,7 @@
 From 6d5f9746494d19610c07d79e5a9a07d844667127 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Fri, 28 Mar 2014 14:30:32 +0100
-Subject: [PATCH 11/48] FileMap Db: Do not set the id as auto-increment
+Subject: [PATCH 11/56] FileMap Db: Do not set the id as auto-increment
 
 When a column is set as auto-increment an additional table
 sqlite_sequence is created which stores the highest rowid. From that

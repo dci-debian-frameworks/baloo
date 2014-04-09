@@ -1,7 +1,7 @@
 From 4d34a8286295d1eef2be24959fc51249b4322ec1 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Dan=20Vr=C3=A1til?= <dvratil@redhat.com>
 Date: Mon, 31 Mar 2014 14:17:07 +0200
-Subject: [PATCH 24/48] Catch Xapian::DatabaseException in EmailQuery
+Subject: [PATCH 24/56] Catch Xapian::DatabaseException in EmailQuery
 
 Prevents KMail from crashing when using quick filter when Baloo databases
 are missing.

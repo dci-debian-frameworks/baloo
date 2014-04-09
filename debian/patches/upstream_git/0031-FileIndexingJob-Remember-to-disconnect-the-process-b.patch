@@ -1,7 +1,7 @@
 From f99a0a4d081f8086ab00c4fda33d116d0a0747c1 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Tue, 1 Apr 2014 16:38:37 +0200
-Subject: [PATCH 31/48] FileIndexingJob: Remember to disconnect the process
+Subject: [PATCH 31/56] FileIndexingJob: Remember to disconnect the process
  before deleting it
 
 Otherwise if this is called when the process is still running it results

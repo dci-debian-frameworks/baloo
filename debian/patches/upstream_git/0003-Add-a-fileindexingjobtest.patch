@@ -1,7 +1,7 @@
 From de39e751d09a16a3f3ef278e2e9755f193074111 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Thu, 27 Mar 2014 13:29:12 +0100
-Subject: [PATCH 03/48] Add a fileindexingjobtest
+Subject: [PATCH 03/56] Add a fileindexingjobtest
 
 This runs the basiciq over all the files and then calls the file
 indexing job on each file individually instead of in batches like the

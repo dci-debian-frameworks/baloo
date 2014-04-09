@@ -1,7 +1,7 @@
 From a088f5cce9884294ac29f04f57e5842c5c16b28f Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Sat, 29 Mar 2014 19:06:54 +0100
-Subject: [PATCH 23/48] BasicIndexingJob: Do not add the type as 'file'
+Subject: [PATCH 23/56] BasicIndexingJob: Do not add the type as 'file'
 
 Everything in the "file database" is a file. We're no longer in the
 Nepomuk world where the same db contains all the different resources.

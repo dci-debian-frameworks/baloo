@@ -1,7 +1,7 @@
 From 707f61f3c4134b64bdd923cf4dc5199219b79c01 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Mon, 7 Apr 2014 18:20:21 +0200
-Subject: [PATCH 49/51] XapianDatabase: Catch more exceptions
+Subject: [PATCH 49/56] XapianDatabase: Catch more exceptions
 
 BUG: 332403
 ---

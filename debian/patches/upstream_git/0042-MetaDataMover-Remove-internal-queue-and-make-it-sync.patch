@@ -1,7 +1,7 @@
 From 3b5cb08a5450cc01e7700697e46262bf80847324 Mon Sep 17 00:00:00 2001
 From: Nitul Datt <nitul1991@gmail.com>
 Date: Wed, 2 Apr 2014 13:02:45 +0200
-Subject: [PATCH 42/48] MetaDataMover: Remove internal queue and make it sync
+Subject: [PATCH 42/56] MetaDataMover: Remove internal queue and make it sync
 
 The MetaDataMover is fast enough that it does not need to be
 asynchronous. It's mostly just executing a single SQL query, and even in

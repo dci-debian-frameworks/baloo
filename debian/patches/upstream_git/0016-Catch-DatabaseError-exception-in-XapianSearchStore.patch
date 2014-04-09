@@ -1,7 +1,7 @@
 From 36ddb43f868a16688d72b201bd09642b0f988f80 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Dan=20Vr=C3=A1til?= <dvratil@redhat.com>
 Date: Sun, 30 Mar 2014 11:50:52 +0200
-Subject: [PATCH 16/48] Catch DatabaseError exception in XapianSearchStore
+Subject: [PATCH 16/56] Catch DatabaseError exception in XapianSearchStore
 
 ---
  src/xapian/xapiansearchstore.cpp | 7 ++++++-

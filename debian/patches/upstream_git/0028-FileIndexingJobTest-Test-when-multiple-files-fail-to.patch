@@ -1,7 +1,7 @@
 From 3ad8f77301f25be1ede51bd38116bbb417fc3568 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Tue, 1 Apr 2014 15:44:20 +0200
-Subject: [PATCH 28/48] FileIndexingJobTest: Test when multiple files fail to
+Subject: [PATCH 28/56] FileIndexingJobTest: Test when multiple files fail to
  index
 
 ---

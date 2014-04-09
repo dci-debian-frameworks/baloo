@@ -1,7 +1,7 @@
 From 6890a28af3eed5c2b2428d8cc0e5e960ef8ed3b8 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Thu, 27 Mar 2014 16:07:48 +0100
-Subject: [PATCH 04/48] Improve the FileIndexingQueue Test
+Subject: [PATCH 04/56] Improve the FileIndexingQueue Test
 
 It now prints out information about how long each file took along with
 average statistics per mimetype.

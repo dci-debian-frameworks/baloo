@@ -47,3 +47,10 @@ upstream_git/0046-Runner-Use-the-Baloo-icon.patch
 upstream_git/0047-XapianSearchStore-Catch-some-more-exceptions.patch
 upstream_git/0048-SVN_SILENT-made-messages-.desktop-file.patch
 upstream_git/0049-XapianDatabase-Catch-more-exceptions.patch
+#upstream_git/0050-Prepare-4.13.0.patch
+upstream_git/0051-SVN_SILENT-made-messages-.desktop-file.patch
+upstream_git/0052-XapianDatabase-Catch-even-more-exceptions.patch
+upstream_git/0053-EmailTest-Make-it-more-like-the-agent.patch
+upstream_git/0054-Email-Test-Print-io-debug-information.patch
+upstream_git/0055-BalooShow-Print-a-message-when-no-index-info-was-fou.patch
+upstream_git/0056-baloo_file-Autostart-and-enable-drKonqi.patch

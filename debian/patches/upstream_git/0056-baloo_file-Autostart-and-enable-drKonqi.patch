@@ -1,0 +1,65 @@
+From 832e867f55dfe1de7163270b0e563f7aca120dc1 Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Wed, 9 Apr 2014 12:25:11 +0200
+Subject: [PATCH 56/56] baloo_file: Autostart and enable drKonqi
+
+We always want baloo_file to be running, even if it crashes (which it
+should not). Also, we want the crash reports.
+
+This patch makes baloo_file a KUniqueApplication instead of it being
+just a QApplication + manual catalog loading. The KUniqueApplication is
+required for auto-restarting on crash.
+---
+ src/file/main.cpp | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
+
+diff --git a/src/file/main.cpp b/src/file/main.cpp
+index 59402bf..cd35713 100644
+--- a/src/file/main.cpp
++++ b/src/file/main.cpp
+@@ -20,11 +20,12 @@
+  *
+  */
+ 
+-#include <QApplication>
+-
+ #include <KComponentData>
+ #include <KAboutData>
+ #include <KStandardDirs>
++#include <KCmdLineArgs>
++#include <KUniqueApplication>
++#include <KCrash>
+ 
+ #include <KConfig>
+ #include <KConfigGroup>
+@@ -45,13 +46,14 @@ int main(int argc, char** argv)
+     lowerSchedulingPriority();
+     lowerPriority();
+ 
+-    QApplication app(argc, argv);
+-
+     KAboutData aboutData("baloo_file", "baloo_file", ki18n("Baloo File"), "0.1",
+                          ki18n("An application to handle file metadata"),
+                          KAboutData::License_GPL_V2);
+ 
+-    KComponentData data(aboutData, KComponentData::RegisterAsMainComponent);
++    KCmdLineArgs::init(argc, argv, &aboutData);
++
++    KUniqueApplication app(true);
++    app.disableSessionManagement();
+ 
+     KConfig config("baloofilerc");
+     KConfigGroup group = config.group("Basic Settings");
+@@ -68,6 +70,9 @@ int main(int argc, char** argv)
+         return 1;
+     }
+ 
++    // Crash Handling
++    KCrash::setFlags(KCrash::AutoRestart);
++
+     const QString path = KGlobal::dirs()->localxdgdatadir() + "baloo/file/";
+ 
+     Database db;
+-- 
+1.9.1
+

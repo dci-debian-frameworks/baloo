@@ -1,0 +1,46 @@
+From 97714643471f721b00350681482a04957831204f Mon Sep 17 00:00:00 2001
+From: Vishesh Handa <me@vhanda.in>
+Date: Tue, 8 Apr 2014 13:35:50 +0200
+Subject: [PATCH 52/56] XapianDatabase: Catch even more exceptions
+
+---
+ src/xapian/xapiandatabase.cpp | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
+
+diff --git a/src/xapian/xapiandatabase.cpp b/src/xapian/xapiandatabase.cpp
+index 2fda1de..0478139 100644
+--- a/src/xapian/xapiandatabase.cpp
++++ b/src/xapian/xapiandatabase.cpp
+@@ -88,7 +88,12 @@ void XapianDatabase::deleteDocument(uint id)
+ void XapianDatabase::commit()
+ {
+     if (m_writeOnly) {
+-        m_wDb.commit();
++        try {
++            m_wDb.commit();
++        }
++        catch (const Xapian::Error& err) {
++            kError() << err.get_error_string();
++        }
+         return;
+     }
+ 
+@@ -116,8 +121,13 @@ void XapianDatabase::commit()
+         }
+     }
+ 
+-    wdb.commit();
+-    m_db->reopen();
++    try {
++        wdb.commit();
++        m_db->reopen();
++    }
++    catch (const Xapian::Error& err) {
++        kError() << err.get_error_string();
++    }
+     kDebug() << "Xapian Committed";
+ 
+     m_docsToAdd.clear();
+-- 
+1.9.1
+

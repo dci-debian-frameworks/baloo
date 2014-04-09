@@ -1,7 +1,7 @@
 From 9d1c2d8c8e7d195b7d0648af0ca9bf6c874780fa Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Tue, 1 Apr 2014 11:34:40 +0200
-Subject: [PATCH 25/48] IndexerConfigTest: Show both fast and slow mimetype
+Subject: [PATCH 25/56] IndexerConfigTest: Show both fast and slow mimetype
 
 ---
  src/file/tests/indexerconfigtest.cpp | 7 +++++--

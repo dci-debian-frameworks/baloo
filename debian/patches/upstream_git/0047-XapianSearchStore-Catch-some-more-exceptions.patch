@@ -1,7 +1,7 @@
 From ca31cdaf61fd6865091aacb4e9768d5650360d46 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Thu, 3 Apr 2014 15:10:57 +0200
-Subject: [PATCH 47/48] XapianSearchStore: Catch some more exceptions
+Subject: [PATCH 47/56] XapianSearchStore: Catch some more exceptions
 
 ---
  src/xapian/xapiansearchstore.cpp | 9 ++++++++-

@@ -1,7 +1,7 @@
 From 6493efc09e69bfd974b86937017eaa9210cf7420 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Sat, 29 Mar 2014 17:45:27 +0100
-Subject: [PATCH 21/48] Cleaner: Commit the changes every 1000 documents
+Subject: [PATCH 21/56] Cleaner: Commit the changes every 1000 documents
 
 ---
  src/file/cleaner/cleaner.cpp | 7 +++++++

@@ -1,7 +1,7 @@
 From a6631dc63d582e9bd1c5bea9ed1779ade6f61ed9 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Tue, 1 Apr 2014 15:56:16 +0200
-Subject: [PATCH 29/48] FileIndexingJobTest: Test timeouts
+Subject: [PATCH 29/56] FileIndexingJobTest: Test timeouts
 
 The FileIndexingJob has an internal timer to make sure the indexer never
 gets stuck on any file. If so it marks that file has invalid. This test

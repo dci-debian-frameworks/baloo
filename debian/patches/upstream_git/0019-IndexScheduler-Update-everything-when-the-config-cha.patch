@@ -1,7 +1,7 @@
 From a200834ac5461c4f7c914c4438fcfe91c8b245ea Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Sat, 29 Mar 2014 17:17:51 +0100
-Subject: [PATCH 19/48] IndexScheduler: Update everything when the config
+Subject: [PATCH 19/56] IndexScheduler: Update everything when the config
  changes
 
 During the nepomuk days doing an update was very expensive and we

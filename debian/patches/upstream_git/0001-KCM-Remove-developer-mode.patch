@@ -1,7 +1,7 @@
 From eb0c51bff2aa4bda6c31a83f489dce9b39afddac Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Thu, 27 Mar 2014 12:59:24 +0100
-Subject: [PATCH 01/48] KCM: Remove developer mode
+Subject: [PATCH 01/56] KCM: Remove developer mode
 
 This also means that source code is now always indexed. A normal user
 typically won't have any source code and the developers can always

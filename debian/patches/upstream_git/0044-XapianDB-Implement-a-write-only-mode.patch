@@ -1,7 +1,7 @@
 From 0350407984eae51e79ca9c7607970d4d92e3a9c8 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Wed, 2 Apr 2014 15:38:44 +0200
-Subject: [PATCH 44/48] XapianDB: Implement a write only mode
+Subject: [PATCH 44/56] XapianDB: Implement a write only mode
 
 In this writeonly mode, we do not keep 2 databases - one for reading and
 one for writing. The disadvantage is that no one else can write as long

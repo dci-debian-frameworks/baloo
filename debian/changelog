@@ -1,3 +1,11 @@
+baloo (4:4.12.97-0ubuntu4) trusty; urgency=medium
+
+  * Yet more upstream commit imports. Adding patches 50 to 56 in upstream_git/
+  * Explicitly do not apply upstream_git/0050-Prepare-4.13.0.patch as it
+    causes an implicit dependency bump which we cannot fullfill at this time.
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Wed, 09 Apr 2014 16:31:31 +0200
+
 baloo (4:4.12.97-0ubuntu3) trusty; urgency=medium
 
   * Add upstream_git/0049-XapianDatabase-Catch-more-exceptions.patch

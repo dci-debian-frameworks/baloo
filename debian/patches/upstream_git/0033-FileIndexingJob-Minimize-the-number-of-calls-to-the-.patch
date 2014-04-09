@@ -1,7 +1,7 @@
 From d0c63165ffcd8be0bcb3b69f4a54cb12ce1543f2 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Tue, 1 Apr 2014 17:45:31 +0200
-Subject: [PATCH 33/48] FileIndexingJob: Minimize the number of calls to the
+Subject: [PATCH 33/56] FileIndexingJob: Minimize the number of calls to the
  extractor
 
 ---

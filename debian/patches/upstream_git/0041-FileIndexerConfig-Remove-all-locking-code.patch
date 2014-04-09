@@ -1,7 +1,7 @@
 From c7036c46b8dffe1a8b9ce1c2eec52e40bf4b3a66 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Wed, 2 Apr 2014 12:52:35 +0200
-Subject: [PATCH 41/48] FileIndexerConfig: Remove all locking code
+Subject: [PATCH 41/56] FileIndexerConfig: Remove all locking code
 
 We're always single threading, we no longer need all this locking.
 ---

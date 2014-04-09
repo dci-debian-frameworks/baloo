@@ -1,7 +1,7 @@
 From 6f85025610f48076ac3b11613934cf33b6f67cd2 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Thu, 3 Apr 2014 11:01:07 +0200
-Subject: [PATCH 46/48] Runner: Use the Baloo icon
+Subject: [PATCH 46/56] Runner: Use the Baloo icon
 
 ---
  src/runner/plasma-runner-baloosearch.desktop | 2 +-

@@ -1,7 +1,7 @@
 From 06c4e2305c179a2f445f45e94279c733f505d528 Mon Sep 17 00:00:00 2001
 From: Montel Laurent <montel@kde.org>
 Date: Sat, 29 Mar 2014 16:56:56 +0100
-Subject: [PATCH 15/48] Normalize email address before to store it in baloo
+Subject: [PATCH 15/56] Normalize email address before to store it in baloo
 
 => better to save quote email during saving when necessary
 

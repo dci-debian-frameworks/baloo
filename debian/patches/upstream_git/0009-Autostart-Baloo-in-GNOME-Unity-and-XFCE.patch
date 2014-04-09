@@ -1,7 +1,7 @@
 From a7377e0cca4f63ca4ce56bef87ac1f82dd219970 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Fri, 28 Mar 2014 12:03:46 +0100
-Subject: [PATCH 09/48] Autostart Baloo in GNOME, Unity and XFCE
+Subject: [PATCH 09/56] Autostart Baloo in GNOME, Unity and XFCE
 
 Baloo should always be running otherwise it will not pick up file
 changes, specially moves.

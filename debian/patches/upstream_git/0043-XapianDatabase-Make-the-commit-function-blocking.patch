@@ -1,7 +1,7 @@
 From d6e8b93f87932670abff3940273e442ef9846e50 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Wed, 2 Apr 2014 14:39:03 +0200
-Subject: [PATCH 43/48] XapianDatabase: Make the commit function blocking
+Subject: [PATCH 43/56] XapianDatabase: Make the commit function blocking
 
 The commit function now keeps trying to obtain the write lock, each time
 it fails it sleep for a short interval. Calling a slot at a later point

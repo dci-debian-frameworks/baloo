@@ -1,7 +1,7 @@
 From 572f20ef063c0e19cc49a932fa3ec293e736c50b Mon Sep 17 00:00:00 2001
 From: Montel Laurent <montel@kde.org>
 Date: Wed, 2 Apr 2014 14:06:57 +0200
-Subject: [PATCH 38/48] Index contactgroup too
+Subject: [PATCH 38/56] Index contactgroup too
 
 ---
  src/pim/agent/contactindexer.cpp | 55 +++++++++++++++++++++++++++++++++++-----

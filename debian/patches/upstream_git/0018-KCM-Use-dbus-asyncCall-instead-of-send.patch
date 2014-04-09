@@ -1,7 +1,7 @@
 From e54afe1e2d131d46a2ac6df4303aadc41507c0c2 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Sat, 29 Mar 2014 15:31:49 +0100
-Subject: [PATCH 18/48] KCM: Use dbus asyncCall instead of send
+Subject: [PATCH 18/56] KCM: Use dbus asyncCall instead of send
 
 ---
  src/file/kcm/kcm.cpp | 3 ++-

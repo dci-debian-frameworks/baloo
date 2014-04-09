@@ -1,7 +1,7 @@
 From 1f49eeec80efcffb7f808cbd4830dab66aefc62f Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Fri, 28 Mar 2014 10:33:25 +0100
-Subject: [PATCH 08/48] BasicIndexingTest: Improve debug messages for io usage
+Subject: [PATCH 08/56] BasicIndexingTest: Improve debug messages for io usage
 
 ---
  src/file/tests/basicindexingqueuetest.cpp | 29 ++++++++++++++++++++++++-----

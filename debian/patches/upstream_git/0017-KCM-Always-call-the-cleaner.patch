@@ -1,7 +1,7 @@
 From 457969987a601d047ff97a9ee575be5182d7246e Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Sat, 29 Mar 2014 15:31:03 +0100
-Subject: [PATCH 17/48] KCM: Always call the cleaner
+Subject: [PATCH 17/56] KCM: Always call the cleaner
 
 The KCM save function will only be called if some setting has changed,
 and since the folders are the only thing that could have changed, we

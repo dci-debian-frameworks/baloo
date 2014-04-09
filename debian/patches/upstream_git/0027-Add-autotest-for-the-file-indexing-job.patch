@@ -1,7 +1,7 @@
 From f453048fd0e830f8b94da06c1ab91805fd067499 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Tue, 1 Apr 2014 15:22:42 +0200
-Subject: [PATCH 27/48] Add autotest for the file indexing job
+Subject: [PATCH 27/56] Add autotest for the file indexing job
 
 We need to create a fake baloo_file_extractor process for this since
 that is what the FileIndexingJob calls.

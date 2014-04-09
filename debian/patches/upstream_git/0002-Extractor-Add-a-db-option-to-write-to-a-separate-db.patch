@@ -1,7 +1,7 @@
 From 9a96bd2f8990bcd160c385d557473a8972578f0f Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Thu, 27 Mar 2014 13:12:27 +0100
-Subject: [PATCH 02/48] Extractor: Add a --db option to write to a separate db
+Subject: [PATCH 02/56] Extractor: Add a --db option to write to a separate db
 
 This is very useful when debugging a particular extractor and you want
 to use a fresh / temporary database.

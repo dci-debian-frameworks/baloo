@@ -1,0 +1,177 @@
+From 2e74b27fc004638ea4aad6db0b99f0c0f4900d2c Mon Sep 17 00:00:00 2001
+From: l10n daemon script <scripty@kde.org>
+Date: Tue, 8 Apr 2014 10:36:16 +0000
+Subject: [PATCH 51/56] SVN_SILENT made messages (.desktop file)
+
+---
+ src/file/baloo_file.desktop                            | 2 ++
+ src/file/inotify/org.kde.baloo.filewatch.actions       | 3 +++
+ src/file/kcm/kcm_baloofile.desktop                     | 5 +++++
+ src/pim/agent/akonadibalooindexingagent.desktop        | 2 ++
+ src/pim/akonadiplugin/akonadibaloosearchplugin.desktop | 2 ++
+ src/runner/plasma-runner-baloosearch.desktop           | 3 +++
+ 6 files changed, 17 insertions(+)
+
+diff --git a/src/file/baloo_file.desktop b/src/file/baloo_file.desktop
+index c02bd58..5458c57 100644
+--- a/src/file/baloo_file.desktop
++++ b/src/file/baloo_file.desktop
+@@ -19,6 +19,7 @@ Name[es]=Demonio del archivo Baloo
+ Name[fi]=Baloo-tiedostopalvelu
+ Name[fr]=Démon de fichier Baloo
+ Name[hu]=Baloo fájl démon
++Name[ia]=Baloo File Daemon (Demon de file de Baloo)
+ Name[it]=Demone dei file Baloo
+ Name[ko]=Baloo 파일 데몬
+ Name[lt]=Baloo failų tarnyba
+@@ -29,6 +30,7 @@ Name[pa]=ਬਾਲੂ ਫਾਇਲ ਡੈਮਨ
+ Name[pl]=Usługa plików Baloo
+ Name[pt]=Serviço de Ficheiros do Baloo
+ Name[pt_BR]=Serviço de arquivos do Baloo
++Name[ru]=Служба мониторинга файлов для Baloo
+ Name[sk]=Súborový démon Baloo
+ Name[sl]=Ozadnji program za datoteke Baloo
+ Name[sr]=Демон Балуа
+diff --git a/src/file/inotify/org.kde.baloo.filewatch.actions b/src/file/inotify/org.kde.baloo.filewatch.actions
+index cf72a98..0b8e216 100644
+--- a/src/file/inotify/org.kde.baloo.filewatch.actions
++++ b/src/file/inotify/org.kde.baloo.filewatch.actions
+@@ -21,6 +21,7 @@ Name[nl]=Limiet op bewaakte mappen
+ Name[pl]=Ograniczenie obserwowania katalogu
+ Name[pt]=Limite de Monitorização de Pastas
+ Name[pt_BR]=Limite de monitoramento de pastas
++Name[ru]=Ограничение на число наблюдаемых папок
+ Name[sk]=Limit sledovania priečinka
+ Name[sl]=Omejitev opazovanih map
+ Name[sr]=Ограничење надгледања фасцикли
+@@ -45,6 +46,7 @@ Description[es]=Para evitar pérdidas en cambios de archivos, eleve el límite d
+ Description[fi]=Nosta inotifyn kansioiden valvontarajaa välttääksesi sitä, että joitain tiedostomuutoksia ei huomata
+ Description[fr]=Pour éviter des changements de fichiers manquant, augmentez la limite de surveillance des dossiers
+ Description[hu]=A fájlváltoztatások hiányzásának elkerülése érdekében növelje a értesítő mappafigyelési korlátot
++Description[ia]=Pro evitar perder modificationes de file, altia le limite de guardia de dossier inotify
+ Description[it]=Per non perdere le modifiche ai file, alza il limite di osservazione delle cartelle di inotify
+ Description[ko]=파일 변경 사항을 놓치지 않으려면 inotify 폴더 감시 제한을 높이십시오
+ Description[nb]=Øk grensen for mappeovervåker for å unngå å gå glipp av filendringer
+@@ -53,6 +55,7 @@ Description[nl]=Om wijzigingen in bestanden niet te missen vergroot u de limiet
+ Description[pl]=Aby uniknąć zmiany brakujących plików, podwyższ ograniczenie obserwacji katalogu inotify
+ Description[pt]=Para evitar as alterações de ficheiros perdidas, aumente o limite de monitorização de pastas do 'inotify'
+ Description[pt_BR]=Para evitar a perda de alterações dos arquivos, aumente o limite de monitoramento das pastas do inotify
++Description[ru]=Чтобы изменения файлов не оставались незамеченными, увеличьте ограничение на число наблюдаемых с помощью inotify папок
+ Description[sk]=Na zabránenie chýbajúcich zmien v súboroch, zvýšte obmedzenie sledovania priečinka inotify
+ Description[sl]=Da se izognete spregledu sprememb datotek, povečajte omejitev opazovanih map inotify
+ Description[sr]=Веће ограничење надгледања фасцикли (inotify) избегава пропуштене измене фајлова
+diff --git a/src/file/kcm/kcm_baloofile.desktop b/src/file/kcm/kcm_baloofile.desktop
+index 25be4ae..2a05f8d 100644
+--- a/src/file/kcm/kcm_baloofile.desktop
++++ b/src/file/kcm/kcm_baloofile.desktop
+@@ -32,6 +32,7 @@ Name[pa]=ਡੈਸਕਟਾਪ ਖੋਜ
+ Name[pl]=Wyszukiwanie na pulpicie
+ Name[pt]=Pesquisa no Ambiente de Trabalho
+ Name[pt_BR]=Pesquisa no desktop
++Name[ru]=Поиск по меткам и содержимому
+ Name[sk]=Hľadanie na ploche
+ Name[sl]=Namizno iskanje
+ Name[sr]=Претрага површи
+@@ -55,6 +56,7 @@ Comment[es]=Configurar la búsqueda de escritorio
+ Comment[fi]=Työpöytähaun asetukset
+ Comment[fr]=Configurer la recherche sur le bureau
+ Comment[hu]=Asztali keresés beállítása
++Comment[ia]=Configura cerca de scriptorio
+ Comment[it]=Configura ricerca dal desktop
+ Comment[ko]=데스크톱 검색 설정
+ Comment[lt]=Konfigūruoti darbastalio paiešką
+@@ -64,6 +66,7 @@ Comment[nl]=Bureaubladzoeken instellen... 
+ Comment[pl]=Konfiguruj znajdywanie na pulpicie
+ Comment[pt]=Configurar a Pesquisa no Ambiente de Trabalho
+ Comment[pt_BR]=Configurar a pesquisa no desktop
++Comment[ru]=Настройка службы поиска
+ Comment[sk]=Nastaviť hľadanie na ploche
+ Comment[sl]=Nastavi Namizno iskanje
+ Comment[sr]=Подешавање претраге површи
+@@ -87,6 +90,7 @@ X-KDE-Keywords[es]=Buscar, archivo, Baloo
+ X-KDE-Keywords[fi]=Search, File, haku, tiedosto, Baloo
+ X-KDE-Keywords[fr]=Recherche, fichier, Baloo
+ X-KDE-Keywords[hu]=Keresés, Fájl, Baloo
++X-KDE-Keywords[ia]=Cerca, File, Baloo
+ X-KDE-Keywords[it]=Ricerca, File, Baloo
+ X-KDE-Keywords[ko]=Search, File, Baloo,검색,파일
+ X-KDE-Keywords[lt]=Paieška, Failas, Baloo
+@@ -97,6 +101,7 @@ X-KDE-Keywords[pa]=ਖੋਜ, ਫਾਇਲ, ਬਾਲੂ
+ X-KDE-Keywords[pl]=Znajdź, Plik, Baloo
+ X-KDE-Keywords[pt]=Procurar, Ficheiro, Baloo
+ X-KDE-Keywords[pt_BR]=Pesquisar, Procurar, Arquivo, Baloo
++X-KDE-Keywords[ru]=Search, File, Baloo, поиск, файл, Балу
+ X-KDE-Keywords[sk]=Hľadať, súbor, Baloo
+ X-KDE-Keywords[sl]=Iskanje, datoteka, Baloo
+ X-KDE-Keywords[sr]=search;file;baloo;претрага;фајл;Балу
+diff --git a/src/pim/agent/akonadibalooindexingagent.desktop b/src/pim/agent/akonadibalooindexingagent.desktop
+index a0286ed..4a7371a 100644
+--- a/src/pim/agent/akonadibalooindexingagent.desktop
++++ b/src/pim/agent/akonadibalooindexingagent.desktop
+@@ -10,6 +10,7 @@ Name[es]=Agente de indexación Baloo de Akonadi
+ Name[fi]=Akonadin Baloo-indeksointiagentti
+ Name[fr]=Agent d'indexation Baloo de Akonadi
+ Name[hu]=Akonadi Baloo indexelő ügynök
++Name[ia]=Agente de indicisation de Baloo de Akonadi
+ Name[it]=Agente di indicizzazione Baloo di Akonadi
+ Name[ko]=Akonadi Baloo 검색 에이전트
+ Name[lt]=Akonadi Baloo indeksavimas agentas
+@@ -19,6 +20,7 @@ Name[nl]=Akonadi-agent voor Baloo indexering
+ Name[pl]=Agent indeksowania Baloo dla Akonadi
+ Name[pt]=Agente de Indexação do Baloo no Akonadi
+ Name[pt_BR]=Agente de Indexação do Baloo no Akonadi
++Name[ru]=Агент индексирования данных Akonadi в Baloo
+ Name[sk]=Agent indexovania Akonadi Baloo
+ Name[sl]=Akonadijev posrednik za izgrajevanje kazal, Baloo
+ Name[sr]=Балуов агент индексирања над Аконадијем
+diff --git a/src/pim/akonadiplugin/akonadibaloosearchplugin.desktop b/src/pim/akonadiplugin/akonadibaloosearchplugin.desktop
+index 8de6231..9820196 100644
+--- a/src/pim/akonadiplugin/akonadibaloosearchplugin.desktop
++++ b/src/pim/akonadiplugin/akonadibaloosearchplugin.desktop
+@@ -10,6 +10,7 @@ Name[es]=Agente de búsqueda Baloo de Akonadi
+ Name[fi]=Akonadin Baloo-hakuliitännäinen
+ Name[fr]=Module de recherche Baloo pour Akonadi
+ Name[hu]=Akonadi Baloo keresés bővítmény
++Name[ia]=Plugin de cerca de Baloo de Akonadi
+ Name[it]=Estensione di ricerca Baloo di Akonadi
+ Name[ko]=Akonadi Baloo 검색 플러그인
+ Name[lt]=Akonadi Baloo paieškos priedas
+@@ -19,6 +20,7 @@ Name[nl]=Akonadi-plug-in voor Baloo zoeken
+ Name[pl]=Wtyczka znajdywania Baloo dla Akonadi
+ Name[pt]=Agente de Pesquisa do Baloo no Akonadi
+ Name[pt_BR]=Plugin de pesquisa do Baloo no Akonadi
++Name[ru]=Модуль Baloo для поиска по базе данных Akonadi
+ Name[sk]=Plugin hľadania Akonadi Baloo
+ Name[sl]=Akonadijev vstavek za iskanje, Baloo
+ Name[sr]=Балуов прикључак претраге над Аконадијем
+diff --git a/src/runner/plasma-runner-baloosearch.desktop b/src/runner/plasma-runner-baloosearch.desktop
+index 42863bb..7d6a3f1 100644
+--- a/src/runner/plasma-runner-baloosearch.desktop
++++ b/src/runner/plasma-runner-baloosearch.desktop
+@@ -22,6 +22,7 @@ Name[pa]=ਡੈਸਕਟਾਪ ਖੋਜ
+ Name[pl]=Wyszukiwanie na pulpicie
+ Name[pt]=Pesquisa no Ambiente de Trabalho
+ Name[pt_BR]=Pesquisa no desktop
++Name[ru]=Поиск по меткам и содержимому
+ Name[sk]=Hľadanie na ploche
+ Name[sl]=Namizno iskanje
+ Name[sr]=Претрага површи
+@@ -45,6 +46,7 @@ Comment[es]=Lanzador con búsquedas en archivos, correo electrónico y contactos
+ Comment[fi]=Suoritusohjelma, joka etsii tiedostoista, sähköposteista ja yhteystiedoista
+ Comment[fr]=Lanceur de recherche dans les fichiers, courriels et contacts
+ Comment[hu]=Futtató, amely fájlokban, e-mailekben és névjegyekben keres
++Comment[ia]=Cursor de qual cercas a transverso de files, messages de e-posta e contactos
+ Comment[it]=Esecutore che cerca nei file, nei messaggi di posta e nei contatti
+ Comment[ko]=파일, 이메일, 연락처를 검색하는 실행기
+ Comment[lt]=Paleidiklis, kuris Ieško failuose, el. laiškuose ir kontaktuose
+@@ -54,6 +56,7 @@ Comment[nl]=Programma dat bestanden, e-mailberichten en contactpersonen doorzoek
+ Comment[pl]=Program, który przeszukuje pliki, pocztę i kontakty
+ Comment[pt]=Um módulo de execução que pesquisa nos ficheiros, e-mails e contactos
+ Comment[pt_BR]=Execução que pesquisa nos arquivos, e-mails e contatos
++Comment[ru]=Поиск по содержимому файлов, писем и по адресной книге
+ Comment[sk]=Bežec, ktorý prehľadáva vaše súbory, e-maily a kontakty
+ Comment[sl]=Zaganjalnik, ki preišče datoteke, e-pošto in stike
+ Comment[sr]=Извођач који тражи кроз фајлове, е‑пошту и контакте
+-- 
+1.9.1
+

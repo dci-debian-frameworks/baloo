@@ -1,7 +1,7 @@
 From 2fd777302ef070dcba04f1142ff7c494ff0b8891 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Sat, 29 Mar 2014 17:47:59 +0100
-Subject: [PATCH 22/48] Cleaner: Do faster mimetype detection
+Subject: [PATCH 22/56] Cleaner: Do faster mimetype detection
 
 Otherwise we consume just way too much io
 ---

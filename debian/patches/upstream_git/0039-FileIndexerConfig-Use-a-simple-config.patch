@@ -1,7 +1,7 @@
 From 2fdf8a9ab98dbec7ed9d48e13276e09d6b3ebed2 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Wed, 2 Apr 2014 12:49:31 +0200
-Subject: [PATCH 39/48] FileIndexerConfig: Use a simple config
+Subject: [PATCH 39/56] FileIndexerConfig: Use a simple config
 
 We do not need anything more
 ---

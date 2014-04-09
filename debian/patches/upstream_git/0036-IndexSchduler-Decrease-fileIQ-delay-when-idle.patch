@@ -1,7 +1,7 @@
 From 3fe4d2e97aabbb878b30a1d572cebb5d65fc2848 Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Wed, 2 Apr 2014 12:13:32 +0200
-Subject: [PATCH 36/48] IndexSchduler: Decrease fileIQ delay when idle
+Subject: [PATCH 36/56] IndexSchduler: Decrease fileIQ delay when idle
 
 ---
  src/file/indexscheduler.cpp | 2 ++

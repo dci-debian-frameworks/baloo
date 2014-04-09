@@ -1,7 +1,7 @@
 From 2d4ef34670a57a5076511cf6f1bea16cff73ffad Mon Sep 17 00:00:00 2001
 From: Vishesh Handa <me@vhanda.in>
 Date: Thu, 27 Mar 2014 19:32:09 +0100
-Subject: [PATCH 06/48] BasicIndexingQueueTest: Print io usage by the basic
+Subject: [PATCH 06/56] BasicIndexingQueueTest: Print io usage by the basic
  indexing
 
 ---
