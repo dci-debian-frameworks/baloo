@@ -1,3 +1,11 @@
+baloo (4:4.13.0-0ubuntu2) trusty; urgency=medium
+
+  * Add upstream_catch_more_exceptions_emailsearchstore.patch from upstream
+    expanding the exception catching to prevent krunner crashes on random
+    searches
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Tue, 15 Apr 2014 11:45:50 +0200
+
 baloo (4:4.13.0-0ubuntu1) trusty; urgency=medium
 
   * New upstream KDE Software Compilation release
