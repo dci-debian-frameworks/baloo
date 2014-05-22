@@ -1,0 +1,31 @@
+Source: baloo
+Priority: extra
+Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
+XSBC-Original-Maintainer: Scarlett Clark <scarlett@scarlettgatelyclark.com>
+Build-Depends: debhelper (>= 9.0.0), cmake, pkg-kde-tools,
+ extra-cmake-modules (>= 0.0.13), pkg-kde-tools, qtbase5-dev,
+ libkfilemetadata5-dev
+Standards-Version: 3.9.5
+Section: kde
+Homepage: https://projects.kde.org/projects/kde/kdelibs/baloo
+
+Package: baloo
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: framework for searching and managing metadata
+ A framework for searching and managing metadata in KDE Software.
+ .
+ Baloo is part of the KDE Plasma desktop.
+
+Package: baloo-dbg
+Section: debug
+Architecture: any
+Recommends: qtbase5-dbg
+Depends: ${misc:Depends}, baloo (= ${binary:Version})
+Description: framework for searching and managing metadata
+ A framework for searching and managing metadata in KDE Software.
+ .
+ Baloo is part of the KDE Plasma desktop.
+ .
+ This package contains the debugging symbols.
