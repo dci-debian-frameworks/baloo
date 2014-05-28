@@ -1,5 +1,13 @@
-baloo (4.96.0-0ubuntu1) UNRELEASED; urgency=medium
+baloo-kf5 (4.96.0-0ubuntu1) UNRELEASED; urgency=medium
 
+  [ Jonathan Riddell ]
   * Initial release.
+
+  [ Scarlett Clark ]
+  * Rename baloo-kf5 to resolve kde4 conflict 
+  * added missing depends
+  * split out libs and data files
+  * added install files
+  * wrap-and-sort
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 19 May 2014 15:37:53 +0000
