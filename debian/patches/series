@@ -1,1 +1,2 @@
+disable_tests_depending_on_revdep
 upstream_catch_more_exceptions_emailsearchstore.patch
