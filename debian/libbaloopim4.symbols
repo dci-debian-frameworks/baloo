@@ -1,5 +1,5 @@
 # SymbolsHelper-Confirmed: 4:4.12.97 amd64
-libbaloopim.so.4 libbaloopim4 #MINVER#, baloo
+libbaloopim.so.4 libbaloopim4 #MINVER#
  _ZN5Baloo3PIM10EmailQuery11addInvolvesERK7QString@Base 4:4.12.80
  _ZN5Baloo3PIM10EmailQuery11bodyMatchesERK7QString@Base 4:4.12.80
  _ZN5Baloo3PIM10EmailQuery11setInvolvesERK11QStringList@Base 4:4.12.80

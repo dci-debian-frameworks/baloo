@@ -1,3 +1,10 @@
+baloo (4:4.13.0-0ubuntu3) utopic; urgency=medium
+
+  * Remove explicit baloo dependency from library .symbol files
+  * Add conflicts on conflicting KF5 baloo packages
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 29 May 2014 15:52:39 +0100
+
 baloo (4:4.13.0-0ubuntu2) trusty; urgency=medium
 
   * Add upstream_catch_more_exceptions_emailsearchstore.patch from upstream
