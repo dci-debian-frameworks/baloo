@@ -1,5 +1,9 @@
 baloo (4:4.13.1-2) UNRELEASED; urgency=medium
 
+  [ Pino Toscano ]
+  * Backport upstream commit b538865e6069a61c8cf467622f3dccef2bac115e to fix
+    build on glibc-based OSes different than Linux; patch
+    upstream_xattr-use-the-linux-xattr-impl-on-any-glibc-based-OS.patch.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 29 May 2014 09:02:51 +0200
 

@@ -1,1 +1,2 @@
 disable_tests_depending_on_revdep
+upstream_xattr-use-the-linux-xattr-impl-on-any-glibc-based-OS.patch
