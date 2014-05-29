@@ -1,4 +1,4 @@
-baloo (4:4.13.0-0ubuntu4) utopic; urgency=medium
+baloo (4:4.13.0-0ubuntu5) utopic; urgency=medium
 
   * Merge with Debian, remaining changes:
    - still on 4.13.0
@@ -6,6 +6,12 @@ baloo (4:4.13.0-0ubuntu4) utopic; urgency=medium
   * Build-Conflicts: libkfilemetadata5-dev
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 29 May 2014 16:08:47 +0100
+
+baloo (4:4.13.0-0ubuntu4) utopic; urgency=high
+
+  * Rebuild against boost1.55
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>   Sat, 03 May 2014 21:55:11 +0100
 
 baloo (4:4.13.1-1) experimental; urgency=medium
 
