@@ -47,6 +47,7 @@ Package: baloo-kf5-dev
 Section: devel
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
+Conflicts: baloo-dev
 Description: framework for searching and managing metadata devel files
  A framework for searching and managing metadata in KDE Software.
  .
@@ -60,6 +61,8 @@ Architecture: any
 Depends: baloo-kf5-data (= ${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
+Conflicts: baloo
+Recommends: baloo-kf5-plugins (= ${binary:Version})
 Description: framework for searching and managing metadata
  A framework for searching and managing metadata in KDE Software.
  .
@@ -78,6 +81,7 @@ Package: baloo-kf5-data
 Section: utils
 Architecture: all
 Depends: ${misc:Depends}, ${shlibs:Depends}
+Conflicts: baloo
 Description: framework for searching and managing metadata data files
  A framework for searching and managing metadata in KDE Software.
  .
