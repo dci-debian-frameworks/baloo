@@ -21,8 +21,10 @@ Build-Conflicts: libkfilemetadata5-dev
 Standards-Version: 3.9.5
 XS-Testsuite: autopkgtest
 Homepage: http://projects.kde.org/baloo
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kde/kde-sc/baloo.git
-Vcs-Git: git://anonscm.debian.org/pkg-kde/kde-sc/baloo.git
+Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kubuntu-packaging/baloo
+Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packaging/baloo
+X-Debian-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kde/kde-sc/baloo.git
+X-Debian-Vcs-Git: git://anonscm.debian.org/pkg-kde/kde-sc/baloo.git
 
 Package: baloo
 Architecture: any
