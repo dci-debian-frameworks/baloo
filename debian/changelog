@@ -1,4 +1,4 @@
-baloo5 (4.96.0-0ubuntu1) UNRELEASED; urgency=medium
+baloo5 (4:4.97.0-0ubuntu1) UNRELEASED; urgency=medium
 
   [ Jonathan Riddell ]
   * Initial release.
@@ -10,4 +10,7 @@ baloo5 (4.96.0-0ubuntu1) UNRELEASED; urgency=medium
   * added install files
   * wrap-and-sort
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 19 May 2014 15:37:53 +0000
+  [ Jonathan Riddell ]
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 09 Jun 2014 10:23:43 +0100
