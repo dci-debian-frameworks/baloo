@@ -29,7 +29,7 @@ Homepage: https://projects.kde.org/projects/kde/kdelibs/baloo
 Package: baloo-kf5-dev
 Section: devel
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: baloo-kf5 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
 Conflicts: baloo-dev
 Description: framework for searching and managing metadata devel files
  A framework for searching and managing metadata in KDE Software.
