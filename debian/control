@@ -6,18 +6,11 @@ Build-Depends: cmake,
                dbus-x11,
                debhelper (>= 9.0.0),
                extra-cmake-modules (>= 0.0.14),
-               kio-dev (>= 4.100.0),
-               libkf5auth-dev (>= 4.100.0),
-               libkf5config-dev (>= 4.100.0),
-               libkf5crash-dev (>= 4.100.0),
-               libkf5i18n-dev (>= 4.100.0),
                libkf5idletime-dev (>= 4.100.0),
                libkf5kcmutils-dev (>= 4.100.0),
                libkf5kdelibs4support-dev (>= 4.100.0),
                libkf5runner-dev (>= 4.100.0),
-               libkf5service-dev (>= 4.100.0),
-               libkf5solid-dev (>= 4.100.0),
-               libkfilemetadata5-dev (>= 4.100.0),
+               libkfilemetadata5-dev (>= 4.97.0),
                libxapian-dev,
                pkg-kde-tools,
                plasma-framework-dev (>= 4.100.0),
@@ -70,7 +63,7 @@ Description: framework for searching and managing metadata data files
  .
  Baloo is part of the KDE Plasma desktop.
 
-Package: libbaloocore5
+Package: libkf5baloocore5
 Section: libs
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
@@ -79,7 +72,7 @@ Description: framework for searching and managing metadata core lib.
  .
  Baloo is part of the KDE Plasma desktop.
 
-Package: libbaloofiles5
+Package: libkf5baloofiles5
 Section: libs
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
@@ -88,7 +81,7 @@ Description: framework for searching and managing metadata plugins
  .
  Baloo is part of the KDE Plasma desktop.
 
-Package: libbalooxapian5
+Package: libkf5balooxapian5
 Section: libs
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
