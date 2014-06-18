@@ -1,6 +1,8 @@
 baloo (4:4.13.2-0ubuntu1) UNRELEASED; urgency=medium
 
   * new upstream release
+  * Remove upstream_catch_more_exceptions_emailsearchstore.patch
+    fixed upstream
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Jun 2014 11:38:20 +0100
 
