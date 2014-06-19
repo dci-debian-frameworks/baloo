@@ -1,0 +1,45 @@
+From 07278894f3a00a3c4ca5ce7d62721c0edfddfb69 Mon Sep 17 00:00:00 2001
+From: Pino Toscano <pino@kde.org>
+Date: Thu, 19 Jun 2014 12:05:30 +0200
+Subject: [PATCH] xattr: do not use on glibc if not implemented
+
+check for the defines that mark the functions as stubs, avoid using
+them in that case
+---
+ src/file/lib/baloo_xattr_p.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/file/lib/baloo_xattr_p.h b/src/file/lib/baloo_xattr_p.h
+index 0dc963d..87dc55f 100644
+--- a/src/file/lib/baloo_xattr_p.h
++++ b/src/file/lib/baloo_xattr_p.h
+@@ -45,7 +45,7 @@ inline ssize_t baloo_getxattr(const QString& path, const QString& name, QString*
+     const char* attributeName = n.constData();
+ 
+     // First get the size of the data we are going to get to reserve the right amount of space.
+-#if defined(Q_OS_LINUX) || defined(__GLIBC__)
++#if defined(Q_OS_LINUX) || (defined(__GLIBC__) && !defined(__stub_getxattr))
+     const ssize_t size = getxattr(encodedPath, attributeName, NULL, 0);
+ #elif defined(Q_OS_MAC)
+     const ssize_t size = getxattr(encodedPath, attributeName, NULL, 0, 0, 0);
+@@ -64,7 +64,7 @@ inline ssize_t baloo_getxattr(const QString& path, const QString& name, QString*
+ 
+     QByteArray data(size, Qt::Uninitialized);
+ 
+-#if defined(Q_OS_LINUX) || defined(__GLIBC__)
++#if defined(Q_OS_LINUX) || (defined(__GLIBC__) && !defined(__stub_getxattr))
+     const ssize_t r = getxattr(encodedPath, attributeName, data.data(), size);
+ #elif defined(Q_OS_MAC)
+     const ssize_t r = getxattr(encodedPath, attributeName, data.data(), size, 0, 0);
+@@ -91,7 +91,7 @@ inline int baloo_setxattr(const QString& path, const QString& name, const QStrin
+ 
+     const size_t valueSize = v.size();
+ 
+-#if defined(Q_OS_LINUX) || defined(__GLIBC__)
++#if defined(Q_OS_LINUX) || (defined(__GLIBC__) && !defined(__stub_setxattr))
+     return setxattr(encodedPath, attributeName, attributeValue, valueSize, 0);
+ #elif defined(Q_OS_MAC)
+     return setxattr(encodedPath, attributeName, attributeValue, valueSize, 0, 0);
+-- 
+2.0.0
+

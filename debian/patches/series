@@ -1,2 +1,4 @@
 disable_tests_depending_on_revdep
+upstream_xattr-fix-fallback-in-no-xattr-OSes.patch
 upstream_xattr-use-the-linux-xattr-impl-on-any-glibc-based-OS.patch
+upstream_xattr-do-not-use-on-glibc-if-not-implemented.patch
