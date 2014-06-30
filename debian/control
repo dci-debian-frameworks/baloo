@@ -88,6 +88,7 @@ Depends: libbaloocore4 (= ${binary:Version}),
          libbalooxapian4 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
+Conflicts: baloo-kf5-dev
 Description: Development headers for developing applications with Baloo
  Baloo is a framework for searching and managing metadata.
  .
