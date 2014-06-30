@@ -1,4 +1,4 @@
 usr/include/
 usr/lib/*/*.so
 usr/lib/*/cmake/*
-usr/lib/*/libexec
+usr/share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
