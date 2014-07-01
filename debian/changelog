@@ -1,4 +1,4 @@
-baloo (4:4.13.1-2) UNRELEASED; urgency=medium
+baloo (4:4.13.2-1) UNRELEASED; urgency=medium
 
   [ Pino Toscano ]
   * Backport upstream commits 01f3fff52d63302e6970a088710ec6b692b1b470,
@@ -10,7 +10,10 @@ baloo (4:4.13.1-2) UNRELEASED; urgency=medium
     upstream_xattr-do-not-use-on-glibc-if-not-implemented.patch.
   * Switch the libboost1.55-dev build dependency to libboost-dev.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 29 May 2014 09:02:51 +0200
+  [ Maximiliano Curia ]
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Jul 2014 16:32:19 +0200
 
 baloo (4:4.13.1-1) experimental; urgency=medium
 
