@@ -1,3 +1,10 @@
+baloo (4:4.98.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream RC release
+  * Upstream renamed tar to baloo
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 07 Jul 2014 14:33:04 +0200
+
 baloo5 (4:4.97.0~git20140616-0ubuntu1) utopic; urgency=medium
 
   [ Jonathan Riddell ]
