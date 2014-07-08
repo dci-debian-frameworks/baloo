@@ -18,6 +18,8 @@ Build-Depends: cmake,
 Standards-Version: 3.9.5
 Section: kde
 Homepage: https://projects.kde.org/projects/kde/kdelibs/baloo
+Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kubuntu-packaging-next/baloo
+Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packaging-next/baloo
 
 Package: baloo-kf5-dev
 Section: devel
