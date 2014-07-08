@@ -1,7 +1,11 @@
 baloo (4:4.98.0-0ubuntu1) UNRELEASED; urgency=medium
 
+  [ Jonathan Riddell ]
   * New upstream RC release
   * Upstream renamed tar to baloo
+
+  [ Scarlett Clark ]
+  * Fix build depend and add locale to -data 
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 07 Jul 2014 14:33:04 +0200
 
