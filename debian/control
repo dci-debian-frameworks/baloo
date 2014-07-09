@@ -1,4 +1,4 @@
-Source: baloo
+Source: baloo-kf5
 Priority: extra
 Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
 XSBC-Original-Maintainer: Scarlett Clark <scarlett@scarlettgatelyclark.com>
@@ -41,19 +41,7 @@ Depends: ${misc:Depends},
 Conflicts: baloo, baloo-kf5 (<= 4:4.97.0-0ubuntu1~ubuntu14.10~ppa5)
 Replaces: baloo-kf5 (<= 4:4.97.0-0ubuntu1~ubuntu14.10~ppa5)
 Provides: baloo
-Recommends: baloo-kf5-plugins (= ${binary:Version})
 Description: framework for searching and managing metadata
- A framework for searching and managing metadata in KDE Software.
- .
- Baloo is part of the KDE Plasma desktop.
-
-Package: baloo-kf5-plugins
-Section: utils
-Architecture: any
-Depends: baloo-kf5 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
-Conflicts: baloo-kf5-plugins (<= 4:4.97.0-0ubuntu1~ubuntu14.10~ppa5)
-Replaces: baloo-kf5-plugins (<= 4:4.97.0-0ubuntu1~ubuntu14.10~ppa5)
-Description: framework for searching and managing metadata plugins
  A framework for searching and managing metadata in KDE Software.
  .
  Baloo is part of the KDE Plasma desktop.

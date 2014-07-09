@@ -1,11 +1,11 @@
-baloo (4:4.98.0-0ubuntu1) UNRELEASED; urgency=medium
+baloo-kf5 (4:4.98.0-0ubuntu1) UNRELEASED; urgency=medium
 
   [ Jonathan Riddell ]
   * New upstream RC release
+  * Upstream renamed tar to baloo
   * Allow for co-installability with baloo (kdelibs4)
-    - Upstream renamed tar to baloo-kf5
-    - Provide virtual package baloo
-  * Remove -data and -plugins, fine all in one package
+   - Provide baloo virtual package
+   - rename souce to baloo-kf5
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 07 Jul 2014 14:33:04 +0200
 
