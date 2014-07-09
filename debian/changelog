@@ -1,7 +1,14 @@
+baloo (4:4.13.2-0ubuntu3) utopic; urgency=medium
+
+  * Allow for co-installability with baloo-kf5
+    - create baloo-utils for kdelibs4 parts we want to keep installed
+    - rename to baloo4 and provide a common baloo virtual package
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 09 Jul 2014 17:24:47 +0200
+
 baloo (4:4.13.2-0ubuntu2) utopic; urgency=medium
 
   * Remove explicit baloo dependency from library .symbol files
-  * baloo-dev Conflicts: baloo-kf5-dev
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 30 Jun 2014 16:57:37 +0200
 

@@ -26,14 +26,28 @@ Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packaging/baloo
 X-Debian-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kde/kde-sc/baloo.git
 X-Debian-Vcs-Git: git://anonscm.debian.org/pkg-kde/kde-sc/baloo.git
 
-Package: baloo
+Package: baloo4
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Replaces: kde-runtime (<< 4:4.12.80), kde-runtime-data (<< 4:4.12.80)
-Breaks: kde-runtime (<< 4:4.12.80), kde-runtime-data (<< 4:4.12.80)
+Replaces: kde-runtime (<< 4:4.12.80), kde-runtime-data (<< 4:4.12.80), baloo (<< 4:4.13.2-0ubuntu3)
+Breaks: kde-runtime (<< 4:4.12.80), kde-runtime-data (<< 4:4.12.80), baloo (<< 4:4.13.2-0ubuntu3)
 Conflicts: baloo-kf5-data, baloo-kf5
+Provides: baloo
 Description: framework for searching and managing metadata.
  A framework for searching and managing metadata in KDE.
+ .
+ This package contains the kdelibs4 version of the binaries, it can also
+ be replaced with baloo-kf5.
+
+Package: baloo-utils
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Replaces: kde-runtime (<< 4:4.12.80), kde-runtime-data (<< 4:4.12.80), baloo (<< 4:4.13.2-0ubuntu3)
+Breaks: kde-runtime (<< 4:4.12.80), kde-runtime-data (<< 4:4.12.80), baloo (<< 4:4.13.2-0ubuntu3)
+Description: framework for searching and managing metadata.
+ A framework for searching and managing metadata in KDE.
+ .
+ This package contains kdelibs4 utilities for Baloo.
 
 Package: libbaloocore4
 Architecture: any
@@ -98,7 +112,7 @@ Description: Development headers for developing applications with Baloo
 
 Package: baloo-dbg
 Architecture: any
-Depends: baloo (= ${binary:Version}), ${misc:Depends}
+Depends: baloo4 (= ${binary:Version}), ${misc:Depends}
 Priority: extra
 Section: debug
 Description: Debugging symbols for baloo
