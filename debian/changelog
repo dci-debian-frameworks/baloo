@@ -7,6 +7,8 @@ baloo-kf5 (5.0.0b-0ubuntu1) UNRELEASED; urgency=medium
   [ Scarlett Clark ]
   * New upstream tarball 
   * New upstream tarball include locale files
+  * Add Replaces: for libkf5baloocore, libkf5baloofiles libkf5balooxapian 
+    to resolve install conflict. 
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 10 Jul 2014 21:13:07 +0200
 
