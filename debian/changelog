@@ -1,4 +1,4 @@
-baloo (4:4.13.2-1) UNRELEASED; urgency=medium
+baloo (4:4.13.3-1) UNRELEASED; urgency=medium
 
   [ Pino Toscano ]
   * Backport upstream commits 01f3fff52d63302e6970a088710ec6b692b1b470,
@@ -13,7 +13,7 @@ baloo (4:4.13.2-1) UNRELEASED; urgency=medium
   [ Maximiliano Curia ]
   * New upstream release.
 
- -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Jul 2014 16:32:19 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 12:52:04 +0200
 
 baloo (4:4.13.1-1) experimental; urgency=medium
 
