@@ -8,12 +8,12 @@ Uploaders: Rohan Garg <rohangarg@kubuntu.org>,
 Build-Depends: cmake,
                debhelper (>= 9),
                kde-sc-dev-latest (>= 4:4.12),
-               kdelibs5-dev (>= 4:4.13.2),
-               kdepimlibs5-dev (>= 4:4.13.2),
-               libakonadi-dev (>= 1.11.80),
+               kdelibs5-dev (>= 4:4.13.90),
+               kdepimlibs5-dev (>= 4:4.13.90),
+               libakonadi-dev (>= 1.12.91),
                libattr1-dev,
                libboost1.55-dev,
-               libkfilemetadata-dev (>= 4:4.13.2),
+               libkfilemetadata-dev (>= 4:4.13.90),
                libqjson-dev,
                libxapian-dev,
                pkg-kde-tools
@@ -82,6 +82,17 @@ Description: PIM funcationality for Baloo
  .
  Baloo is part of KDE SC.
 
+Package: libbalooqueryparser4
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Query Parser for Baloo
+ Baloo is a framework for searching and managing metadata.
+ .
+ This package contains the baloo query parser library ported from Nepomuk.
+ .
+ Baloo is part of KDE SC.
+
 Package: libbalooxapian4
 Architecture: any
 Section: libdevel
@@ -98,6 +109,7 @@ Architecture: any
 Section: libdevel
 Depends: libbaloocore4 (= ${binary:Version}),
          libbaloofiles4 (= ${binary:Version}),
+         libbalooqueryparser4 (= ${binary:Version}),
          libbaloopim4 (= ${binary:Version}),
          libbalooxapian4 (= ${binary:Version}),
          ${misc:Depends},

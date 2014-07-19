@@ -1,3 +1,12 @@
+baloo (4:4.13.90-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release
+  * Added new library libbalooqueryparser
+  * Patched symbols with batchpatch
+  * Add new library to -dev as depend
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 18 Jul 2014 13:54:56 -0700
+
 baloo (4:4.13.2-0ubuntu3) utopic; urgency=medium
 
   * Allow for co-installability with baloo-kf5
