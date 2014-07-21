@@ -16,7 +16,8 @@ Build-Depends: cmake,
                libkfilemetadata-dev (>= 4:4.13.90),
                libqjson-dev,
                libxapian-dev,
-               pkg-kde-tools
+               pkg-kde-tools,
+               libx11-dev
 Build-Conflicts: libkfilemetadata5-dev
 Standards-Version: 3.9.5
 XS-Testsuite: autopkgtest
