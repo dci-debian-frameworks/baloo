@@ -1,15 +1,16 @@
-baloo-kf5 (5.0.0b-0ubuntu1) UNRELEASED; urgency=medium
+baloo-kf5 (5.0.0b-0ubuntu1) utopic; urgency=medium
 
   [ Jonathan Riddell ]
   * New upstream release
   * Remove epoch that had slipped in
+  * Initial upload to Ubuntu
 
   [ Scarlett Clark ]
-  * New upstream tarball 
+  * New upstream tarball
   * New upstream tarball include locale files
-  * Add Replaces: for libkf5baloocore, libkf5baloofiles libkf5balooxapian 
-    to resolve install conflict. 
-  * Update watch to http://download.kde.org 
+  * Add Replaces: for libkf5baloocore, libkf5baloofiles libkf5balooxapian
+    to resolve install conflict.
+  * Update watch to http://download.kde.org
 
   [ José Manuel Santamaría Lema ]
   * Update libraries install paths so a soname change won't go
@@ -39,10 +40,10 @@ baloo5 (4:4.97.0~git20140616-0ubuntu1) utopic; urgency=medium
   * split out libs and data files
   * added install files
   * wrap-and-sort
-  * add missing depend  
-  * Add baloo-kf5 depend to -dev 
-  * Grab git snapshot to resolve cmake patch issue. 
-  * break/replace old version 
-  * more break replace 
+  * add missing depend
+  * Add baloo-kf5 depend to -dev
+  * Grab git snapshot to resolve cmake patch issue.
+  * break/replace old version
+  * more break replace
 
  -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Tue, 17 Jun 2014 09:01:57 -0700
