@@ -1,7 +1,12 @@
 baloo (4:4.13.95-0ubuntu1) UNRELEASED; urgency=medium
 
+  [ Scarlett Clark ]
   * New upstream beta release
   * Fix libalooqueryparser install file
+
+  [ Philip Muškovac ]
+  * Remove empty arch= selector in libbaloopim4.symbols and
+    libbalooxapian4.symbols
 
  -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 25 Jul 2014 06:18:28 -0700
 
