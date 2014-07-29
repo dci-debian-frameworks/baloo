@@ -21,6 +21,43 @@ baloo (4:4.13.3-1) UNRELEASED; urgency=medium
 
  -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 12:52:04 +0200
 
+baloo (4:4.13.2-0ubuntu3) utopic; urgency=medium
+
+  * Allow for co-installability with baloo-kf5
+    - create baloo-utils for kdelibs4 parts we want to keep installed
+    - rename to baloo4 and provide a common baloo virtual package
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 09 Jul 2014 17:24:47 +0200
+
+baloo (4:4.13.2-0ubuntu2) utopic; urgency=medium
+
+  * Remove explicit baloo dependency from library .symbol files
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 30 Jun 2014 16:57:37 +0200
+
+baloo (4:4.13.2-0ubuntu1) utopic; urgency=medium
+
+  * new upstream release
+  * Remove upstream_catch_more_exceptions_emailsearchstore.patch
+    fixed upstream
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Jun 2014 11:38:20 +0100
+
+baloo (4:4.13.0-0ubuntu5) utopic; urgency=medium
+
+  * Merge with Debian, remaining changes:
+   - still on 4.13.0
+  * Add conflicts on kf5 baloo packages
+  * Build-Conflicts: libkfilemetadata5-dev
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 29 May 2014 16:08:47 +0100
+
+baloo (4:4.13.0-0ubuntu4) utopic; urgency=high
+
+  * Rebuild against boost1.55
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Sat, 03 May 2014 21:55:11 +0100
+
 baloo (4:4.13.1-1) experimental; urgency=medium
 
   * Initial release, based on the kubuntu package.
@@ -31,3 +68,76 @@ baloo (4:4.13.1-1) experimental; urgency=medium
   * Add dbus interface file to the -dev package.
 
  -- Maximiliano Curia <maxy@debian.org>  Mon, 26 May 2014 13:25:45 +0200
+
+baloo (4:4.13.0-0ubuntu3) utopic; urgency=medium
+
+  * Remove explicit baloo dependency from library .symbol files
+  * Add conflicts on conflicting KF5 baloo packages
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 29 May 2014 15:52:39 +0100
+
+baloo (4:4.13.0-0ubuntu2) trusty; urgency=medium
+
+  * Add upstream_catch_more_exceptions_emailsearchstore.patch from upstream
+    expanding the exception catching to prevent krunner crashes on random
+    searches
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Tue, 15 Apr 2014 11:45:50 +0200
+
+baloo (4:4.13.0-0ubuntu1) trusty; urgency=medium
+
+  * New upstream KDE Software Compilation release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 10 Apr 2014 21:32:59 +0100
+
+baloo (4:4.12.97-0ubuntu4) trusty; urgency=medium
+
+  * Yet more upstream commit imports. Adding patches 50 to 56 in upstream_git/
+  * Explicitly do not apply upstream_git/0050-Prepare-4.13.0.patch as it
+    causes an implicit dependency bump which we cannot fullfill at this time.
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Wed, 09 Apr 2014 16:31:31 +0200
+
+baloo (4:4.12.97-0ubuntu3) trusty; urgency=medium
+
+  * Add upstream_git/0049-XapianDatabase-Catch-more-exceptions.patch
+    fixing a crash when changing the file rating in dolphin.
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Tue, 08 Apr 2014 13:10:09 +0200
+
+baloo (4:4.12.97-0ubuntu2) trusty; urgency=medium
+
+  * Blanket import fixes between 4.12.97 and current git KDE/4.13 in
+    debian/patches/upstream_git/
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Mon, 07 Apr 2014 12:35:02 +0200
+
+baloo (4:4.12.97-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release candidate
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Wed, 02 Apr 2014 11:04:27 +0200
+
+baloo (4:4.12.95-0ubuntu1) trusty; urgency=medium
+
+  [ Rohan Garg ]
+  * New upstream beta release
+
+  [ Philip Muškovac ]
+  * Add new symbols
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Sun, 23 Mar 2014 11:51:35 +0100
+
+baloo (4:4.12.90-0ubuntu1) trusty; urgency=low
+
+  [ Jonathan Riddell ]
+  * Initial release
+  * Don't depend on baloo, kde-runtime, kdepim-runtime to stop
+    circular deps
+  * baloo-dev doesn't depend on baloo to stop circular deps
+
+  [ Scarlett Clark ]
+  * Fix copyright
+  * Create and fix symbols.
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Mar 2014 10:30:39 +0000

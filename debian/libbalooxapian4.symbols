@@ -1,5 +1,5 @@
 # SymbolsHelper-Confirmed: 4:4.13.1 amd64
-libbalooxapian.so.4 libbalooxapian4 #MINVER#, baloo
+libbalooxapian.so.4 libbalooxapian4 #MINVER#
  _ZN5Baloo14XapianDatabase14deleteDocumentEj@Base 4:4.12.97
  _ZN5Baloo14XapianDatabase15replaceDocumentEjRKN6Xapian8DocumentE@Base 4:4.12.97
  _ZN5Baloo14XapianDatabase15replaceDocumentEjRKNS_14XapianDocumentE@Base 4:4.13.0
