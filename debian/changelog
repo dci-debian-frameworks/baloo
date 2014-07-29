@@ -12,6 +12,12 @@ baloo (4:4.13.3-1) UNRELEASED; urgency=medium
 
   [ Maximiliano Curia ]
   * New upstream release.
+  * Remove upstream applied patch: upstream_xattr-do-not-use-on-glibc-
+    if-not-implemented.patch
+  * Remove upstream applied patch: upstream_xattr-fix-fallback-in-no-
+    xattr-OSes.patch
+  * Remove upstream applied patch: upstream_xattr-use-the-linux-xattr-
+    impl-on-any-glibc-based-OS.patch
 
  -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 12:52:04 +0200
 
