@@ -1,7 +1,8 @@
 Tests: testsuite
 Depends: @, @builddeps@,
          xvfb, xauth, dbus-x11,
-         libqt4-sql-sqlite
+         libqt4-sql-sqlite,
+         kdelibs5-plugins
 Restrictions: build-needed
 
 Tests: acc
