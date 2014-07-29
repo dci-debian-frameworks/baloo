@@ -1,4 +1,4 @@
-baloo (4:4.13.3-1) UNRELEASED; urgency=medium
+baloo (4:4.13.3-1) unstable; urgency=medium
 
   [ Pino Toscano ]
   * Backport upstream commits 01f3fff52d63302e6970a088710ec6b692b1b470,
@@ -19,7 +19,7 @@ baloo (4:4.13.3-1) UNRELEASED; urgency=medium
   * Remove upstream applied patch: upstream_xattr-use-the-linux-xattr-
     impl-on-any-glibc-based-OS.patch
 
- -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 12:52:04 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 30 Jul 2014 00:17:47 +0200
 
 baloo (4:4.13.2-0ubuntu3) utopic; urgency=medium
 
