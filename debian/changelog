@@ -19,6 +19,7 @@ baloo (4:4.13.3-1) unstable; urgency=medium
   * Remove upstream applied patch: upstream_xattr-use-the-linux-xattr-
     impl-on-any-glibc-based-OS.patch
   * Update symbols file.
+  * Update build dependencies.
 
  -- Maximiliano Curia <maxy@debian.org>  Wed, 30 Jul 2014 00:17:47 +0200
 
