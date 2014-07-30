@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 4:4.13.1 amd64
+# SymbolsHelper-Confirmed: 4:4.13.3 amd64
 libbaloopim.so.4 libbaloopim4 #MINVER#
  _ZN5Baloo3PIM10EmailQuery11addInvolvesERK7QString@Base 4:4.12.80
  _ZN5Baloo3PIM10EmailQuery11bodyMatchesERK7QString@Base 4:4.12.80
@@ -83,6 +83,8 @@ libbaloopim.so.4 libbaloopim4 #MINVER#
  _ZTIN5Baloo3PIM9NoteQueryE@Base 4:4.12.80
  _ZTIN6Xapian12RuntimeErrorE@Base 4:4.12.97
  _ZTIN6Xapian13DatabaseErrorE@Base 4:4.12.97
+ _ZTIN6Xapian20DatabaseCorruptErrorE@Base 4:4.13.3
+ _ZTIN6Xapian20DatabaseOpeningErrorE@Base 4:4.13.3
  _ZTIN6Xapian5ErrorE@Base 4:4.12.97
  _ZTSN5Baloo3PIM10EmailQueryE@Base 4:4.12.80
  _ZTSN5Baloo3PIM12ContactQueryE@Base 4:4.12.80
@@ -90,6 +92,8 @@ libbaloopim.so.4 libbaloopim4 #MINVER#
  _ZTSN5Baloo3PIM9NoteQueryE@Base 4:4.12.80
  _ZTSN6Xapian12RuntimeErrorE@Base 4:4.12.97
  _ZTSN6Xapian13DatabaseErrorE@Base 4:4.12.97
+ _ZTSN6Xapian20DatabaseCorruptErrorE@Base 4:4.13.3
+ _ZTSN6Xapian20DatabaseOpeningErrorE@Base 4:4.13.3
  _ZTSN6Xapian5ErrorE@Base 4:4.12.97
  _ZTVN5Baloo3PIM10EmailQueryE@Base 4:4.12.80
  _ZTVN5Baloo3PIM12ContactQueryE@Base 4:4.12.80
