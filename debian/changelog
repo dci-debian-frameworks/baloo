@@ -1,6 +1,10 @@
 baloo (4:4.13.97-0ubuntu1) UNRELEASED; urgency=medium
 
+  [ Scarlett Clark ]
   * New upstream beta release RC
+
+  [ Jonathan Riddell ]
+  * Update symbols
 
  -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Thu, 31 Jul 2014 10:49:09 -0700
 
