@@ -25,6 +25,9 @@ License: LGPL 2.1 or 3 or approved by KDE e.V.
  .
  You should have received a copy of the GNU Lesser General Public
  License along with this library.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU Library General
+ Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
 
 Files: src/file/eventmonitor.cpp
  src/file/eventmonitor.h
@@ -83,6 +86,9 @@ License: LGPL-2
  .
  You should have received a copy of the GNU Lesser General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU Library General
+ Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
 
 Files: src/core/core_export.h
  src/file/kinotify.cpp
@@ -110,6 +116,9 @@ License: LGPL-2+
  along with this library; see the file COPYING.LIB.  If not, write to
  the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU Library General
+ Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
 
 Files: autotests/search.cpp 
  src/file/autotest/kinotifytest.h
@@ -140,3 +149,6 @@ License: GPL 2 or 3 or approved by KDE e.V.
  .
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
