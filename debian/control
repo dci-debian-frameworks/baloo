@@ -30,8 +30,8 @@ X-Debian-Vcs-Git: git://anonscm.debian.org/pkg-kde/kde-sc/baloo.git
 Package: baloo4
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Replaces: kde-runtime (<< 4:4.12.80), kde-runtime-data (<< 4:4.12.80), baloo (<< 4:4.13.2-0ubuntu3)
-Breaks: kde-runtime (<< 4:4.12.80), kde-runtime-data (<< 4:4.12.80), baloo (<< 4:4.13.2-0ubuntu3)
+Replaces: kde-runtime (<< 4:4.12.80), kde-runtime-data (<< 4:4.12.80), baloo (<< 4:4.13.90)
+Breaks: kde-runtime (<< 4:4.12.80), kde-runtime-data (<< 4:4.12.80), baloo (<< 4:4.13.90)
 Conflicts: baloo-kf5-data, baloo-kf5
 Provides: baloo
 Description: framework for searching and managing metadata.
