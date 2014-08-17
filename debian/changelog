@@ -1,6 +1,11 @@
 baloo (4:4.14.0-0ubuntu1) UNRELEASED; urgency=medium
 
+  [ Jonathan Riddell ]
   * New upstream release
+
+  [ Philip Muškovac ]
+  * Add a transitional package for baloo > baloo4 as Provides don't take care
+    of upgrades
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 14 Aug 2014 10:53:07 +0200
 
