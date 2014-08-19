@@ -8,6 +8,9 @@ baloo (4:4.14.0-0ubuntu1) UNRELEASED; urgency=medium
     of upgrades
   * Delete obsolete baloo.install 
 
+  [ Rohan Garg ]
+  * Make baloo-utils a dep of baloo4
+
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 14 Aug 2014 10:53:07 +0200
 
 baloo (4:4.13.97-0ubuntu3) utopic; urgency=medium
