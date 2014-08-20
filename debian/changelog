@@ -1,4 +1,4 @@
-baloo (4:4.14.0-0ubuntu1) UNRELEASED; urgency=medium
+baloo (4:4.14.0-0ubuntu1) utopic; urgency=medium
 
   [ Jonathan Riddell ]
   * New upstream release
@@ -11,7 +11,7 @@ baloo (4:4.14.0-0ubuntu1) UNRELEASED; urgency=medium
   [ Rohan Garg ]
   * Make baloo-utils a dep of baloo4
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 14 Aug 2014 10:53:07 +0200
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 20 Aug 2014 12:26:11 +0200
 
 baloo (4:4.13.97-0ubuntu3) utopic; urgency=medium
 
