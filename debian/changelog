@@ -3,6 +3,7 @@ baloo (4:4.14.0-1) UNRELEASED; urgency=medium
   * New upstream release.
   * Update build dependencies.
   * Update symbols files with buildds logs.
+  * Update symbols file.
 
  -- Maximiliano Curia <maxy@debian.org>  Mon, 18 Aug 2014 18:17:14 +0200
 
