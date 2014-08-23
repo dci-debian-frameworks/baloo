@@ -1,11 +1,11 @@
-baloo (4:4.14.0-1) UNRELEASED; urgency=medium
+baloo (4:4.14.0-1) unstable; urgency=medium
 
   * New upstream release.
   * Update build dependencies.
   * Update symbols files with buildds logs.
   * Update symbols file.
 
- -- Maximiliano Curia <maxy@debian.org>  Mon, 18 Aug 2014 18:17:14 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 23 Aug 2014 18:18:14 +0200
 
 baloo (4:4.14.0-0ubuntu1) utopic; urgency=medium
 
