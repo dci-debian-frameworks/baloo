@@ -50,7 +50,7 @@ Priority: extra
 Architecture: any
 Depends: baloo4
 Description: Transitional package for baloo4
- Transitional package for baloo4
+ A framework for searching and managing metadata in KDE.
  .
  This package can safely be removed after installation
 
