@@ -6,6 +6,76 @@ baloo (4:4.14.0-1) UNRELEASED; urgency=medium
 
  -- Maximiliano Curia <maxy@debian.org>  Mon, 18 Aug 2014 18:17:14 +0200
 
+baloo (4:4.14.0-0ubuntu1) utopic; urgency=medium
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+  [ Philip Muškovac ]
+  * Add a transitional package for baloo > baloo4 as Provides don't take care
+    of upgrades
+  * Delete obsolete baloo.install 
+
+  [ Rohan Garg ]
+  * Make baloo-utils a dep of baloo4
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 20 Aug 2014 12:26:11 +0200
+
+baloo (4:4.13.97-0ubuntu3) utopic; urgency=medium
+
+  * Add replaces/breaks for file moved to baloo-dev
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 12 Aug 2014 19:59:34 +0200
+
+baloo (4:4.13.97-0ubuntu2) utopic; urgency=medium
+
+  * Bump replaces version of baloo for new updates
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 12 Aug 2014 19:45:17 +0200
+
+baloo (4:4.13.97-0ubuntu1) utopic; urgency=medium
+
+  [ Scarlett Clark ]
+  * New upstream beta release RC
+
+  [ Jonathan Riddell ]
+  * Update symbols
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 01 Aug 2014 16:02:52 +0200
+
+baloo (4:4.13.95-0ubuntu1) utopic; urgency=medium
+
+  [ Scarlett Clark ]
+  * New upstream beta release
+  * Fix libalooqueryparser install file
+
+  [ Philip Muškovac ]
+  * Remove empty arch= selector in libbaloopim4.symbols and
+    libbalooxapian4.symbols
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 25 Jul 2014 06:18:28 -0700
+
+baloo (4:4.13.90-0ubuntu3) utopic; urgency=medium
+
+  * Add missing build-dep on libx11-dev
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 19 Jul 2014 21:40:48 +0200
+
+baloo (4:4.13.90-0ubuntu2) utopic; urgency=medium
+
+  * Add missing .install file
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 19 Jul 2014 21:40:48 +0200
+
+baloo (4:4.13.90-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release
+  * Added new library libbalooqueryparser
+  * Patched symbols with batchpatch
+  * Add new library to -dev as depend
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 18 Jul 2014 13:54:56 -0700
+
 baloo (4:4.13.3-1) unstable; urgency=medium
 
   [ Pino Toscano ]
