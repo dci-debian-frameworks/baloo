@@ -2,8 +2,6 @@ Tests: testsuite
 Depends: @, @builddeps@,
          xvfb, xauth, dbus-x11,
          libqt4-sql-sqlite,
-         kdelibs5-plugins
+         kdelibs5-plugins,
+         dh-acc, exuberant-ctags
 Restrictions: build-needed
-
-Tests: acc
-Depends: @, dh-acc, exuberant-ctags

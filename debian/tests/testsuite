@@ -2,3 +2,7 @@
 
 xvfb-run -a --server-args="-screen 0 1024x768x24" \
     dbus-launch --exit-with-session debian/tests/testsuite.xsession
+ret=$?
+if [ $ret -eq 0 ]; then
+    dh_acc
+fi
