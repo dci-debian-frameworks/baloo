@@ -6,17 +6,11 @@
 </version>
 
 <headers>
-    /usr/include/baloo/term.h
-    /usr/include/baloo/query.h
-    /usr/include/baloo/queryrunnable.h
-    /usr/include/baloo/result.h
-    /usr/include/baloo/resultiterator.h
-    /usr/include/baloo/searchstore.h
-    /usr/include/baloo/core_export.h
+    /usr/include/baloo/pim
 </headers>
 
 <libs>
-    /usr/lib/libbaloocore.so
+    /usr/lib/libbaloopim.so
 </libs>
 
 </descriptor>
