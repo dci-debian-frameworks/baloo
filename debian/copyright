@@ -120,7 +120,7 @@ License: LGPL-2+
  On Debian systems, the complete text of the GNU Library General
  Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
 
-Files: autotests/search.cpp 
+Files: autotests/search.cpp
  src/file/autotest/kinotifytest.h
  src/file/autotest/kinotifytest.cpp
  src/tools/balooshow/main.cpp
