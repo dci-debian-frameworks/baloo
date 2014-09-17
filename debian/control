@@ -12,7 +12,7 @@ Build-Depends: cmake,
                libkf5kdelibs4support-dev (>= 5.0.0),
                libkf5runner-dev (>= 5.0.0),
                libxapian-dev,
-               pkg-kde-tools,
+               pkg-kde-tools (>= 0.15.15ubuntu1~),
                plasma-framework-dev (>= 5.0.0),
                qtbase5-dev
 Standards-Version: 3.9.5
