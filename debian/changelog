@@ -1,6 +1,7 @@
 baloo-kf5 (5.0.2-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release
+  * Bump version depends.
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 18 Sep 2014 06:38:18 -0700
 
@@ -12,6 +13,8 @@ baloo-kf5 (5.0.1b-0ubuntu1) UNRELEASED; urgency=medium
   [ Harald Sitter ]
   * Wrap and sort
   * Move to new pkg-kde-tools
+  * baloo-kf5-dev depends on libkf5filemetadata1-dev (as seen in its
+    CMakeConfig)
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Sun, 10 Aug 2014 16:53:31 +0200
 
