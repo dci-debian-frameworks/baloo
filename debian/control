@@ -24,7 +24,10 @@ Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packaging-next/ba
 Package: baloo-kf5-dev
 Section: devel
 Architecture: any
-Depends: baloo-kf5 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Depends: baloo-kf5 (= ${binary:Version}),
+         libkf5filemetadata1-dev,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Conflicts: baloo-dev
 Description: framework for searching and managing metadata devel files
  A framework for searching and managing metadata in KDE Software.
