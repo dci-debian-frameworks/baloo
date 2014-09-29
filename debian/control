@@ -14,7 +14,8 @@ Build-Depends: cmake,
                libxapian-dev,
                pkg-kde-tools (>= 0.15.15ubuntu1~),
                plasma-framework-dev (>= 5.2.0),
-               qtbase5-dev
+               qtbase5-dev,
+               qtdeclarative5-dev
 Standards-Version: 3.9.5
 Section: kde
 Homepage: https://projects.kde.org/projects/kde/kdelibs/baloo
@@ -25,7 +26,11 @@ Package: baloo-kf5-dev
 Section: devel
 Architecture: any
 Depends: baloo-kf5 (= ${binary:Version}),
-         libkf5filemetadata1-dev,
+         libkf5baloocore1 (= ${binary:Version}),
+         libkf5baloofiles1 (= ${binary:Version}),
+         libkf5baloonaturalqueryparser1 (= ${binary:Version}),
+         libkf5balooxapian1 (= ${binary:Version}),
+         libkf5filemetadata-dev,
          ${misc:Depends},
          ${shlibs:Depends}
 Conflicts: baloo-dev
@@ -73,6 +78,15 @@ Section: libs
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Replaces: libkf5balooxapian5
+Description: framework for searching and managing metadata plugins
+ A framework for searching and managing metadata in KDE Software.
+ .
+ Baloo is part of the KDE Plasma desktop.
+
+Package: libkf5baloonaturalqueryparser1
+Section: libs
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: framework for searching and managing metadata plugins
  A framework for searching and managing metadata in KDE Software.
  .
