@@ -131,6 +131,7 @@ Depends: libbaloocore4 (= ${binary:Version}),
          libbalooqueryparser4 (= ${binary:Version}),
          libbaloopim4 (= ${binary:Version}),
          libbalooxapian4 (= ${binary:Version}),
+         libkfilemetadata-dev (>= 4:4.13.0),
          ${misc:Depends},
          ${shlibs:Depends}
 Conflicts: baloo-kf5-dev
