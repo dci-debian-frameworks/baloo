@@ -38,7 +38,7 @@ Breaks: baloo (<< 4:4.13.2-0ubuntu3),
         kde-runtime-data (<< 4:4.12.80)
 Conflicts: baloo-kf5, baloo-kf5-data
 Provides: baloo
-Description: framework for searching and managing metadata.
+Description: framework for searching and managing metadata
  A framework for searching and managing metadata in KDE.
  .
  This package contains the kdelibs4 version of the binaries, it can also
@@ -49,10 +49,10 @@ Section: oldlibs
 Priority: extra
 Architecture: any
 Depends: baloo4
-Description: Transitional package for baloo4
+Description: transitional package for baloo4
  A framework for searching and managing metadata in KDE.
  .
- This package can safely be removed after installation
+ This package can safely be removed after installation.
 
 Package: baloo-utils
 Architecture: any
@@ -63,7 +63,7 @@ Replaces: baloo (<< 4:4.13.2-0ubuntu3),
 Breaks: baloo (<< 4:4.13.2-0ubuntu3),
         kde-runtime (<< 4:4.12.80),
         kde-runtime-data (<< 4:4.12.80)
-Description: framework for searching and managing metadata.
+Description: utilities for Baloo
  A framework for searching and managing metadata in KDE.
  .
  This package contains kdelibs4 utilities for Baloo.
@@ -72,10 +72,10 @@ Package: libbaloocore4
 Architecture: any
 Section: libdevel
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Core funcationality for Baloo
+Description: core functionality for Baloo
  Baloo is a framework for searching and managing metadata.
  .
- This package contains the baloo core library.
+ This package contains the Baloo core library.
  .
  Baloo is part of KDE SC.
 
@@ -83,10 +83,10 @@ Package: libbaloofiles4
 Architecture: any
 Section: libdevel
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Files funcationality for Baloo
+Description: files functionality for Baloo
  Baloo is a framework for searching and managing metadata.
  .
- This package contains the baloo files library.
+ This package contains the Baloo files library.
  .
  Baloo is part of KDE SC.
 
@@ -94,10 +94,10 @@ Package: libbaloopim4
 Architecture: any
 Section: libdevel
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: PIM funcationality for Baloo
+Description: PIM functionality for Baloo
  Baloo is a framework for searching and managing metadata.
  .
- This package contains the baloo PIM library.
+ This package contains the Baloo PIM library.
  .
  Baloo is part of KDE SC.
 
@@ -105,10 +105,10 @@ Package: libbalooqueryparser4
 Architecture: any
 Section: libdevel
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Query Parser for Baloo
+Description: query Parser for Baloo
  Baloo is a framework for searching and managing metadata.
  .
- This package contains the baloo query parser library ported from Nepomuk.
+ This package contains the Baloo query parser library ported from Nepomuk.
  .
  Baloo is part of KDE SC.
 
@@ -116,10 +116,10 @@ Package: libbalooxapian4
 Architecture: any
 Section: libdevel
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Xapian funcationality for Baloo
+Description: Xapian functionality for Baloo
  Baloo is a framework for searching and managing metadata.
  .
- This package contains the baloo Xapian library.
+ This package contains the Baloo Xapian library.
  .
  Baloo is part of KDE SC.
 
@@ -137,10 +137,10 @@ Depends: libbaloocore4 (= ${binary:Version}),
 Conflicts: baloo-kf5-dev
 Replaces: baloo (<< 4:4.13.90)
 Breaks: baloo (<< 4:4.13.90)
-Description: Development headers for developing applications with Baloo
+Description: development files for Baloo
  Baloo is a framework for searching and managing metadata.
  .
- This package contains development headers for baloo.
+ This package contains development headers for Baloo.
  .
  Baloo is part of KDE SC.
 
@@ -149,7 +149,7 @@ Architecture: any
 Depends: baloo4 (= ${binary:Version}), ${misc:Depends}
 Priority: extra
 Section: debug
-Description: Debugging symbols for baloo
+Description: debugging symbols for Baloo
  Baloo is a framework for searching and managing metadata in KDE.
  .
  This package contains debugging symbols for Baloo.
