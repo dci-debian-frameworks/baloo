@@ -1,6 +1,10 @@
 baloo-kf5 (5.0.95-0ubuntu1) UNRELEASED; urgency=medium
 
+  [ Jonathan Riddell ]
   * New upstream beta release
+
+  [ Harald Sitter ]
+  * Lintian override missing manpage warnings (we don't care)
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 01 Oct 2014 15:19:32 +0200
 
