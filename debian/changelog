@@ -1,4 +1,4 @@
-baloo (4:4.14.2-1~) UNRELEASED; urgency=medium
+baloo (4:4.14.2-1) unstable; urgency=medium
 
   [ Pino Toscano ]
   * Make baloo-dev depend on libkfilemetadata-dev, as it uses its headers.
@@ -8,7 +8,7 @@ baloo (4:4.14.2-1~) UNRELEASED; urgency=medium
   [ Maximiliano Curia ]
   * New upstream release (4.14.2).
 
- -- Maximiliano Curia <maxy@debian.org>  Thu, 16 Oct 2014 13:37:02 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 20 Oct 2014 18:54:00 +0200
 
 baloo (4:4.14.1-1) unstable; urgency=medium
 
