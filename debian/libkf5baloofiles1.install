@@ -1,2 +1,2 @@
-usr/lib/x86_64-linux-gnu/libKF5BalooFiles.so.1
-usr/lib/x86_64-linux-gnu/libKF5BalooFiles.so.5*
+usr/lib/*/libKF5BalooFiles.so.1
+usr/lib/*/libKF5BalooFiles.so.5*
