@@ -1,8 +1,8 @@
-baloo-kf5 (5.1.1-0ubuntu1) UNRELEASED; urgency=medium
+baloo-kf5 (5.1.1-0ubuntu1) vivid; urgency=medium
 
   * New upstream release
 
- -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 06 Nov 2014 18:12:20 -0800
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 10 Nov 2014 19:37:40 +0100
 
 baloo-kf5 (5.1.0.1-0ubuntu4) vivid; urgency=medium
 
