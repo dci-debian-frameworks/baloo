@@ -29,6 +29,7 @@ Depends: baloo-kf5 (= ${binary:Version}),
          libkf5baloonaturalqueryparser1 (= ${binary:Version}),
          libkf5balooxapian1 (= ${binary:Version}),
          libkf5filemetadata-dev,
+         libxapian-dev,
          ${misc:Depends},
          ${shlibs:Depends}
 Conflicts: baloo-dev
