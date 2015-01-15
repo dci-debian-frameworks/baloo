@@ -1,8 +1,8 @@
-baloo-kf5 (5.1.2-0ubuntu1) UNRELEASED; urgency=medium
+baloo-kf5 (5.5.95-0ubuntu1) UNRELEASED; urgency=medium
 
-  * New upstream release
+  * New upstream beta release
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 12 Dec 2014 14:33:26 +0100
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 14 Jan 2015 13:49:10 +0100
 
 baloo-kf5 (5.1.1-0ubuntu1) vivid; urgency=medium
 
