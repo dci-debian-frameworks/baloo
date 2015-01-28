@@ -43,8 +43,7 @@ Package: baloo-kf5
 Section: utils
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Conflicts: baloo, baloo-kf5 (<= 4:4.97.0-0ubuntu1~ubuntu14.10~ppa5)
-Replaces: baloo-kf5 (<= 4:4.97.0-0ubuntu1~ubuntu14.10~ppa5)
+Conflicts: baloo (<< 5.0)
 Provides: baloo
 Description: framework for searching and managing metadata
  A framework for searching and managing metadata in KDE Software.
