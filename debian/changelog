@@ -1,4 +1,4 @@
-baloo-kf5 (5.6.0-1~) UNRELEASED; urgency=medium
+baloo-kf5 (5.6.0-1) experimental; urgency=medium
 
   * Prepare initial Debian release.
   * Update install files.
@@ -11,7 +11,7 @@ baloo-kf5 (5.6.0-1~) UNRELEASED; urgency=medium
   * Add basic autopkgtests support.
   * Add missing dev dependency (thanks to acc headers check)
 
- -- Maximiliano Curia <maxy@debian.org>  Fri, 06 Feb 2015 20:39:03 +0100
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 07 Feb 2015 18:39:29 +0100
 
 baloo-kf5 (5.6.0-0ubuntu1) vivid; urgency=medium
 
