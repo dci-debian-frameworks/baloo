@@ -37,7 +37,7 @@ baloo-kf5 (5.0.2-0ubuntu1) utopic; urgency=medium
 
   * New upstream release
   * Bump version depends.
-  * Update renamed dependency kfilemetadata-dev 
+  * Update renamed dependency kfilemetadata-dev
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 18 Sep 2014 06:38:18 -0700
 

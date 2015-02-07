@@ -18,9 +18,9 @@ usr/share/kservices5/baloosearch.protocol
 usr/share/kservices5/kded/baloosearchfolderupdater.desktop
 usr/share/kservices5/tags.protocol
 usr/share/kservices5/timeline.protocol
-usr/share/locale/*/*/balooctl.mo
-usr/share/locale/*/*/baloo_file_extractor.mo
 usr/share/locale/*/*/baloo_file.mo
+usr/share/locale/*/*/baloo_file_extractor.mo
+usr/share/locale/*/*/balooctl.mo
 usr/share/locale/*/*/baloosearch.mo
 usr/share/locale/*/*/balooshow.mo
 usr/share/locale/*/*/kio_baloosearch.mo
