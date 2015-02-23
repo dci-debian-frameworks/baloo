@@ -1,6 +1,7 @@
 baloo-kf5 (5.6.1-0ubuntu1) UNRELEASED; urgency=medium
 
   *  New upstream release
+  * Bump kfilemetadata version so hopefully armhf will find it. 
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 19 Feb 2015 13:38:31 -0800
 
