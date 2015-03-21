@@ -1,3 +1,12 @@
+baloo-kf5 (5.6.2-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream release
+  * Bump version depends.
+  * Update renamed dependency kfilemetadata-dev
+  * Fix version.
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 19 Mar 2015 20:54:03 -0700
+
 baloo-kf5 (5.6.0-1) experimental; urgency=medium
 
   * Prepare initial Debian release.
@@ -47,10 +56,6 @@ baloo-kf5 (5.0.2-0ubuntu1) utopic; urgency=medium
   * Bump version depends.
   * Update renamed dependency kfilemetadata-dev
 
- -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 18 Sep 2014 06:38:18 -0700
-
-baloo-kf5 (5.0.1b-0ubuntu1) UNRELEASED; urgency=medium
-
   [ Jonathan Riddell ]
   * New upstream bugfix release
 
@@ -60,7 +65,7 @@ baloo-kf5 (5.0.1b-0ubuntu1) UNRELEASED; urgency=medium
   * baloo-kf5-dev depends on libkf5filemetadata1-dev (as seen in its
     CMakeConfig)
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Sun, 10 Aug 2014 16:53:31 +0200
+ -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 18 Sep 2014 06:38:18 -0700
 
 baloo-kf5 (5.0.0b-0ubuntu1) utopic; urgency=medium
 
