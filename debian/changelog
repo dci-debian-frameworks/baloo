@@ -1,4 +1,4 @@
-baloo-kf5 (5.6.2-1~) UNRELEASED; urgency=medium
+baloo-kf5 (5.6.2-1) experimental; urgency=medium
 
   [ Scarlett Clark ]
   * New upstream release
@@ -10,7 +10,7 @@ baloo-kf5 (5.6.2-1~) UNRELEASED; urgency=medium
   * Prepare Debian release. (5.6.1-1)
   * New upstream release (5.6.2).
 
- -- Maximiliano Curia <maxy@debian.org>  Wed, 25 Mar 2015 09:50:51 +0100
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 25 Mar 2015 23:17:29 +0100
 
 baloo-kf5 (5.6.1-0ubuntu1) vivid; urgency=medium
 
