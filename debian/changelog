@@ -1,6 +1,26 @@
-baloo-kf5 (5.6.2-0ubuntu1) UNRELEASED; urgency=medium
+baloo-kf5 (5.6.2-0ubuntu4) vivid; urgency=medium
+
+  * Fix baloo-kf5 replaces/conflicts baloo versions
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 26 Mar 2015 15:42:24 +0100
+
+baloo-kf5 (5.6.2-0ubuntu3) vivid; urgency=medium
+
+  * Fix baloo to depend on baloo-kf5 without epoch
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 25 Mar 2015 23:37:42 +0100
+
+baloo-kf5 (5.6.2-0ubuntu2) vivid; urgency=medium
+
+  * Add transitional baloo package with 4: epoch
+  * Remove baloo provides
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 25 Mar 2015 21:27:57 +0100
+
+baloo-kf5 (5.6.2-0ubuntu1) vivid; urgency=medium
 
   * New upstream release
+  * Release to Archive
  
  -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 19 Mar 2015 20:54:03 -0700
 
