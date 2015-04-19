@@ -43,8 +43,8 @@ Package: baloo-kf5
 Section: utils
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Conflicts: baloo (<< 5.0)
-Provides: baloo
+Conflicts: baloo (<< 4:5.0)
+Replaces: baloo (<< 4:5.0)
 Description: framework for searching and managing metadata
  A framework for searching and managing metadata in KDE Software.
  .
@@ -80,3 +80,15 @@ Description: framework for searching and managing metadata
  Baloo is part of the KDE Plasma desktop.
  .
  This package contains the debugging symbols.
+
+Package: baloo
+Priority: extra
+Section: oldlibs
+Architecture: any
+Depends: baloo-kf5 (= ${source:Version}), ${misc:Depends}
+Description: transitional package for baloo
+ A framework for searching and managing metadata in KDE Software.
+ .
+ Baloo is part of the KDE Plasma desktop.
+ .
+ This package can be safely removed.
