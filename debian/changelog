@@ -4,9 +4,8 @@ baloo-kf5 (5.9.0-0ubuntu1) UNRELEASED; urgency=medium
   * New upstream release
 
   [ Harald Sitter ]
-  * Fix baloo -> baloo-kf5 transitional dependency version to use
-    binary:Version rather than source:Upstream-Version as latter does not
-    include the revision and cannot meet an =version requirement.
+  * Fix baloo -> baloo-kf5 transitional dependency requirement to >= rather
+    than as = cannot be met by the source:Upstream-Version substvar
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 23 Apr 2015 18:12:09 +0200
 
