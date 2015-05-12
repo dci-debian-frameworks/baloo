@@ -1,3 +1,9 @@
+baloo-kf5 (5.9.0-1~) UNRELEASED; urgency=medium
+
+  * New upstream release (5.9.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 12 May 2015 20:05:13 +0200
+
 baloo-kf5 (5.6.2-1) experimental; urgency=medium
 
   [ Scarlett Clark ]
