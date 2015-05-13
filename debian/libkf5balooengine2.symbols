@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.3.0+git20150512 amd64
+# SymbolsHelper-Confirmed: 5.9.0+git20150512.1512 amd64 i386
 libKF5BalooEngine.so.2 libkf5balooengine2 #MINVER#
  _ZN5Baloo10DocumentDB3delEy@Base 5.3.0+git20150512
  _ZN5Baloo10DocumentDB3getEy@Base 5.3.0+git20150512
@@ -28,12 +28,12 @@ libKF5BalooEngine.so.2 libkf5balooengine2 #MINVER#
  _ZN5Baloo11EngineQueryC1E7QVectorIS0_ENS0_9OperationE@Base 5.3.0+git20150512
  _ZN5Baloo11EngineQueryC1ERK10QByteArrayNS0_9OperationEi@Base 5.3.0+git20150512
  _ZN5Baloo11EngineQueryC1ERK10QByteArrayi@Base 5.3.0+git20150512
- _ZN5Baloo11EngineQueryC1ERKS0_@Base 5.3.0+git20150512
+ (arch=i386)_ZN5Baloo11EngineQueryC1ERKS0_@Base 5.9.0+git20150512.1512
  _ZN5Baloo11EngineQueryC1Ev@Base 5.3.0+git20150512
  _ZN5Baloo11EngineQueryC2E7QVectorIS0_ENS0_9OperationE@Base 5.3.0+git20150512
  _ZN5Baloo11EngineQueryC2ERK10QByteArrayNS0_9OperationEi@Base 5.3.0+git20150512
  _ZN5Baloo11EngineQueryC2ERK10QByteArrayi@Base 5.3.0+git20150512
- _ZN5Baloo11EngineQueryC2ERKS0_@Base 5.3.0+git20150512
+ (arch=i386)_ZN5Baloo11EngineQueryC2ERKS0_@Base 5.9.0+git20150512.1512
  _ZN5Baloo11EngineQueryC2Ev@Base 5.3.0+git20150512
  _ZN5Baloo11QueryParser10parseQueryERK7QStringS3_@Base 5.3.0+git20150512
  _ZN5Baloo11QueryParser18setAutoExapandSizeEi@Base 5.3.0+git20150512
@@ -112,6 +112,7 @@ libKF5BalooEngine.so.2 libkf5balooengine2 #MINVER#
  _ZN5Baloo13DocumentUrlDB3putEyRK10QByteArray@Base 5.3.0+git20150512
  _ZN5Baloo13DocumentUrlDB5getIdEyRK10QByteArray@Base 5.3.0+git20150512
  _ZN5Baloo13DocumentUrlDB6renameEyRK10QByteArray@Base 5.3.0+git20150512
+ _ZN5Baloo13DocumentUrlDB7replaceEyRK10QByteArray@Base 5.9.0+git20150512.1512
  _ZN5Baloo13DocumentUrlDBC1EjjP7MDB_txn@Base 5.3.0+git20150512
  _ZN5Baloo13DocumentUrlDBC2EjjP7MDB_txn@Base 5.3.0+git20150512
  _ZN5Baloo13DocumentUrlDBD1Ev@Base 5.3.0+git20150512
