@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.9.1+git20150601.1653 amd64 i386
+# SymbolsHelper-Confirmed: 5.9.1+git20150604.0804 amd64 i386
 libKF5BalooEngine.so.2 libkf5balooengine2 #MINVER#
  _ZN5Baloo10DocumentDB3delEy@Base 5.3.0+git20150512
  _ZN5Baloo10DocumentDB3getEy@Base 5.3.0+git20150512
@@ -39,34 +39,15 @@ libKF5BalooEngine.so.2 libkf5balooengine2 #MINVER#
  _ZN5Baloo11QueryParser18setAutoExapandSizeEi@Base 5.3.0+git20150512
  _ZN5Baloo11QueryParserC1Ev@Base 5.3.0+git20150512
  _ZN5Baloo11QueryParserC2Ev@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction10docUrlIterEy@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction10documentIdERK10QByteArray@Base 5.9.1+git20150601.1653
  _ZN5Baloo11Transaction11addDocumentERKNS_8DocumentE@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction11documentUrlEy@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction11hasDocumentEy@Base 5.3.0+git20150512
  _ZN5Baloo11Transaction11setPhaseOneEy@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction12documentDataEy@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction12phaseOneSizeEv@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction13documentCTimeEy@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction13documentMTimeEy@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction13documentTermsEy@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction14mTimeRangeIterEjj@Base 5.3.0+git20150512
  _ZN5Baloo11Transaction14removeDocumentEy@Base 5.3.0+git20150512
  _ZN5Baloo11Transaction14removePhaseOneEy@Base 5.3.0+git20150512
  _ZN5Baloo11Transaction14renameFilePathEyRKNS_8DocumentE@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction15postingIteratorERKNS_11EngineQueryE@Base 5.3.0+git20150512
  _ZN5Baloo11Transaction15replaceDocumentERKNS_8DocumentE6QFlagsINS_17DocumentOperationEE@Base 5.9.1+git20150601.1653
- _ZN5Baloo11Transaction16fetchPhaseOneIdsEi@Base 5.3.0+git20150512
  _ZN5Baloo11Transaction17removeRecursivelyEy@Base 5.9.1+git20150601.1653
- _ZN5Baloo11Transaction18documentXattrTermsEy@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction19postingCompIteratorERK10QByteArrayS3_NS_9PostingDB10ComparatorE@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction21documentFileNameTermsEy@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction22fetchTermsStartingWithERK10QByteArray@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction4execERKNS_11EngineQueryEi@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction4sizeEv@Base 5.3.0+git20150512
  _ZN5Baloo11Transaction5abortEv@Base 5.3.0+git20150512
  _ZN5Baloo11Transaction6commitEv@Base 5.3.0+git20150512
- _ZN5Baloo11Transaction9mTimeIterEjNS_7MTimeDB10ComparatorE@Base 5.3.0+git20150512
  _ZN5Baloo11TransactionC1EPNS_8DatabaseENS0_15TransactionTypeE@Base 5.3.0+git20150512
  _ZN5Baloo11TransactionC1ERKNS_8DatabaseENS0_15TransactionTypeE@Base 5.3.0+git20150512
  _ZN5Baloo11TransactionC2EPNS_8DatabaseENS0_15TransactionTypeE@Base 5.3.0+git20150512
@@ -256,7 +237,26 @@ libKF5BalooEngine.so.2 libkf5balooengine2 #MINVER#
  _ZN5Baloo9PostingDBD2Ev@Base 5.3.0+git20150512
  _ZNK5Baloo10DocumentDB9toTestMapEv@Base 5.9.1+git20150601.1653
  _ZNK5Baloo10PositionDB9toTestMapEv@Base 5.9.1+git20150601.1653
+ _ZNK5Baloo11Transaction10docUrlIterEy@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction10documentIdERK10QByteArray@Base 5.9.1+git20150604.0804
  _ZNK5Baloo11Transaction10hasChangesEv@Base 5.3.0+git20150512
+ _ZNK5Baloo11Transaction11documentUrlEy@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction11hasDocumentEy@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction12documentDataEy@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction12phaseOneSizeEv@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction13documentCTimeEy@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction13documentMTimeEy@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction13documentTermsEy@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction14mTimeRangeIterEjj@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction15postingIteratorERKNS_11EngineQueryE@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction16fetchPhaseOneIdsEi@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction18documentXattrTermsEy@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction19postingCompIteratorERK10QByteArrayS3_NS_9PostingDB10ComparatorE@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction21documentFileNameTermsEy@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction22fetchTermsStartingWithERK10QByteArray@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction4execERKNS_11EngineQueryEi@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction4sizeEv@Base 5.9.1+git20150604.0804
+ _ZNK5Baloo11Transaction9mTimeIterEjNS_7MTimeDB10ComparatorE@Base 5.9.1+git20150604.0804
  _ZNK5Baloo12DocumentIdDB12toTestVectorEv@Base 5.9.1+git20150601.1653
  _ZNK5Baloo12IdFilenameDB9toTestMapEv@Base 5.9.1+git20150601.1653
  _ZNK5Baloo13DocumentUrlDB11getChildrenEy@Base 5.9.1+git20150601.1653
