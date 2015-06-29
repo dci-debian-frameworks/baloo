@@ -1,4 +1,6 @@
-usr/include/
-usr/lib/*/*.so
-usr/lib/*/cmake/*
+usr/include/KF5/Baloo/
+usr/include/KF5/baloo_version.h
+usr/lib/*/cmake/KF5Baloo/
+usr/lib/*/libKF5Baloo.so
+usr/lib/*/libKF5BalooXapian.so
 usr/share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml

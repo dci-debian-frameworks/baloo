@@ -3,13 +3,12 @@ Upstream-Name: baloo
 Source: http://community.kde.org/Baloo
 
 Files: *
-Copyright: 2010, 2010-13, 2010-14, 2011-2014 Vishesh Handa <me@vhanda.in>
-     2007-2011 Sebastian Trueg <trueg@kde.org>
-     2013 Simeon Bird <bladud@gmail.com>
-     2013 Daniel Vrátil <dvratil@redhat.com>
-     2014 Christian Mollekopf <mollekopf@kolabsys.com>
-     2014 Laurent Montel <montel@kde.org>
-License: LGPL-KDEeV
+Copyright: 2013, David Edmundson <davidedmundson@kde.org>
+           2010-2011, Sebastian Trueg <trueg@kde.org>
+           2013, Simeon Bird <bladud@gmail.com>
+           2010-2014, Vishesh Handa <handa.vish@gmail.com>
+           2013-2014, Vishesh Handa <vhanda@kde.org>
+License: LGPL-2.1+3+KDEeV
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
  License as published by the Free Software Foundation; either
@@ -26,49 +25,118 @@ License: LGPL-KDEeV
  You should have received a copy of the GNU Lesser General Public
  License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  .
- On Debian systems, the complete text of the GNU Library General
- Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+ On Debian systems, the complete text of the GNU Lesser General Public License
+ version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1", likewise,
+ the complete text of the GNU Lesser General Public License version 3 can be
+ found in "/usr/share/common-licenses/LGPL-3".
+
+Files: COPYING.LIB
+       src/file/autotests/basicindexingjobtest.cpp
+       src/file/autotests/basicindexingqueuetest.cpp
+       src/file/autotests/fileindexingjob/fileindexingjobtest.cpp
+       src/file/autotests/fileindexingjob/fileindexingjobtest.h
+       src/file/autotests/filemonitortest.cpp
+       src/file/autotests/filemonitortest.h
+       src/file/autotests/filewatchtest.cpp
+       src/file/autotests/metadatamovertest.cpp
+       src/file/autotests/metadatamovertest.h
+       src/file/autotests/regularexpcachebenchmark.cpp
+       src/file/autotests/scheduler/schedulertest.cpp
+       src/file/autotests/scheduler/schedulertest.h
+       src/file/basicindexingqueue.cpp
+       src/file/basicindexingqueue.h
+       src/file/cleaner/cleaner.cpp
+       src/file/cleaner/cleaner.h
+       src/file/extractor/autotests/extractortest.cpp
+       src/file/extractor/autotests/extractortest.h
+       src/file/filtereddiriterator.cpp
+       src/file/filtereddiriterator.h
+       src/file/indexingqueue.cpp
+       src/file/optimizedbytearray.h
+       src/file/pendingfile.cpp
+       src/file/pendingfile.h
+       src/file/tests/fileextractor.cpp
+       src/file/tests/fileextractor.h
+       src/lib/advancedqueryparser.cpp
+       src/lib/advancedqueryparser.h
+       src/lib/autotests/advancedqueryparsertest.cpp
+       src/lib/autotests/advancedqueryparsertest.h
+       src/lib/autotests/db.cpp
+       src/lib/autotests/filefetchjobtest.cpp
+       src/lib/autotests/filefetchjobtest.h
+       src/lib/autotests/queryserializationtest.cpp
+       src/lib/autotests/queryserializationtest.h
+       src/lib/autotests/taglistjobtest.cpp
+       src/lib/autotests/taglistjobtest.h
+       src/lib/autotests/xattrdetector.cpp
+       src/lib/autotests/xattrdetector.h
+       src/lib/baloo_xattr_p.h
+       src/lib/filemonitor.cpp
+       src/lib/filemonitor.h
+       src/lib/indexerconfig.cpp
+       src/lib/indexerconfig.h
+       src/lib/taglistjob.cpp
+       src/lib/taglistjob.h
+       src/lib/wildcardpostingsource.cpp
+       src/lib/wildcardpostingsource.h
+       src/tools/balooctl/filestatistics.cpp
+       src/tools/balooctl/filestatistics.h
+       src/xapian/autotests/queryparsertest.cpp
+       src/xapian/autotests/queryparsertest.h
+       src/xapian/autotests/termgeneratortest.cpp
+       src/xapian/autotests/termgeneratortest.h
+       src/xapian/xapiandatabase.cpp
+       src/xapian/xapiandatabase.h
+       src/xapian/xapiandocument.cpp
+       src/xapian/xapiandocument.h
+       src/xapian/xapianqueryparser.cpp
+       src/xapian/xapianqueryparser.h
+       src/xapian/xapiantermgenerator.cpp
+       src/xapian/xapiantermgenerator.h
+Copyright: 2014, David Faure <faure@kde.org>
+           2014, Denis Steckelmacher <steckdenis@yahoo.fr>
+           1991-1999, Free Software Foundation, Inc
+           2014, Pinak Ahuja <pinak.ahuja@gmail.com>
+           2014, Raphael Kubo da Costa <rakuco@FreeBSD.org>
+           2014, Vishesh Handa <vhanda@kde.org>
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public License
+ version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
 
 Files: src/file/eventmonitor.cpp
- src/file/eventmonitor.h
- src/file/fileexcludefilters.cpp
- src/file/fileexcludefilters.h
- src/file/fileindexer.cpp
- src/file/fileindexer.h
- src/file/fileindexerconfig.cpp
- src/file/fileindexerconfig.h
- src/file/filewatch.cpp
- src/file/filewatch.h
- src/file/indexscheduler.cpp
- src/file/indexscheduler.h
- src/file/metadatamover.cpp
- src/file/metadatamover.h
- src/file/priority.cpp
- src/file/priority.h
- src/file/kcm/kcm.cpp
- src/file/kcm/kcm.h
- src/kioslaves/timeline/timelinetools.h
- src/file/fileexcludefilters.h
- src/file/kcm/kcm.h
- src/file/kcm/kcm.cpp
- src/file/indexscheduler.cpp
- src/file/metadatamover.cpp
- src/file/metadatamover.h
- src/file/fileindexer.cpp
- src/file/priority.cpp
- src/file/fileindexerconfig.h
- src/file/filewatch.cpp
- src/file/fileindexer.h
- src/file/indexscheduler.h
- src/file/fileexcludefilters.cpp
- src/file/eventmonitor.h
- src/file/eventmonitor.cpp
- src/file/filewatch.h
- src/file/fileindexerconfig.cpp
- src/file/priority.h
- src/kioslaves/timeline/timelinetools.h
-Copyright: 2008 Sebastian Trueg <trueg@kde.org>
-     2010-14 Vishesh Handa <me@vhanda.in>
+       src/file/eventmonitor.h
+       src/file/fileexcludefilters.cpp
+       src/file/fileexcludefilters.h
+       src/file/fileindexer.cpp
+       src/file/fileindexer.h
+       src/file/fileindexerconfig.cpp
+       src/file/fileindexerconfig.h
+       src/file/filewatch.cpp
+       src/file/filewatch.h
+       src/file/indexscheduler.cpp
+       src/file/indexscheduler.h
+       src/file/metadatamover.cpp
+       src/file/metadatamover.h
+       src/file/priority.cpp
+       src/file/priority.h
+       src/kioslaves/timeline/timelinetools.h
+Copyright: 2006-2007, Jos van den Oever <jos@vandenoever.info>
+           2007-2011, Sebastian Trueg <trueg@kde.org>
+           2010-2014, Vishesh Handa <handa.vish@gmail.com>
 License: LGPL-2
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Library General Public
@@ -84,56 +152,27 @@ License: LGPL-2
  the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  Boston, MA 02110-1301, USA.
  .
- You should have received a copy of the GNU Lesser General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
- .
- On Debian systems, the complete text of the GNU Library General
- Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+ On Debian systems, the complete text of the GNU Library General Public
+ License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
 
-Files: src/core/core_export.h
- src/file/kinotify.cpp
- src/file/kinotify.h
- src/file/lib/file_export.h
- src/pim/lib/pim_export.h
- src/xapian/xapian_export.h
- debian/*
-Copyright: 2007 David Faure <faure@kde.org>
-     2007-2010 Sebastian Trueg <trueg@kde.org>
-     2012 Vishesh Handa <me@vhanda.in>
-     2014 Scarlett Clark <scarlett@scarlettgatelyclark.com>
+Files: src/file/kinotify.cpp
+       src/file/kinotify.h
+       src/qml/balooplugin.cpp
+       src/qml/balooplugin.h
+       src/qml/queryresultsmodel.cpp
+       src/qml/queryresultsmodel.h
+Copyright: 2014, Antonis Tsiapaliokas <antonis.tsiapaliokas@kde.org>
+           2007-2010, Sebastian Trueg <trueg@kde.org>
+           2012-2014, Vishesh Handa <vhanda@kde.org>
 License: LGPL-2+
- This library is free software; you can redistribute it and/or
- modify it under the terms of the GNU Library General Public
- License as published by the Free Software Foundation; either
- version 2 of the License, or (at your option) any later version.
- .
- This library is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- Library General Public License for more details.
- .
- You should have received a copy of the GNU Library General Public License
- along with this library; see the file COPYING.LIB.  If not, write to
- the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
- Boston, MA 02110-1301, USA.
- .
- On Debian systems, the complete text of the GNU Library General
- Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
 
-Files: autotests/search.cpp
- src/file/autotest/kinotifytest.h
- src/file/autotest/kinotifytest.cpp
- src/tools/balooshow/main.cpp
- src/tools/balooctl/main.cpp
- src/kioslaves/timeline/kio_timeline.cpp
- src/kioslaves/search/kio_search.cpp
- src/pim/agent/emailindexer.h
- src/pim/agent/abstractindexer.h
- src/pim/agent/contactindexer.h
- src/pim/agent/abstractindexer.cpp
-Copyright: 2013 Vishesh Handa <me@vhanda.in>
- 2007 David Faure <faure@kde.org>
-License: GPL-KDEeV
+Files: src/file/autotests/kinotifytest.cpp
+       src/kioslaves/timeline/kio_timeline.cpp
+       src/tools/balooctl/main.cpp
+       src/tools/balooshow/main.cpp
+Copyright: 2009-2010, Sebastian Trueg <trueg@kde.org>
+           2014, Vishesh Handa <vhanda@kde.org>
+License: GPL-2+3+KDEeV
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License as
  published by the Free Software Foundation; either version 2 of
@@ -150,5 +189,52 @@ License: GPL-KDEeV
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2", likewise, the
+ complete text of the GNU General Public License version 3 can be found in
+ "/usr/share/common-licenses/GPL-3".
+
+Files: COPYING
+       src/kioslaves/search/kio_search.cpp
+Copyright: 1989-1991, Free Software Foundation, Inc
+           2008-2010, Sebastian Trueg <trueg@kde.org>
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+Files: debian/*
+Copyright: 2014 Scarlett Clark <scarlett@scarlettgatelyclark.com>
+License: LGPL-2+
+
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+ .
+ You should have received a copy of the GNU Library General Public License
+ along with this library; see the file COPYING.LIB.  If not, write to
+ the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU Library General Public
+ License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
