@@ -6,6 +6,19 @@ baloo-kf5 (5.9.2-1~) UNRELEASED; urgency=medium
 
  -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 12:22:45 +0200
 
+baloo-kf5 (5.9.1-0ubuntu1) wily; urgency=medium
+
+  * New upstream release
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+  [ Harald Sitter ]
+  * Fix baloo -> baloo-kf5 transitional dependency requirement to >= rather
+    than as = cannot be met by the source:Upstream-Version substvar
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 23 Apr 2015 18:12:09 +0200
+
 baloo-kf5 (5.6.2-1) experimental; urgency=medium
 
   [ Scarlett Clark ]
@@ -20,9 +33,36 @@ baloo-kf5 (5.6.2-1) experimental; urgency=medium
 
  -- Maximiliano Curia <maxy@debian.org>  Wed, 25 Mar 2015 23:17:29 +0100
 
+baloo-kf5 (5.6.2-0ubuntu4) vivid; urgency=medium
+
+  * Fix baloo-kf5 replaces/conflicts baloo versions
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 26 Mar 2015 15:42:24 +0100
+
+baloo-kf5 (5.6.2-0ubuntu3) vivid; urgency=medium
+
+  * Fix baloo to depend on baloo-kf5 without epoch
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 25 Mar 2015 23:37:42 +0100
+
+baloo-kf5 (5.6.2-0ubuntu2) vivid; urgency=medium
+
+  * Add transitional baloo package with 4: epoch
+  * Remove baloo provides
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 25 Mar 2015 21:27:57 +0100
+
+baloo-kf5 (5.6.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+  * Release to Archive
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 19 Mar 2015 20:54:03 -0700
+
 baloo-kf5 (5.6.1-0ubuntu1) vivid; urgency=medium
 
-  *  New upstream release
+  * New upstream release
+  * Bump kfilemetadata version so hopefully armhf will find it.
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 23 Feb 2015 09:52:31 -0800
 
@@ -74,6 +114,7 @@ baloo-kf5 (5.0.2-0ubuntu1) utopic; urgency=medium
   * New upstream release
   * Bump version depends.
   * Update renamed dependency kfilemetadata-dev
+  * Fix version.
 
   [ Jonathan Riddell ]
   * New upstream bugfix release
