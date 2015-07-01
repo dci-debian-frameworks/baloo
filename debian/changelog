@@ -1,10 +1,10 @@
-baloo-kf5 (5.9.2-1~) UNRELEASED; urgency=medium
+baloo-kf5 (5.9.2-1) unstable; urgency=medium
 
   * New upstream release (5.9.0).
   * New upstream release (5.9.1).
   * New upstream release (5.9.2).
 
- -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 12:22:45 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 01 Jul 2015 09:23:52 +0200
 
 baloo-kf5 (5.9.1-0ubuntu1) wily; urgency=medium
 
