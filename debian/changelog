@@ -1,16 +1,15 @@
-baloo-kf5 (5.9.2-0ubuntu1) UNRELEASED; urgency=medium
+baloo-kf5 (5.9.2-1) unstable; urgency=medium
 
-  * New upstream release
+  * New upstream release (5.9.0).
+  * New upstream release (5.9.1).
+  * New upstream release (5.9.2).
+  * Update copyright information.
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 29 Jun 2015 17:04:12 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 01 Jul 2015 09:23:52 +0200
 
 baloo-kf5 (5.9.1-0ubuntu1) wily; urgency=medium
 
   * New upstream release
-
- -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 04 Jun 2015 20:12:12 +0200
-
-baloo-kf5 (5.9.0-0ubuntu1) UNRELEASED; urgency=medium
 
   [ Jonathan Riddell ]
   * New upstream release
@@ -20,6 +19,20 @@ baloo-kf5 (5.9.0-0ubuntu1) UNRELEASED; urgency=medium
     than as = cannot be met by the source:Upstream-Version substvar
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 23 Apr 2015 18:12:09 +0200
+
+baloo-kf5 (5.6.2-1) experimental; urgency=medium
+
+  [ Scarlett Clark ]
+  * New upstream release
+  * Bump version depends.
+  * Update renamed dependency kfilemetadata-dev
+  * Fix version.
+
+  [ Maximiliano Curia ]
+  * Prepare Debian release. (5.6.1-1)
+  * New upstream release (5.6.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 25 Mar 2015 23:17:29 +0100
 
 baloo-kf5 (5.6.2-0ubuntu4) vivid; urgency=medium
 
@@ -44,15 +57,30 @@ baloo-kf5 (5.6.2-0ubuntu1) vivid; urgency=medium
 
   * New upstream release
   * Release to Archive
- 
+
  -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 19 Mar 2015 20:54:03 -0700
 
 baloo-kf5 (5.6.1-0ubuntu1) vivid; urgency=medium
 
-  *  New upstream release
-  * Bump kfilemetadata version so hopefully armhf will find it. 
+  * New upstream release
+  * Bump kfilemetadata version so hopefully armhf will find it.
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 23 Feb 2015 09:52:31 -0800
+
+baloo-kf5 (5.6.0-1) experimental; urgency=medium
+
+  * Prepare initial Debian release.
+  * Update install files.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+  * Update build dependencies to build against experimental and to
+    follow cmake.
+  * Add myself as Uploader.
+  * Update copyright information.
+  * Update watch file.
+  * Add basic autopkgtests support.
+  * Add missing dev dependency (thanks to acc headers check)
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 07 Feb 2015 18:39:29 +0100
 
 baloo-kf5 (5.6.0-0ubuntu1) vivid; urgency=medium
 
@@ -89,10 +117,6 @@ baloo-kf5 (5.0.2-0ubuntu1) utopic; urgency=medium
   * Update renamed dependency kfilemetadata-dev
   * Fix version.
 
- -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 18 Sep 2014 06:38:18 -0700
-
-baloo-kf5 (5.0.1b-0ubuntu1) UNRELEASED; urgency=medium
-
   [ Jonathan Riddell ]
   * New upstream bugfix release
 
@@ -102,7 +126,7 @@ baloo-kf5 (5.0.1b-0ubuntu1) UNRELEASED; urgency=medium
   * baloo-kf5-dev depends on libkf5filemetadata1-dev (as seen in its
     CMakeConfig)
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Sun, 10 Aug 2014 16:53:31 +0200
+ -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 18 Sep 2014 06:38:18 -0700
 
 baloo-kf5 (5.0.0b-0ubuntu1) utopic; urgency=medium
 
