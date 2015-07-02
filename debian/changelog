@@ -1,7 +1,5 @@
 baloo-kf5 (5.9.2-1) unstable; urgency=medium
 
-  * New upstream release (5.9.0).
-  * New upstream release (5.9.1).
   * New upstream release (5.9.2).
   * Update copyright information.
 
@@ -19,20 +17,6 @@ baloo-kf5 (5.9.1-0ubuntu1) wily; urgency=medium
     than as = cannot be met by the source:Upstream-Version substvar
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 23 Apr 2015 18:12:09 +0200
-
-baloo-kf5 (5.6.2-1) experimental; urgency=medium
-
-  [ Scarlett Clark ]
-  * New upstream release
-  * Bump version depends.
-  * Update renamed dependency kfilemetadata-dev
-  * Fix version.
-
-  [ Maximiliano Curia ]
-  * Prepare Debian release. (5.6.1-1)
-  * New upstream release (5.6.2).
-
- -- Maximiliano Curia <maxy@debian.org>  Wed, 25 Mar 2015 23:17:29 +0100
 
 baloo-kf5 (5.6.2-0ubuntu4) vivid; urgency=medium
 
@@ -59,6 +43,27 @@ baloo-kf5 (5.6.2-0ubuntu1) vivid; urgency=medium
   * Release to Archive
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 19 Mar 2015 20:54:03 -0700
+
+baloo-kf5 (5.9.1-1~) UNRELEASED; urgency=medium
+
+  * New upstream release (5.9.0).
+  * New upstream release (5.9.1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 05 Jun 2015 11:54:43 +0200
+
+baloo-kf5 (5.6.2-1) experimental; urgency=medium
+
+  [ Scarlett Clark ]
+  * New upstream release
+  * Bump version depends.
+  * Update renamed dependency kfilemetadata-dev
+  * Fix version.
+
+  [ Maximiliano Curia ]
+  * Prepare Debian release. (5.6.1-1)
+  * New upstream release (5.6.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 25 Mar 2015 23:17:29 +0100
 
 baloo-kf5 (5.6.1-0ubuntu1) vivid; urgency=medium
 
