@@ -21,7 +21,7 @@ Build-Depends: cmake (>= 2.8.12),
                libkf5runner-dev (>= 5.2.0),
                libkf5solid-dev (>= 5.0.0),
                libxapian-dev,
-               pkg-kde-tools (>= 0.15.15ubuntu1~),
+               pkg-kde-tools (>= 0.15.18~),
                plasma-framework-dev (>= 5.2.0),
                qtbase5-dev (>= 5.4),
                qtdeclarative5-dev (>= 5.4)
@@ -54,8 +54,10 @@ Package: baloo-kf5
 Section: utils
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: ${kde-l10n:all}
 Conflicts: baloo (<< 4:5.0)
-Replaces: baloo (<< 4:5.0)
+Replaces: baloo (<< 4:5.0),
+          ${kde-l10n:all}
 Description: framework for searching and managing metadata
  A framework for searching and managing metadata in KDE Software.
  .

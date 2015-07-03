@@ -1,6 +1,6 @@
 baloo-kf5 (5.9.2-2~) UNRELEASED; urgency=medium
 
-  * 
+  * Add the missing Breaks/Replaces. (Closes: #789166)
 
  -- Maximiliano Curia <maxy@debian.org>  Fri, 03 Jul 2015 13:21:21 +0200
 
