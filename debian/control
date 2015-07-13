@@ -1,4 +1,4 @@
-Source: baloo-kf5
+Source: baloo
 Section: kde
 Priority: optional
 Maintainer: Debian/Kubuntu Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
@@ -31,10 +31,10 @@ Homepage: https://projects.kde.org/projects/kde/kdelibs/baloo
 Vcs-Browser: http://anonscm.debian.org/cgit/pkg-kde/plasma/baloo.git
 Vcs-Git: git://anonscm.debian.org/pkg-kde/plasma/baloo.git
 
-Package: baloo-kf5-dev
+Package: baloo-dev
 Section: devel
 Architecture: any
-Depends: baloo-kf5 (= ${binary:Version}),
+Depends: baloo (= ${binary:Version}),
          libkf5baloo1 (= ${binary:Version}),
          libkf5balooxapian1 (= ${binary:Version}),
          libkf5coreaddons-dev,
@@ -42,7 +42,7 @@ Depends: baloo-kf5 (= ${binary:Version}),
          libxapian-dev,
          ${misc:Depends},
          ${shlibs:Depends}
-Conflicts: baloo-dev
+Provides: baloo-kf5-dev
 Description: framework for searching and managing metadata devel files
  A framework for searching and managing metadata in KDE Software.
  .
@@ -50,16 +50,14 @@ Description: framework for searching and managing metadata devel files
  .
  This package contains the development files.
 
-Package: baloo-kf5
+Package: baloo
 Section: utils
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Breaks: ${kde-l10n:all}
-Conflicts: baloo (<< 4:5.0)
-Replaces: baloo (<< 4:5.0),
-          ${kde-l10n:all}
-Description: framework for searching and managing metadata
- A framework for searching and managing metadata in KDE Software.
+Replaces: ${kde-l10n:all}
+Description: Plasma utility for searching and managing metadata
+ A utility for searching and managing metadata in KDE Software.
  .
  Baloo is part of the KDE Plasma desktop.
 
@@ -82,12 +80,12 @@ Description: framework for searching and managing metadata plugins
  .
  Baloo is part of the KDE Plasma desktop.
 
-Package: baloo-kf5-dbg
+Package: baloo-dbg
 Section: debug
 Priority: extra
 Architecture: any
 Recommends: qtbase5-dbg
-Depends: baloo-kf5 (= ${binary:Version}), ${misc:Depends}
+Depends: baloo (= ${binary:Version}), ${misc:Depends}
 Description: framework for searching and managing metadata
  A framework for searching and managing metadata in KDE Software.
  .
@@ -95,14 +93,3 @@ Description: framework for searching and managing metadata
  .
  This package contains the debugging symbols.
 
-Package: baloo
-Section: oldlibs
-Priority: extra
-Architecture: any
-Depends: baloo-kf5 (>= ${source:Upstream-Version}), ${misc:Depends}
-Description: transitional package for baloo
- A framework for searching and managing metadata in KDE Software.
- .
- Baloo is part of the KDE Plasma desktop.
- .
- This package can be safely removed.
