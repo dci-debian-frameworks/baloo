@@ -7,9 +7,14 @@ include /usr/share/pkg-kde-tools/qt-kde-team/3/debian-qt-kde.mk
 include /usr/share/pkg-kde-tools/qt-kde-team/2/l10n-packages.mk
 
 override_dh_strip:
-	$(overridden_command) --dbg-package=baloo-dbg
+	$(overridden_command) --dbg-package=baloo-kf5-dbg
 
 override_dh_auto_test:
 	PYBUILD_TEST_ARGS="export `dbus-launch`"\
 	dh_auto_test
 
+BINARY_VERSION_NO_EPOCH := $(shell dpkg-parsechangelog | grep '^Version: ' | sed 's/^Version: \(\([[:digit:]]\+\):\)\?/\2/')
+
+override_dh_gencontrol:
+	dh_gencontrol -pbaloo -- '-v4:$(BINARY_VERSION_NO_EPOCH)'
+	dh_gencontrol --remaining-packages

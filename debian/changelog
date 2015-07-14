@@ -1,14 +1,3 @@
-baloo (4:5.9.2-3) UNRELEASED; urgency=medium
-
-  * Team upload.
-  * Rename source and application binary back to baloo since it is no longer
-    in frameworks
-  * Use epoch to match non-frameworks KDE versioning
-  * Rename -dev package back to baloo-dev and have it Provide baloo-kf5-dev
-    for interim compatiblity
-
- -- Scott Kitterman <scott@kitterman.com>  Mon, 13 Jul 2015 14:34:47 -0400
-
 baloo-kf5 (5.9.2-2) unstable; urgency=medium
 
   * Add the missing Breaks/Replaces. (Closes: #789166)
