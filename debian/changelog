@@ -1,3 +1,10 @@
+baloo-kf5 (5.9.2-3) unstable; urgency=medium
+
+  * Team upload.
+  * Change baloo transitional package from arch any to arch all
+
+ -- Scott Kitterman <scott@kitterman.com>  Tue, 14 Jul 2015 10:50:08 -0400
+
 baloo-kf5 (5.9.2-2) unstable; urgency=medium
 
   * Add the missing Breaks/Replaces. (Closes: #789166)

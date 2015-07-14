@@ -98,7 +98,7 @@ Description: framework for searching and managing metadata
 Package: baloo
 Section: oldlibs
 Priority: extra
-Architecture: any
+Architecture: all
 Depends: baloo-kf5 (>= ${source:Upstream-Version}), ${misc:Depends}
 Description: transitional package for baloo
  A framework for searching and managing metadata in KDE Software.
