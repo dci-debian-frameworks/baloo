@@ -54,8 +54,8 @@ Package: baloo-kf5
 Section: utils
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Breaks: ${kde-l10n:all}
-Conflicts: baloo (<< 4:5.0)
+Breaks: baloo (<< 4:5.0),
+        ${kde-l10n:all}
 Replaces: baloo (<< 4:5.0),
           ${kde-l10n:all}
 Description: framework for searching and managing metadata
