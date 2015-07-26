@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.9.0+git20150512 amd64
+# SymbolsHelper-Confirmed: 5.9.2 amd64
 libKF5Baloo.so.1 libkf5baloo1 #MINVER#
  (optional=templinst)_ZN12KConfigGroup10writeEntryI7QStringEEvPKcRK5QListIT_E6QFlagsIN11KConfigBase15WriteConfigFlagEE@Base 5.9.0+git20150512
  (optional=templinst)_ZN12KConfigGroup10writeEntryIbEEvPKcRKT_6QFlagsIN11KConfigBase15WriteConfigFlagEE@Base 5.9.0+git20150512
@@ -141,7 +141,9 @@ libKF5Baloo.so.1 libkf5baloo1 #MINVER#
  _ZN5Baloo6ResultD1Ev@Base 5.9.0+git20150512
  _ZN5Baloo6ResultD2Ev@Base 5.9.0+git20150512
  _ZN5Baloo6ResultaSERKS0_@Base 5.9.0+git20150512
+ (optional=templinst)_ZN6Xapian5QueryC1IN15QTypedArrayDataINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE8iteratorEEENS0_2opET_SC_j@Base 5.9.2
  (optional=templinst)_ZN6Xapian5QueryC1IN15QTypedArrayDataISsE8iteratorEEENS0_2opET_S6_j@Base 5.9.0+git20150512
+ (optional=templinst)_ZN6Xapian5QueryC2IN15QTypedArrayDataINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE8iteratorEEENS0_2opET_SC_j@Base 5.9.2
  (optional=templinst)_ZN6Xapian5QueryC2IN15QTypedArrayDataISsE8iteratorEEENS0_2opET_S6_j@Base 5.9.0+git20150512
  (optional=templinst)_ZNK12KConfigGroup9readEntryIbEET_PKcRKS1_@Base 5.9.0+git20150512
  (optional=templinst)_ZNK12KConfigGroup9readEntryIiEET_PKcRKS1_@Base 5.9.0+git20150512
