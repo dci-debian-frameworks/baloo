@@ -6,6 +6,13 @@ baloo-kf5 (5.9.3-0ubuntu1) UNRELEASED; urgency=medium
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 02 Jul 2015 12:34:31 -0700
 
+baloo-kf5 (5.9.2-0ubuntu2) wily; urgency=medium
+
+  * Update symbols files: add a couple of optional symbols after building with
+    GCC 5
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Wed, 22 Jul 2015 21:50:57 +0200
+
 baloo-kf5 (5.9.2-0ubuntu1) wily; urgency=medium
 
   [ Jonathan Riddell ]
