@@ -26,9 +26,9 @@ Build-Depends: cmake (>= 2.8.12),
                qtdeclarative5-dev
 Standards-Version: 3.9.6
 XS-Testsuite: autopkgtest
-Homepage: https://projects.kde.org/projects/kde/kdelibs/baloo
-Vcs-Browser: http://anonscm.debian.org/cgit/pkg-kde/plasma/baloo.git
-Vcs-Git: git://anonscm.debian.org/pkg-kde/plasma/baloo.git
+Homepage: https://projects.kde.org/projects/frameworks/baloo
+Vcs-Browser: http://anonscm.debian.org/cgit/pkg-kde/frameworks/baloo.git
+Vcs-Git: git://anonscm.debian.org/pkg-kde/frameworks/baloo.git
 
 Package: baloo-kf5-dev
 Section: devel
