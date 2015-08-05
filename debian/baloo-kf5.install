@@ -3,7 +3,6 @@ etc
 usr/bin
 usr/lib/*/libexec
 usr/lib/*/qt5
-usr/share/applications/org.kde.baloo-monitor.desktop
 usr/share/dbus-1/system-services/org.kde.baloo.filewatch.service
 usr/share/icons/hicolor/128x128/apps/baloo.png
 usr/share/kservices5/*
