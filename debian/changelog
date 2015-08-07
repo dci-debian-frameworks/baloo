@@ -4,6 +4,14 @@ baloo-kf5 (5.13.0-0ubuntu1) UNRELEASED; urgency=medium
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 07 Aug 2015 16:37:00 +0200
 
+baloo-kf5 (5.9.3-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+  * wrap-and-sort.
+  * Fix version
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 02 Jul 2015 12:34:31 -0700
+
 baloo-kf5 (5.9.2-0ubuntu2) wily; urgency=medium
 
   * Update symbols files: add a couple of optional symbols after building with
@@ -13,19 +21,20 @@ baloo-kf5 (5.9.2-0ubuntu2) wily; urgency=medium
 
 baloo-kf5 (5.9.2-0ubuntu1) wily; urgency=medium
 
+  [ Jonathan Riddell ]
   * New upstream release
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 02 Jul 2015 12:25:29 +0000
 
+baloo-kf5 (5.9.2-1) unstable; urgency=medium
+
+  * New upstream release (5.9.2).
+  * Update copyright information.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 01 Jul 2015 09:23:52 +0200
+
 baloo-kf5 (5.9.1-0ubuntu1) wily; urgency=medium
 
-  * New upstream release
-
- -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 04 Jun 2015 20:12:12 +0200
-
-baloo-kf5 (5.9.0-0ubuntu1) UNRELEASED; urgency=medium
-
-  [ Jonathan Riddell ]
   * New upstream release
 
   [ Harald Sitter ]
@@ -57,7 +66,7 @@ baloo-kf5 (5.6.2-0ubuntu1) vivid; urgency=medium
 
   * New upstream release
   * Release to Archive
- 
+
  -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 19 Mar 2015 20:54:03 -0700
 
 baloo-kf5 (5.9.1-1~) UNRELEASED; urgency=medium
@@ -83,8 +92,8 @@ baloo-kf5 (5.6.2-1) experimental; urgency=medium
 
 baloo-kf5 (5.6.1-0ubuntu1) vivid; urgency=medium
 
-  *  New upstream release
-  * Bump kfilemetadata version so hopefully armhf will find it. 
+  * New upstream release
+  * Bump kfilemetadata version so hopefully armhf will find it.
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 23 Feb 2015 09:52:31 -0800
 
@@ -136,6 +145,7 @@ baloo-kf5 (5.0.2-0ubuntu1) utopic; urgency=medium
   * New upstream release
   * Bump version depends.
   * Update renamed dependency kfilemetadata-dev
+  * Fix version.
 
   [ Jonathan Riddell ]
   * New upstream bugfix release
