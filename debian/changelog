@@ -183,3 +183,253 @@ baloo5 (4:4.97.0~git20140616-0ubuntu1) utopic; urgency=medium
   * more break replace
 
  -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Tue, 17 Jun 2014 09:01:57 -0700
+
+baloo (4:4.14.2-2) unstable; urgency=medium
+
+  * Update symbols files. (Closes: #777792)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 07 Aug 2015 11:54:39 +0200
+
+baloo (4:4.14.2-1) unstable; urgency=medium
+
+  [ Pino Toscano ]
+  * Make baloo-dev depend on libkfilemetadata-dev, as it uses its headers.
+    (Closes: #762240)
+  * Small improvements to the descriptions. (Closes: #757626, #760023)
+
+  [ Maximiliano Curia ]
+  * New upstream release (4.14.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 20 Oct 2014 18:54:00 +0200
+
+baloo (4:4.14.1-1) unstable; urgency=medium
+
+  * New upstream release (4.14.1).
+  * Merge dh_acc test into testsuite.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 17 Sep 2014 09:44:24 +0200
+
+baloo (4:4.14.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update build dependencies.
+  * Update symbols files with buildds logs.
+  * Update symbols file.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 23 Aug 2014 18:18:14 +0200
+
+baloo (4:4.14.0-0ubuntu1) utopic; urgency=medium
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+  [ Philip Muškovac ]
+  * Add a transitional package for baloo > baloo4 as Provides don't take care
+    of upgrades
+  * Delete obsolete baloo.install
+
+  [ Rohan Garg ]
+  * Make baloo-utils a dep of baloo4
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 20 Aug 2014 12:26:11 +0200
+
+baloo (4:4.13.97-0ubuntu3) utopic; urgency=medium
+
+  * Add replaces/breaks for file moved to baloo-dev
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 12 Aug 2014 19:59:34 +0200
+
+baloo (4:4.13.97-0ubuntu2) utopic; urgency=medium
+
+  * Bump replaces version of baloo for new updates
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 12 Aug 2014 19:45:17 +0200
+
+baloo (4:4.13.97-0ubuntu1) utopic; urgency=medium
+
+  [ Scarlett Clark ]
+  * New upstream beta release RC
+
+  [ Jonathan Riddell ]
+  * Update symbols
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 01 Aug 2014 16:02:52 +0200
+
+baloo (4:4.13.95-0ubuntu1) utopic; urgency=medium
+
+  [ Scarlett Clark ]
+  * New upstream beta release
+  * Fix libalooqueryparser install file
+
+  [ Philip Muškovac ]
+  * Remove empty arch= selector in libbaloopim4.symbols and
+    libbalooxapian4.symbols
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 25 Jul 2014 06:18:28 -0700
+
+baloo (4:4.13.90-0ubuntu3) utopic; urgency=medium
+
+  * Add missing build-dep on libx11-dev
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 19 Jul 2014 21:40:48 +0200
+
+baloo (4:4.13.90-0ubuntu2) utopic; urgency=medium
+
+  * Add missing .install file
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 19 Jul 2014 21:40:48 +0200
+
+baloo (4:4.13.90-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release
+  * Added new library libbalooqueryparser
+  * Patched symbols with batchpatch
+  * Add new library to -dev as depend
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 18 Jul 2014 13:54:56 -0700
+
+baloo (4:4.13.3-1) unstable; urgency=medium
+
+  [ Pino Toscano ]
+  * Backport upstream commits 01f3fff52d63302e6970a088710ec6b692b1b470,
+    b538865e6069a61c8cf467622f3dccef2bac115e and
+    07278894f3a00a3c4ca5ce7d62721c0edfddfb69 to fix build on glibc-based OSes
+    different than Linux; patches
+    upstream_xattr-fix-fallback-in-no-xattr-OSes.patch,
+    upstream_xattr-use-the-linux-xattr-impl-on-any-glibc-based-OS.patch, and
+    upstream_xattr-do-not-use-on-glibc-if-not-implemented.patch.
+  * Switch the libboost1.55-dev build dependency to libboost-dev.
+
+  [ Maximiliano Curia ]
+  * New upstream release.
+  * Remove upstream applied patch: upstream_xattr-do-not-use-on-glibc-
+    if-not-implemented.patch
+  * Remove upstream applied patch: upstream_xattr-fix-fallback-in-no-
+    xattr-OSes.patch
+  * Remove upstream applied patch: upstream_xattr-use-the-linux-xattr-
+    impl-on-any-glibc-based-OS.patch
+  * Update symbols file.
+  * Update build dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 30 Jul 2014 00:17:47 +0200
+
+baloo (4:4.13.2-0ubuntu3) utopic; urgency=medium
+
+  * Allow for co-installability with baloo-kf5
+    - create baloo-utils for kdelibs4 parts we want to keep installed
+    - rename to baloo4 and provide a common baloo virtual package
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 09 Jul 2014 17:24:47 +0200
+
+baloo (4:4.13.2-0ubuntu2) utopic; urgency=medium
+
+  * Remove explicit baloo dependency from library .symbol files
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 30 Jun 2014 16:57:37 +0200
+
+baloo (4:4.13.2-0ubuntu1) utopic; urgency=medium
+
+  * new upstream release
+  * Remove upstream_catch_more_exceptions_emailsearchstore.patch
+    fixed upstream
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Jun 2014 11:38:20 +0100
+
+baloo (4:4.13.0-0ubuntu5) utopic; urgency=medium
+
+  * Merge with Debian, remaining changes:
+   - still on 4.13.0
+  * Add conflicts on kf5 baloo packages
+  * Build-Conflicts: libkfilemetadata5-dev
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 29 May 2014 16:08:47 +0100
+
+baloo (4:4.13.0-0ubuntu4) utopic; urgency=high
+
+  * Rebuild against boost1.55
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Sat, 03 May 2014 21:55:11 +0100
+
+baloo (4:4.13.1-1) experimental; urgency=medium
+
+  * Initial release, based on the kubuntu package.
+  * Update build dependencies.
+  * Update symbols files.
+  * New patch: disable_tests_depending_on_revdep
+  * Add dh-acc files.
+  * Add dbus interface file to the -dev package.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 May 2014 13:25:45 +0200
+
+baloo (4:4.13.0-0ubuntu3) utopic; urgency=medium
+
+  * Remove explicit baloo dependency from library .symbol files
+  * Add conflicts on conflicting KF5 baloo packages
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 29 May 2014 15:52:39 +0100
+
+baloo (4:4.13.0-0ubuntu2) trusty; urgency=medium
+
+  * Add upstream_catch_more_exceptions_emailsearchstore.patch from upstream
+    expanding the exception catching to prevent krunner crashes on random
+    searches
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Tue, 15 Apr 2014 11:45:50 +0200
+
+baloo (4:4.13.0-0ubuntu1) trusty; urgency=medium
+
+  * New upstream KDE Software Compilation release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 10 Apr 2014 21:32:59 +0100
+
+baloo (4:4.12.97-0ubuntu4) trusty; urgency=medium
+
+  * Yet more upstream commit imports. Adding patches 50 to 56 in upstream_git/
+  * Explicitly do not apply upstream_git/0050-Prepare-4.13.0.patch as it
+    causes an implicit dependency bump which we cannot fullfill at this time.
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Wed, 09 Apr 2014 16:31:31 +0200
+
+baloo (4:4.12.97-0ubuntu3) trusty; urgency=medium
+
+  * Add upstream_git/0049-XapianDatabase-Catch-more-exceptions.patch
+    fixing a crash when changing the file rating in dolphin.
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Tue, 08 Apr 2014 13:10:09 +0200
+
+baloo (4:4.12.97-0ubuntu2) trusty; urgency=medium
+
+  * Blanket import fixes between 4.12.97 and current git KDE/4.13 in
+    debian/patches/upstream_git/
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Mon, 07 Apr 2014 12:35:02 +0200
+
+baloo (4:4.12.97-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release candidate
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Wed, 02 Apr 2014 11:04:27 +0200
+
+baloo (4:4.12.95-0ubuntu1) trusty; urgency=medium
+
+  [ Rohan Garg ]
+  * New upstream beta release
+
+  [ Philip Muškovac ]
+  * Add new symbols
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Sun, 23 Mar 2014 11:51:35 +0100
+
+baloo (4:4.12.90-0ubuntu1) trusty; urgency=low
+
+  [ Jonathan Riddell ]
+  * Initial release
+  * Don't depend on baloo, kde-runtime, kdepim-runtime to stop
+    circular deps
+  * baloo-dev doesn't depend on baloo to stop circular deps
+
+  [ Scarlett Clark ]
+  * Fix copyright
+  * Create and fix symbols.
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Mar 2014 10:30:39 +0000
