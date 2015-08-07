@@ -46,16 +46,6 @@ Description: framework for searching and managing metadata
  This package contains the kdelibs4 version of the binaries, it can also
  be replaced with baloo-kf5.
 
-Package: baloo
-Section: oldlibs
-Priority: extra
-Architecture: any
-Depends: baloo4
-Description: transitional package for baloo4
- A framework for searching and managing metadata in KDE.
- .
- This package can safely be removed after installation.
-
 Package: baloo-utils
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
