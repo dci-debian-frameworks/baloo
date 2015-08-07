@@ -1,3 +1,9 @@
+baloo-kf5 (5.13.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 07 Aug 2015 16:37:00 +0200
+
 baloo-kf5 (5.9.2-0ubuntu2) wily; urgency=medium
 
   * Update symbols files: add a couple of optional symbols after building with
