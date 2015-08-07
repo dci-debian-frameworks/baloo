@@ -29,7 +29,9 @@ X-Ubuntu-Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packagin
 
 Package: baloo4
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, baloo-utils
+Depends: ${misc:Depends}, ${shlibs:Depends},
+         baloo-utils,
+         libqt4-sql-sqlite
 Replaces: baloo (<< 4:4.13.2-0ubuntu3),
           kde-runtime (<< 4:4.12.80),
           kde-runtime-data (<< 4:4.12.80)
