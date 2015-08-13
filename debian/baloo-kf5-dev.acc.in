@@ -11,7 +11,7 @@
 
 <libs>
     /usr/lib/@@DEB_HOST_MULTIARCH@@/libKF5Baloo.so
-    /usr/lib/@@DEB_HOST_MULTIARCH@@/libKF5BalooXapian.so
+    /usr/lib/@@DEB_HOST_MULTIARCH@@/libKF5BalooEngine.so
 </libs>
 
 <gcc_options>
