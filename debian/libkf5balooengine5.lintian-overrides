@@ -1,0 +1,1 @@
+libkf5balooengine5: dev-pkg-without-shlib-symlink usr/lib/*/libKF5BalooEngine.so.5.* usr/lib/*/libKF5BalooEngine.so
