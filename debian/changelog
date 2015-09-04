@@ -1,6 +1,7 @@
 baloo-kf5 (5.13.0-1) experimental; urgency=medium
 
   * New upstream release (5.13.0).
+  * New patch: disable_failing_test
 
  -- Maximiliano Curia <maxy@debian.org>  Mon, 31 Aug 2015 23:58:56 +0200
 
