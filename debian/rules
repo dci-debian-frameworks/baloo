@@ -10,7 +10,8 @@ override_dh_strip:
 	$(overridden_command) --dbg-package=baloo-kf5-dbg
 
 override_dh_auto_test:
-	dbus-launch --exit-with-session	dh_auto_test
+	xvfb-run -a --server-args="-screen 0 1024x768x24" \
+	    dbus-launch --exit-with-session dh_auto_test
 
 BINARY_VERSION_NO_EPOCH := $(shell dpkg-parsechangelog | grep '^Version: ' | sed 's/^Version: \(\([[:digit:]]\+\):\)\?/\2/')
 
