@@ -22,7 +22,6 @@ Build-Depends: cmake (>= 2.8.12),
                qtbase5-dev (>= 5.4),
                qtdeclarative5-dev (>= 5.4)
 Standards-Version: 3.9.6
-XS-Testsuite: autopkgtest
 Homepage: https://projects.kde.org/projects/frameworks/baloo
 Vcs-Browser: http://anonscm.debian.org/cgit/pkg-kde/frameworks/baloo.git
 Vcs-Git: git://anonscm.debian.org/pkg-kde/frameworks/baloo.git
@@ -60,8 +59,7 @@ Package: baloo-kf5
 Section: utils
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Breaks: ${kde-l10n:all}
-Conflicts: baloo (<< 4:5.0)
+Breaks: baloo (<< 4:5.0), ${kde-l10n:all}
 Replaces: baloo (<< 4:5.0), ${kde-l10n:all}
 Description: framework for searching and managing metadata
  A framework for searching and managing metadata in KDE Software.
@@ -95,7 +93,7 @@ Description: framework for searching and managing metadata
 Package: baloo
 Section: oldlibs
 Priority: extra
-Architecture: any
+Architecture: all
 Depends: baloo-kf5 (>= ${source:Upstream-Version}), ${misc:Depends}
 Description: transitional package for baloo
  A framework for searching and managing metadata in KDE Software.
