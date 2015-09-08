@@ -1,6 +1,7 @@
 baloo-kf5 (5.13.0-2~) UNRELEASED; urgency=medium
 
-  * 
+  * Move auto test to autopkgtests.
+  * Release to unstable.
 
  -- Maximiliano Curia <maxy@debian.org>  Wed, 09 Sep 2015 00:45:27 +0200
 
