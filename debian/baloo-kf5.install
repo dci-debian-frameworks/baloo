@@ -1,7 +1,6 @@
 #usr/share/locale
 etc
 usr/bin
-usr/lib/*/libexec
 usr/lib/*/qt5
 usr/share/dbus-1/system-services/org.kde.baloo.filewatch.service
 usr/share/icons/hicolor/128x128/apps/baloo.png
