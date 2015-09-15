@@ -3,3 +3,6 @@ etc
 usr/bin
 usr/lib/*/qt5
 usr/share/icons/hicolor/128x128/apps/baloo.png
+usr/share/kservices5/baloosearch.protocol
+usr/share/kservices5/tags.protocol
+usr/share/kservices5/timeline.protocol
