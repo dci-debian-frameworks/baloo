@@ -2,7 +2,4 @@
 etc
 usr/bin
 usr/lib/*/qt5
-usr/share/dbus-1/system-services/org.kde.baloo.filewatch.service
 usr/share/icons/hicolor/128x128/apps/baloo.png
-usr/share/kservices5/*
-usr/share/polkit-1/actions/org.kde.baloo.filewatch.policy

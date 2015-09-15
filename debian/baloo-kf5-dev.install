@@ -3,3 +3,6 @@ usr/lib/*/*.so
 usr/lib/*/cmake/*
 usr/lib/*/pkgconfig/Baloo.pc
 usr/share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
+usr/share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
+usr/share/dbus-1/interfaces/org.kde.baloo.main.xml
+usr/share/dbus-1/interfaces/org.kde.baloo.scheduler.xml
