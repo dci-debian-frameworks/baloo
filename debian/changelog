@@ -1,6 +1,7 @@
 baloo-kf5 (5.14.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * new upstream release
+  * Update install files
 
  -- Clive Johnston <clivejo@aol.com>  Mon, 14 Sep 2015 18:59:45 +0100
 
