@@ -6,4 +6,3 @@ usr/share/kservices5/baloosearch.protocol
 usr/share/kservices5/tags.protocol
 usr/share/kservices5/timeline.protocol
 usr/share/locale
-usr/share/polkit-1/actions/org.kde.baloo.filewatch.policy
