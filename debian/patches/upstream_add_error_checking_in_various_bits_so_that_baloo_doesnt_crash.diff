@@ -1,0 +1,61 @@
+From 3312d6f3f4b80ec04e86c2ea103adc51ade0f020 Mon Sep 17 00:00:00 2001
+From: Rohan Garg <rohan@garg.io>
+Date: Wed, 16 Sep 2015 01:20:47 +0200
+Subject: [PATCH] Add error checking in various bits so that Baloo doesn't
+ crash when disabled.
+
+REVIEW: 125241
+BUG: 352454
+---
+ src/engine/database.cpp | 16 +++++++++++++---
+ src/lib/searchstore.cpp |  2 +-
+ 2 files changed, 14 insertions(+), 4 deletions(-)
+
+diff --git a/src/engine/database.cpp b/src/engine/database.cpp
+index b2b9f47..4f0579f 100644
+--- a/src/engine/database.cpp
++++ b/src/engine/database.cpp
+@@ -72,14 +72,24 @@ bool Database::open(OpenMode mode)
+         return false;
+     }
+ 
+-    mdb_env_create(&m_env);
++    int rc = mdb_env_create(&m_env);
++    if (rc) {
++        m_env = 0;
++        return false;
++    }
++
+     mdb_env_set_maxdbs(m_env, 12);
+     mdb_env_set_mapsize(m_env, static_cast<size_t>(1024) * 1024 * 1024 * 5); // 5 gb
+ 
+     // The directory needs to be created before opening the environment
+     QByteArray arr = QFile::encodeName(m_path) + "/index";
+-    mdb_env_open(m_env, arr.constData(), MDB_NOSUBDIR | MDB_NOMEMINIT, 0664);
+-    int rc = mdb_reader_check(m_env, 0);
++    rc = mdb_env_open(m_env, arr.constData(), MDB_NOSUBDIR | MDB_NOMEMINIT, 0664);
++    if (rc) {
++        m_env = 0;
++        return false;
++    }
++
++    rc = mdb_reader_check(m_env, 0);
+     Q_ASSERT_X(rc == 0, "Database::open reader_check", mdb_strerror(rc));
+ 
+     //
+diff --git a/src/lib/searchstore.cpp b/src/lib/searchstore.cpp
+index d4abf50..806ea5f 100644
+--- a/src/lib/searchstore.cpp
++++ b/src/lib/searchstore.cpp
+@@ -66,7 +66,7 @@ SearchStore::~SearchStore()
+ 
+ QStringList SearchStore::exec(const Term& term, int offset, int limit, bool sortResults)
+ {
+-    if (!m_db) {
++    if (!m_db || !m_db->isOpen()) {
+         return QStringList();
+     }
+ 
+-- 
+2.5.0
+

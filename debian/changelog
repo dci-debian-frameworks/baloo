@@ -1,3 +1,13 @@
+baloo-kf5 (5.14.0-0ubuntu3) wily; urgency=medium
+
+  * Add
+    upstream_add_error_checking_in_various_bits_so_that_baloo_doesnt_crash.diff
+    for better reliabiltiy
+  * Add upstream_fail_baloo_file_load_if_the_database_is_not_open.diff
+    to fix a dolphin crash when selection multiple files
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sat, 26 Sep 2015 17:34:57 +0200
+
 baloo-kf5 (5.14.0-0ubuntu2) wily; urgency=medium
 
   * Remove balloengine from baloo-kf5-dev.acc.in, dev symlink no longer
