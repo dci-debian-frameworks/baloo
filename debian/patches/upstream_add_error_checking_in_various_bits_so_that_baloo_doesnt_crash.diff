@@ -11,8 +11,8 @@ BUG: 352454
  src/lib/searchstore.cpp |  2 +-
  2 files changed, 14 insertions(+), 4 deletions(-)
 
-diff --git a/src/engine/database.cpp b/src/engine/database.cpp
-index b2b9f47..4f0579f 100644
+Index: b/src/engine/database.cpp
+===================================================================
 --- a/src/engine/database.cpp
 +++ b/src/engine/database.cpp
 @@ -72,14 +72,24 @@ bool Database::open(OpenMode mode)
@@ -43,19 +43,16 @@ index b2b9f47..4f0579f 100644
      Q_ASSERT_X(rc == 0, "Database::open reader_check", mdb_strerror(rc));
  
      //
-diff --git a/src/lib/searchstore.cpp b/src/lib/searchstore.cpp
-index d4abf50..806ea5f 100644
+Index: b/src/lib/searchstore.cpp
+===================================================================
 --- a/src/lib/searchstore.cpp
 +++ b/src/lib/searchstore.cpp
 @@ -66,7 +66,7 @@ SearchStore::~SearchStore()
  
- QStringList SearchStore::exec(const Term& term, int offset, int limit, bool sortResults)
+ QStringList SearchStore::exec(const Term& term, int limit, bool sortResults)
  {
 -    if (!m_db) {
 +    if (!m_db || !m_db->isOpen()) {
          return QStringList();
      }
  
--- 
-2.5.0
-
