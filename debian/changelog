@@ -1,3 +1,11 @@
+baloo-kf5 (5.14.0-0ubuntu4) UNRELEASED; urgency=medium
+
+  * Vivid backport.
+  * Remove upstream_add_error_checking_in_various_bits_so_that_baloo_doesnt_crash.diff
+    applied upstream. 
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 29 Sep 2015 16:39:00 -0700
+
 baloo-kf5 (5.14.0-0ubuntu3) wily; urgency=medium
 
   * Add
