@@ -1,3 +1,11 @@
+baloo-kf5 (5.14.0-2) unstable; urgency=medium
+
+  * Cherry-pick upstream commits to fix crashes. (Closes: #800061)
+    - Add_error_checking_in_various_bits_so_that_Baloo_doesnt_crash.diff
+    - Fail_Baloo_File_load_if_the_Database_is_not_open.diff
+
+ -- Felix Geyer <fgeyer@debian.org>  Fri, 02 Oct 2015 23:50:56 +0200
+
 baloo-kf5 (5.14.0-1) unstable; urgency=medium
 
   * New upstream release (5.14.0).
