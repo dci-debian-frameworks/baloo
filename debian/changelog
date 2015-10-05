@@ -1,12 +1,16 @@
-baloo-kf5 (5.14.0-0ubuntu4) UNRELEASED; urgency=medium
+baloo-kf5 (5.15.0-0ubuntu1) UNRELEASED; urgency=medium
 
+  [ Scarlett Clark ]
   * Vivid backport.
   * Remove upstream_add_error_checking_in_various_bits_so_that_baloo_doesnt_crash.diff
     applied upstream. 
   * Remove upstream_fail_baloo_file_load_if_the_database_is_not_open.diff applied
     upstream. 
 
- -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 29 Sep 2015 16:39:00 -0700
+  [ Jonathan Riddell ]
+  * new upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 05 Oct 2015 19:09:12 +0100
 
 baloo-kf5 (5.14.0-0ubuntu3) wily; urgency=medium
 
