@@ -1,3 +1,9 @@
+baloo-kf5 (5.15.0-1~) UNRELEASED; urgency=medium
+
+  * New upstream release (5.15.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 05 Oct 2015 15:07:42 +0200
+
 baloo-kf5 (5.14.0-2) unstable; urgency=medium
 
   * Cherry-pick upstream commits to fix crashes. (Closes: #800061)
