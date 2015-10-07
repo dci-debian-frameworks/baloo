@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.3.0+git20150512 amd64
+# SymbolsHelper-Confirmed: 5.15.0 amd64
 libKF5Baloo.so.5 libkf5baloo5 #MINVER#
  (optional=templinst)_ZN12KConfigGroup10writeEntryI7QStringEEvPKcRK5QListIT_E6QFlagsIN11KConfigBase15WriteConfigFlagEE@Base 5.3.0+git20150512
  (optional=templinst)_ZN12KConfigGroup10writeEntryIbEEvPKcRKT_6QFlagsIN11KConfigBase15WriteConfigFlagEE@Base 5.3.0+git20150512
@@ -27,8 +27,10 @@ libKF5Baloo.so.5 libkf5baloo5 #MINVER#
  _ZN5Baloo11FileMonitorD0Ev@Base 5.3.0+git20150512
  _ZN5Baloo11FileMonitorD1Ev@Base 5.3.0+git20150512
  _ZN5Baloo11FileMonitorD2Ev@Base 5.3.0+git20150512
+ _ZN5Baloo13IndexerConfig17setExcludeFiltersERK11QStringList@Base 5.15.0
  _ZN5Baloo13IndexerConfig17setExcludeFoldersERK11QStringList@Base 5.3.0+git20150512
  _ZN5Baloo13IndexerConfig17setIncludeFoldersERK11QStringList@Base 5.3.0+git20150512
+ _ZN5Baloo13IndexerConfig20setOnlyBasicIndexingEb@Base 5.15.0
  _ZN5Baloo13IndexerConfigC1Ev@Base 5.3.0+git20150512
  _ZN5Baloo13IndexerConfigC2Ev@Base 5.3.0+git20150512
  _ZN5Baloo13IndexerConfigD1Ev@Base 5.3.0+git20150512
@@ -91,12 +93,17 @@ libKF5Baloo.so.5 libkf5baloo5 #MINVER#
  _ZNK5Baloo10TagListJob10metaObjectEv@Base 5.3.0+git20150512
  _ZNK5Baloo11FileMonitor10metaObjectEv@Base 5.3.0+git20150512
  _ZNK5Baloo11FileMonitor5filesEv@Base 5.3.0+git20150512
+ _ZNK5Baloo13IndexerConfig11indexHiddenEv@Base 5.15.0
  _ZNK5Baloo13IndexerConfig11setFirstRunEb@Base 5.3.0+git20150512
+ _ZNK5Baloo13IndexerConfig14excludeFiltersEv@Base 5.15.0
  _ZNK5Baloo13IndexerConfig14excludeFoldersEv@Base 5.3.0+git20150512
  _ZNK5Baloo13IndexerConfig14includeFoldersEv@Base 5.3.0+git20150512
+ _ZNK5Baloo13IndexerConfig14setIndexHiddenEb@Base 5.15.0
  _ZNK5Baloo13IndexerConfig15shouldBeIndexedERK7QString@Base 5.3.0+git20150512
+ _ZNK5Baloo13IndexerConfig17onlyBasicIndexingEv@Base 5.15.0
  _ZNK5Baloo13IndexerConfig19fileIndexingEnabledEv@Base 5.3.0+git20150512
  _ZNK5Baloo13IndexerConfig22setFileIndexingEnabledEb@Base 5.3.0+git20150512
+ _ZNK5Baloo13IndexerConfig7refreshEv@Base 5.15.0
  _ZNK5Baloo13IndexerConfig8firstRunEv@Base 5.3.0+git20150512
  _ZNK5Baloo13QueryRunnable10metaObjectEv@Base 5.3.0+git20150512
  _ZNK5Baloo14ResultIterator8filePathEv@Base 5.3.0+git20150512
