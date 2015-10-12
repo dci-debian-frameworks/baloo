@@ -1,3 +1,9 @@
+baloo-kf5 (5.15.0a-0ubuntu1) wily; urgency=medium
+
+  * New upstream tar
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 12 Oct 2015 11:25:33 +0100
+
 baloo-kf5 (5.15.0-0ubuntu2) UNRELEASED; urgency=medium
 
   * Vivid backport. 
