@@ -1,8 +1,8 @@
-baloo-kf5 (5.15.0+-1~) UNRELEASED; urgency=medium
+baloo-kf5 (5.15.0+-1) unstable; urgency=medium
 
   * Respin of the fixed upstream release 5.15.0).
 
- -- Maximiliano Curia <maxy@debian.org>  Tue, 13 Oct 2015 19:45:05 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 13 Oct 2015 20:25:18 +0200
 
 baloo-kf5 (5.15.0-1) unstable; urgency=medium
 
