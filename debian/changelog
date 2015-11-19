@@ -1,6 +1,7 @@
 baloo-kf5 (5.16.0-1~) UNRELEASED; urgency=medium
 
   * New upstream release (5.16.0).
+  * Update symbols files.
 
  -- Maximiliano Curia <maxy@debian.org>  Tue, 17 Nov 2015 11:49:11 +0100
 
