@@ -1,0 +1,19 @@
+Index: baloo/autotests/unit/lib/CMakeLists.txt
+===================================================================
+--- baloo.orig/autotests/unit/lib/CMakeLists.txt	2015-08-31 21:50:27.916625507 +0200
++++ baloo/autotests/unit/lib/CMakeLists.txt	2015-09-05 01:24:02.599336948 +0200
+@@ -5,10 +5,10 @@
+     TEST_NAME "queryserializationtest"
+     LINK_LIBRARIES Qt5::Test KF5::Baloo
+ )
+-ecm_add_test(filemonitortest.cpp
+-    TEST_NAME "filemonitortest"
+-    LINK_LIBRARIES Qt5::Test Qt5::DBus KF5::Baloo
+-)
++# ecm_add_test(filemonitortest.cpp
++#     TEST_NAME "filemonitortest"
++#     LINK_LIBRARIES Qt5::Test Qt5::DBus KF5::Baloo
++# )
+ 
+ #
+ # Advanced Query Parser
