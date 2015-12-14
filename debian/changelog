@@ -1,8 +1,9 @@
-baloo-kf5 (5.16.0-1ubuntu1) UNRELEASED; urgency=medium
+baloo-kf5 (5.17.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * Debian merge: No remaining changes. 
+  * New upstream release Xenial
 
- -- Scarlett Clark <sgclark@kubuntu.org>  Fri, 04 Dec 2015 18:01:09 -0800
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 14 Dec 2015 01:32:33 +0000
 
 baloo-kf5 (5.16.0-1) unstable; urgency=medium
 
