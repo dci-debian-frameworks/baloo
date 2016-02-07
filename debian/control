@@ -78,19 +78,6 @@ Description: framework for searching and managing metadata core lib.
  .
  Baloo is part of the KDE Plasma desktop.
 
-Package: baloo-kf5-dbg
-Section: debug
-Priority: extra
-Architecture: any
-Recommends: qtbase5-dbg
-Depends: baloo-kf5 (= ${binary:Version}), ${misc:Depends}
-Description: framework for searching and managing metadata
- A framework for searching and managing metadata in KDE Software.
- .
- Baloo is part of the KDE Plasma desktop.
- .
- This package contains the debugging symbols.
-
 Package: baloo
 Section: oldlibs
 Priority: extra
