@@ -1,6 +1,6 @@
-baloo-kf5 (5.20.0-1~2.gbp08a231) UNRELEASED; urgency=medium
+baloo-kf5 (5.20.0-1~3.gbpf66144) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @08a2310848b552e7dc3040a369c4fdfbcb85357f **
+  ** SNAPSHOT build @f66144ebc6812040ac9869f695fbc90fb0bf7fc4 **
 
   [ Maximiliano Curia ]
   * Replace the "Historical name" ddeb-migration by its "Modern, clearer" replacement dbgsym-migration.
@@ -14,8 +14,9 @@ baloo-kf5 (5.20.0-1~2.gbp08a231) UNRELEASED; urgency=medium
 
   [ Maximiliano Curia ]
   * Update acc test script
+  * UNRELEASED
 
- -- Maximiliano Curia <maxy@gnuservers.com.ar>  Fri, 01 Apr 2016 17:37:16 +0200
+ -- Maximiliano Curia <jenkins@amadeus.gnuservers.com.ar>  Fri, 01 Apr 2016 17:37:35 +0200
 
 baloo-kf5 (5.19.0-1) experimental; urgency=medium
 
