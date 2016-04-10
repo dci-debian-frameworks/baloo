@@ -1,6 +1,6 @@
-baloo-kf5 (5.21.0-1~1.gbp6b3853) UNRELEASED; urgency=medium
+baloo-kf5 (5.21.0-1~2.gbp15f8e6) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @6b38533f1522a4be7345de4da1db975f13804154 **
+  ** SNAPSHOT build @15f8e67fabd99fc57e5bbf534c1d9904472c83b1 **
 
   [ Maximiliano Curia ]
   * Replace the "Historical name" ddeb-migration by its "Modern, clearer" replacement dbgsym-migration.
@@ -19,7 +19,10 @@ baloo-kf5 (5.21.0-1~1.gbp6b3853) UNRELEASED; urgency=medium
   [ Automatic packaging ]
   * Update build-deps and deps with the info from cmake
 
- -- Automatic packaging <maxy+jenkins@gnuservers.com.ar>  Sat, 09 Apr 2016 23:37:10 +0200
+  [ Maximiliano Curia ]
+  * uscan no longer supports more than one main upstream tarball being listed
+
+ -- Maximiliano Curia <maxy@gnuservers.com.ar>  Sun, 10 Apr 2016 09:37:19 +0200
 
 baloo-kf5 (5.19.0-1) experimental; urgency=medium
 
