@@ -1,6 +1,6 @@
-baloo-kf5 (5.21.0-1~2.gbp15f8e6) UNRELEASED; urgency=medium
+baloo-kf5 (5.21.0-1~3.gbpc026fa) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @15f8e67fabd99fc57e5bbf534c1d9904472c83b1 **
+  ** SNAPSHOT build @c026facc50ba4d9723929075b2b36442e1475efd **
 
   [ Maximiliano Curia ]
   * Replace the "Historical name" ddeb-migration by its "Modern, clearer" replacement dbgsym-migration.
@@ -8,9 +8,11 @@ baloo-kf5 (5.21.0-1~2.gbp15f8e6) UNRELEASED; urgency=medium
   * debian/control: Update Vcs-Browser and Vcs-Git fields
   * debian/control: Update Vcs-Browser and Vcs-Git fields
   * Drop qt5-qmltooling-plugins build dependency
+  * Add a .gitattributes file to use dpkg-mergechangelogs
 
   [ Automatic packaging ]
   * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 3.9.8
 
   [ Maximiliano Curia ]
   * Update acc test script
@@ -22,7 +24,7 @@ baloo-kf5 (5.21.0-1~2.gbp15f8e6) UNRELEASED; urgency=medium
   [ Maximiliano Curia ]
   * uscan no longer supports more than one main upstream tarball being listed
 
- -- Maximiliano Curia <maxy@gnuservers.com.ar>  Sun, 10 Apr 2016 09:37:19 +0200
+ -- Maximiliano Curia <maxy@gnuservers.com.ar>  Mon, 18 Apr 2016 19:37:15 +0200
 
 baloo-kf5 (5.19.0-1) experimental; urgency=medium
 
