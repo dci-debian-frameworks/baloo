@@ -1,13 +1,22 @@
+From: Debian/Kubuntu Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Date: Sat, 30 Apr 2016 15:09:55 +0200
+Subject: fix-822499
+
 Description: Fix FTBFS due missing includes
 Author: Tobias Frost <tobi@debian.org>
 Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=822499
 Forwarded: no
 Last-Update: 2016-04-26
 ---
-This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+ src/file/extractor/autotests/iohandlertest.cpp | 2 ++
+ src/file/timeestimator.cpp                     | 2 ++
+ 2 files changed, 4 insertions(+)
+
+diff --git a/src/file/extractor/autotests/iohandlertest.cpp b/src/file/extractor/autotests/iohandlertest.cpp
+index 2c8eeaa..e4772e6 100644
 --- a/src/file/extractor/autotests/iohandlertest.cpp
 +++ b/src/file/extractor/autotests/iohandlertest.cpp
-@@ -29,6 +29,8 @@
+@@ -30,6 +30,8 @@
  
  #include "../iohandler.h"
  
@@ -16,9 +25,11 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  namespace Baloo {
  class IOHandlerTest : public QObject
  {
+diff --git a/src/file/timeestimator.cpp b/src/file/timeestimator.cpp
+index cf91df7..a2affe5 100644
 --- a/src/file/timeestimator.cpp
 +++ b/src/file/timeestimator.cpp
-@@ -23,6 +23,8 @@
+@@ -25,6 +25,8 @@
  #include "timeestimator.h"
  #include "filecontentindexerprovider.h"
  
@@ -26,4 +37,4 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 +
  using namespace Baloo;
  
- TimeEstimator::TimeEstimator(QObject* parent)
+ TimeEstimator::TimeEstimator(FileIndexerConfig *config, QObject* parent)
