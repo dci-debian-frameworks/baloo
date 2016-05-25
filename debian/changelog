@@ -1,6 +1,4 @@
-baloo-kf5 (5.22.0-1~1.gbpc1e054) UNRELEASED; urgency=medium
-
-  ** SNAPSHOT build @c1e054bd924831686d276a1e699ca83f0b829e69 **
+baloo-kf5 (5.22.0-1) unstable; urgency=medium
 
   [ Maximiliano Curia ]
   * Replace the "Historical name" ddeb-migration by its "Modern, clearer" replacement dbgsym-migration.
@@ -10,14 +8,13 @@ baloo-kf5 (5.22.0-1~1.gbpc1e054) UNRELEASED; urgency=medium
   * Add a .gitattributes file to use dpkg-mergechangelogs
   * Update acc test script
   * uscan no longer supports more than one main upstream tarball being listed
-  * Acknowledge nmu 5.16.0-1.1. Thanks to Tobias Frost
+  * Acknowledge nmu 5.16.0-1.1. Thanks to Tobias Frost (Closes: #822499)
 
   [ Automatic packaging ]
   * Update build-deps and deps with the info from cmake
   * Bump Standards-Version to 3.9.8
-  * Update build-deps and deps with the info from cmake
 
- -- Automatic packaging <maxy+jenkins@gnuservers.com.ar>  Sun, 15 May 2016 17:37:13 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 25 May 2016 11:23:53 +0200
 
 baloo-kf5 (5.19.0-1) experimental; urgency=medium
 
