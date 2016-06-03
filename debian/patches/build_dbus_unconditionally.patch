@@ -1,0 +1,9 @@
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -7,5 +7,5 @@
+     add_subdirectory(file)
+     add_subdirectory(kioslaves)
+     add_subdirectory(tools)
+-    add_subdirectory(dbus)
+ endif()
++add_subdirectory(dbus)
