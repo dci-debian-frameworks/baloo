@@ -1,3 +1,10 @@
+baloo-kf5 (5.22.0-2) unstable; urgency=medium
+
+  * Add new patch: build_dbus_unconditionally.patch
+  * Add a kfreebsd specific install file
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 03 Jun 2016 19:15:57 +0200
+
 baloo-kf5 (5.22.0-1) unstable; urgency=medium
 
   [ Maximiliano Curia ]
