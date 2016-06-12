@@ -1,6 +1,16 @@
+From: Debian/Kubuntu Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Date: Sun, 12 Jun 2016 23:37:11 +0200
+Subject: build_dbus_unconditionally
+
+---
+ src/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 529b786..3b6fab9 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -7,5 +7,5 @@
+@@ -7,5 +7,5 @@ if (BUILD_KINOTIFY)
      add_subdirectory(file)
      add_subdirectory(kioslaves)
      add_subdirectory(tools)
