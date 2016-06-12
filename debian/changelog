@@ -1,3 +1,12 @@
+baloo-kf5 (5.23.0-1~1.gbp5efb27) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @5efb272ee88579e54791504cf20f7922420a1c60 **
+
+  * Update build-deps and deps with the info from cmake
+  * Refresh patches
+
+ -- Automatic packaging <maxy+jenkins@gnuservers.com.ar>  Sun, 12 Jun 2016 23:37:35 +0200
+
 baloo-kf5 (5.22.0-2) unstable; urgency=medium
 
   * Add new patch: build_dbus_unconditionally.patch
