@@ -1,11 +1,9 @@
-baloo-kf5 (5.25.0-1~1.gbp017c48) UNRELEASED; urgency=medium
+baloo-kf5 (5.25.0-1) unstable; urgency=medium
 
-  ** SNAPSHOT build @017c48256b92ff0d9d489fa2553712ec33df5435 **
-
-  * Update build-deps and deps with the info from cmake
+  [ Automatic packaging ]
   * Update build-deps and deps with the info from cmake
 
- -- Automatic packaging <maxy+jenkins@gnuservers.com.ar>  Sat, 13 Aug 2016 11:37:13 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 20 Aug 2016 16:48:47 +0200
 
 baloo-kf5 (5.23.0-1) unstable; urgency=medium
 
