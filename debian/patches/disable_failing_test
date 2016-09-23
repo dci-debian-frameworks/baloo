@@ -1,8 +1,17 @@
-Index: baloo/autotests/unit/lib/CMakeLists.txt
+From: Debian/Kubuntu Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Date: Sat, 30 Apr 2016 15:09:55 +0200
+Subject: disable_failing_test
+
 ===================================================================
---- baloo.orig/autotests/unit/lib/CMakeLists.txt	2015-08-31 21:50:27.916625507 +0200
-+++ baloo/autotests/unit/lib/CMakeLists.txt	2015-09-05 01:24:02.599336948 +0200
-@@ -5,10 +5,10 @@
+---
+ autotests/unit/lib/CMakeLists.txt | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/autotests/unit/lib/CMakeLists.txt b/autotests/unit/lib/CMakeLists.txt
+index d3490ed..700446a 100644
+--- a/autotests/unit/lib/CMakeLists.txt
++++ b/autotests/unit/lib/CMakeLists.txt
+@@ -5,10 +5,10 @@ ecm_add_test(queryserializationtest.cpp
      TEST_NAME "queryserializationtest"
      LINK_LIBRARIES Qt5::Test KF5::Baloo
  )
