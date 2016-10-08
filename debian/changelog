@@ -1,6 +1,6 @@
-baloo-kf5 (5.26.0-2~1.gbp42e9b8) UNRELEASED; urgency=medium
+baloo-kf5 (5.27.0-1~1.gbpf0bd5c) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @42e9b82f1f28e7579efeca1762d9e400f0a40709 **
+  ** SNAPSHOT build @f0bd5ce13779d810df3fbd5bb89b3b09911b994b **
 
   [ Maximiliano Curia ]
   * Drop obsolete conffile.
@@ -8,8 +8,9 @@ baloo-kf5 (5.26.0-2~1.gbp42e9b8) UNRELEASED; urgency=medium
 
   [ Automatic packaging ]
   * Update build-deps and deps with the info from cmake
+  * Update build-deps and deps with the info from cmake
 
- -- Maximiliano Curia <maxy@gnuservers.com.ar>  Thu, 06 Oct 2016 12:38:09 +0200
+ -- Automatic packaging <maxy+jenkins@gnuservers.com.ar>  Sat, 08 Oct 2016 11:37:28 +0200
 
 baloo-kf5 (5.26.0-1) unstable; urgency=medium
 
