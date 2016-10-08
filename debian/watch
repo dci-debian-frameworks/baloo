@@ -1,3 +1,3 @@
 version=4
 
-http://download.kde.org/stable/frameworks/([\d.]+)/baloo-([\d.]+)\.tar\.xz
+opts=pgpsigurlmangle=s/$/.sig/ http://download.kde.org/stable/frameworks/([\d.]+)/baloo-([\d.]+)\.tar\.xz
