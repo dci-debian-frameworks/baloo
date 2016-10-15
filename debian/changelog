@@ -1,16 +1,14 @@
-baloo-kf5 (5.27.0-1~1.gbpf0bd5c) UNRELEASED; urgency=medium
-
-  ** SNAPSHOT build @f0bd5ce13779d810df3fbd5bb89b3b09911b994b **
+baloo-kf5 (5.27.0-1) unstable; urgency=medium
 
   [ Maximiliano Curia ]
+  * New upstream release (5.27)
   * Drop obsolete conffile.
     Thanks to shirish for the report (Closes: 839917)
 
   [ Automatic packaging ]
   * Update build-deps and deps with the info from cmake
-  * Update build-deps and deps with the info from cmake
 
- -- Automatic packaging <maxy+jenkins@gnuservers.com.ar>  Sat, 08 Oct 2016 11:37:28 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 15 Oct 2016 17:05:54 +0200
 
 baloo-kf5 (5.26.0-1) unstable; urgency=medium
 
