@@ -1,3 +1,15 @@
+baloo-kf5 (5.27.0-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.27)
+  * Drop obsolete conffile.
+    Thanks to shirish for the report (Closes: 839917)
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 15 Oct 2016 17:05:54 +0200
+
 baloo-kf5 (5.27.0-0neon) xenial; urgency=medium
 
   * New release
