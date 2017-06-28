@@ -1,4 +1,2 @@
 disable_failing_test
-fix-822499.patch
-build_dbus_unconditionally.patch
 Disable-the-file-indexer-by-default.patch
