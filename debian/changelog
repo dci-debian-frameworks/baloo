@@ -1,8 +1,18 @@
-baloo-kf5 (5.35.0-1~) UNRELEASED; urgency=medium
+baloo-kf5 (5.35.0-1~1) UNRELEASED; urgency=medium
 
+  [ Maximiliano Curia ]
   * New upstream release (5.35.0).
+  * Bump Standards-Version to 4.0.0.
+  * Update build-deps and deps with the info from cmake
+  * Drop upstream patches
 
- -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Jun 2017 17:53:34 +0200
+  [ Raymond Wooninck ]
+  * Add gpg signature
+
+  [ Harald Sitter ]
+  * acc c++11. now used more liberally
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 07 Jul 2017 14:11:41 +0200
 
 baloo-kf5 (5.28.0-2) unstable; urgency=medium
 
