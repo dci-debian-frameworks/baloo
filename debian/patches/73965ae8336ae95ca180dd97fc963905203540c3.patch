@@ -1,0 +1,59 @@
+From 73965ae8336ae95ca180dd97fc963905203540c3 Mon Sep 17 00:00:00 2001
+From: David Faure <faure@kde.org>
+Date: Mon, 10 Jul 2017 11:33:19 +0200
+Subject: [PATCH] Fix compilation with cmake current git and cmake >= 3.10
+
+(cmake 3.9 will revert this new behaviour for compat reasons and introduce
+a policy, so this is both a very-short-term and a rather-long-term fix)
+---
+ src/lib/CMakeLists.txt              | 4 +++-
+ src/qml/experimental/CMakeLists.txt | 4 +++-
+ src/tools/balooctl/CMakeLists.txt   | 5 ++++-
+ 3 files changed, 10 insertions(+), 3 deletions(-)
+
+diff --git a/src/lib/CMakeLists.txt b/src/lib/CMakeLists.txt
+index 381b3efe..08dabdf9 100644
+--- a/src/lib/CMakeLists.txt
++++ b/src/lib/CMakeLists.txt
+@@ -2,7 +2,9 @@ set(DBUS_INTERFACES
+   ${CMAKE_BINARY_DIR}/src/dbus/maininterface.cpp
+ )
+ 
+-SET_SOURCE_FILES_PROPERTIES(${DBUS_INTERFACES} PROPERTIES GENERATED 1)
++# CMake <= 3.9 skipped automoc for generated files
++# CMake >= 3.10 requires SKIP_AUTOMOC to actually skip automoc
++SET_SOURCE_FILES_PROPERTIES(${DBUS_INTERFACES} PROPERTIES GENERATED 1 SKIP_AUTOMOC 1)
+ 
+ set(BALOO_LIB_SRCS
+     term.cpp
+diff --git a/src/qml/experimental/CMakeLists.txt b/src/qml/experimental/CMakeLists.txt
+index 2cea7f8c..936d0c9b 100644
+--- a/src/qml/experimental/CMakeLists.txt
++++ b/src/qml/experimental/CMakeLists.txt
+@@ -5,7 +5,9 @@ set(DBUS_INTERFACES
+   ${CMAKE_BINARY_DIR}/src/dbus/fileindexerinterface.cpp
+ )
+ 
+-SET_SOURCE_FILES_PROPERTIES(${DBUS_INTERFACES} PROPERTIES GENERATED 1)
++# CMake <= 3.9 skipped automoc for generated files
++# CMake >= 3.10 requires SKIP_AUTOMOC to actually skip automoc
++SET_SOURCE_FILES_PROPERTIES(${DBUS_INTERFACES} PROPERTIES GENERATED 1 SKIP_AUTOMOC 1)
+ 
+ set(baloomonitorplugin_SRCS
+     baloomonitorplugin.cpp
+diff --git a/src/tools/balooctl/CMakeLists.txt b/src/tools/balooctl/CMakeLists.txt
+index c38b461f..d7be2389 100644
+--- a/src/tools/balooctl/CMakeLists.txt
++++ b/src/tools/balooctl/CMakeLists.txt
+@@ -16,7 +16,10 @@ set(DBUS_INTERFACES
+   ${CMAKE_BINARY_DIR}/src/dbus/fileindexerinterface.cpp
+ )
+ 
+-set_source_files_properties(${DBUS_INTERFACES} PROPERTIES GENERATED 1)
++
++# CMake <= 3.9 skipped automoc for generated files
++# CMake >= 3.10 requires SKIP_AUTOMOC to actually skip automoc
++SET_SOURCE_FILES_PROPERTIES(${DBUS_INTERFACES} PROPERTIES GENERATED 1 SKIP_AUTOMOC 1)
+ 
+ add_executable(balooctl ${SRCS} ${DBUS_INTERFACES})
+ add_dependencies(balooctl BalooDBusInterfaces)
