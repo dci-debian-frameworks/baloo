@@ -84,6 +84,7 @@ Description: framework for searching and managing metadata core lib (documentati
  Baloo is part of the KDE Plasma desktop.
  .
  This package contains the qch documentation files.
+Section: doc
 
 Package: libkf5baloo5
 Section: libs
