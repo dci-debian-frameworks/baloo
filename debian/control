@@ -33,7 +33,7 @@ Vcs-Git: https://anonscm.debian.org/git/pkg-kde/frameworks/baloo.git
 
 Package: baloo
 Section: oldlibs
-Priority: extra
+Priority: optional
 Architecture: all
 Depends: baloo-kf5 (>= ${source:Upstream-Version}), ${misc:Depends}
 Description: transitional package for baloo
