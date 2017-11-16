@@ -81,7 +81,7 @@ Description: framework for searching and managing metadata core lib.
 
 Package: baloo
 Section: oldlibs
-Priority: extra
+Priority: optional
 Architecture: all
 Depends: baloo-kf5 (>= ${source:Upstream-Version}), ${misc:Depends}
 Description: transitional package for baloo
