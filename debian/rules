@@ -2,15 +2,16 @@
 # -*- makefile -*-
 
 l10npkgs_firstversion_ok := 4:4.14.0-2
-
-include /usr/share/pkg-kde-tools/qt-kde-team/3/debian-qt-kde.mk
 include /usr/share/pkg-kde-tools/qt-kde-team/2/l10n-packages.mk
 
+%:
+	dh $@ --with kf5,pkgkde_symbolshelper --buildsystem kf5
+
 override_dh_auto_configure:
-	$(overridden_command) -- -DBUILD_QCH=ON
+	dh_auto_configure -- -DBUILD_QCH=ON
 
 override_dh_strip:
-	$(overridden_command) --dbgsym-migration='baloo-kf5-dbg (<= 5.19.0-1~~)'
+	dh_strip --dbgsym-migration='baloo-kf5-dbg (<= 5.19.0-1~~)'
 
 override_dh_auto_test:
 	# Disable auto tests at build time
@@ -18,6 +19,6 @@ override_dh_auto_test:
 
 BINARY_VERSION_NO_EPOCH := $(shell dpkg-parsechangelog | grep '^Version: ' | sed 's/^Version: \(\([[:digit:]]\+\):\)\?/\2/')
 
-override_dh_gencontrol:
+override_dh_gencontrol: l10npkgs_firstversion_ok
 	dh_gencontrol -pbaloo -- '-v4:$(BINARY_VERSION_NO_EPOCH)'
 	dh_gencontrol --remaining-packages
