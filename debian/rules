@@ -20,5 +20,4 @@ override_dh_auto_test:
 BINARY_VERSION_NO_EPOCH := $(shell dpkg-parsechangelog | grep '^Version: ' | sed 's/^Version: \(\([[:digit:]]\+\):\)\?/\2/')
 
 override_dh_gencontrol: l10npkgs_firstversion_ok
-	dh_gencontrol -pbaloo -- '-v4:$(BINARY_VERSION_NO_EPOCH)'
-	dh_gencontrol --remaining-packages
+	dh_gencontrol
