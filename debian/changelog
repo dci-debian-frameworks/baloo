@@ -1,4 +1,4 @@
-baloo-kf5 (5.41.0-1~1) UNRELEASED; urgency=medium
+baloo-kf5 (5.41.0-1) experimental; urgency=medium
 
   * New upstream release (5.38.0).
   * Update build-deps and deps with the info from cmake
@@ -7,8 +7,9 @@ baloo-kf5 (5.41.0-1~1) UNRELEASED; urgency=medium
   * Update build-deps and deps with the info from cmake
   * Drop transitional package baloo.
     Thanks to Holger Levsen for checking and reporting (Closes: 878226)
+  * Release to experimental
 
- -- Maximiliano Curia <maxy@debian.org>  Thu, 14 Dec 2017 08:16:43 -0300
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 15 Dec 2017 10:41:54 -0300
 
 baloo-kf5 (5.37.0-2) sid; urgency=medium
 
